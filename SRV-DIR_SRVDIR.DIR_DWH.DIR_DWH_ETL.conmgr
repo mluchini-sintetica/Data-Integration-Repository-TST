@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL"
+  DTS:DTSID="{62102490-454D-4B7E-9A09-120A46D18B10}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=SRV-DIR-TST;User ID=DIR_DWH_ETL;Initial Catalog=DIR_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="w8pYZhJSQMk="
+        p4:IV="p5z6HQrRlFBoiMVw9g0AQw=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">saJdUelPQrf8SrrKZmICvvcCnEOKv6JthqQQtYzWGB8VGONzxBgY8lu5TzqoqFCVETrey6Q6EXwquLwppBXOBg/62Tr63M+WWlrAM3BSuanxiyCyveTZdqp9Ts32DpuBcB0G0fTe39D6O0Tj0lXnzL5KDQ9jM+m42W0NmweBxsA=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

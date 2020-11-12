@@ -1,0 +1,2744 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/29/2020 6:54:53 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRV-DIR-TST"
+  DTS:CreatorName="SINTE00\mluchini"
+  DTS:DTSID="{06B19BE7-1E4B-4E75-9554-6D94ACBAFBBA}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="2064"
+  DTS:ObjectName="AUDIT_TRAIL_FLAT_FILES"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="177"
+  DTS:VersionGUID="{5A51F557-3042-46C0-A9B5-6CF06A3BC53F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="out_MAX_ID"
+      DTS:ConfigurationVariable="\Package.Variables[User::in_PARENT_ID].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{1D6919D8-2155-4E1D-B699-DC4DCEDD3180}"
+      DTS:ObjectName="in_PARENT_ID" />
+  </DTS:Configurations>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{16CB609D-D55A-407A-90E7-DCE11939ED61}"
+      DTS:ObjectName="Parameter">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EDE18915-0D38-483B-83DD-F0297B58FE1E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_OBJECT_ERROR">
+      <DTS:VariableValue
+        DTS:DataType="8">SRV-DIR-TST - SSIS package: AUDIT_TRAIL_FLAT_FILES ERROR</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{52D28826-A341-4D52-A21B-45C5FABE8E64}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; MATLAB NOT COMPLETED on TIME (&quot; + (DT_WSTR,20)@[out_CHECK_MAX_PERIOD_MIN_NBR] + &quot; min)&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_OBJECT_MATLAB_OVERTIME">
+      <DTS:VariableValue
+        DTS:DataType="8">SRV-DIR-TST - SSIS package: AUDIT_TRAIL_FLAT_FILES MATLAB NOT COMPLETED on TIME (0 min)</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A14237FA-7A12-410A-A01E-1D360CAEE9AA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
+      <DTS:VariableValue
+        DTS:DataType="8">SRV-DIR-TST - SSIS package: AUDIT_TRAIL_FLAT_FILES completed SUCCESSFULLY</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7902A17A-AF38-4081-B4B0-668124C1D74A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_PROFILE">
+      <DTS:VariableValue
+        DTS:DataType="8">ITatSINTETICA.COM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ADCFE1A7-1BA3-4A59-9520-FB2F25E84BE9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
+      <DTS:VariableValue
+        DTS:DataType="8">This package loads equipments audit trail data from Machine files to DIR Flat Files, via MatLab</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="If the package is called by the parent package, it represents the run ID of the parente"
+      DTS:DTSID="{70660099-B47A-410A-BF73-96B5DCE73A6D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_PARENT_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{96130AC3-F226-4EE5-A2AB-8F79FAE980CA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_SOURCE_SYSTEM_CD">
+      <DTS:VariableValue
+        DTS:DataType="8">Audit_Trail_Equipment_ME</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{856DEBCE-1070-4DA7-82F7-275F6C793176}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_SOURCE_SYSTEM_DESC">
+      <DTS:VariableValue
+        DTS:DataType="8">EQUIPMENTS</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{18A9EC8B-97C6-4291-824E-43D3F17E74BB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_TARGET_SYSTEM_DESC">
+      <DTS:VariableValue
+        DTS:DataType="8">FLAT FILES</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{57825002-1349-433A-92D1-F59DCF5C02F6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_CHECK_FREQUENCE_MIN_NBR">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BE7B5FF0-172B-4111-96C4-8D704B29712D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_CHECK_MAX_PERIOD_MIN_NBR">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EDBB7B78-2BCB-4C66-9A0B-5D52E0D81140}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_MATLAB_MAX_TIME">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6CB21512-5D90-43D1-9C25-D2A8FCAD06E1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_MATLAB_RUN_FLG">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{40DDCD4F-623F-43EE-8E78-F6C0C195D7B7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_MAX_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{679F9FC3-3A37-461E-BF4D-8FB95E08C839}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_SITE_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BC86BCA0-DEA7-4D03-8BCD-538E52C9767A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_SOURCE_SYSTEM_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Assign SITE_ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{68ab6a41-b89a-4289-8b30-98131e2197d8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Assign SITE_ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="SELECT ID &#xA;FROM TBDWMN_SITE &#xA;WHERE SITE_CD = ? and getdate() between VALIDITY_START_DT and VALIDITY_END_DT"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="ID"
+            SQLTask:DtsVariableName="User::out_SITE_ID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Project::in_SITE_CD"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Assign SOURCE_SYSTEM_ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{a6e9b5c5-89d5-466a-a8d2-8fc903b20737}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="SELECT ID&#xA;FROM TBDWMN_SOURCE_SYSTEM&#xA;WHERE SOURCE_SYSTEM_CD = ? and getdate() between VALIDITY_START_DT and VALIDITY_END_DT"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="ID"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_CD"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Email for MatLab Overtime"
+      DTS:AssignExpression="@[out_MATLAB_MAX_TIME] = GETDATE()"
+      DTS:CreationName="STOCK:FORLOOP"
+      DTS:Description="For Loop Container"
+      DTS:DTSID="{463DD16B-EE0E-4C09-9D5C-4F137A70A92D}"
+      DTS:EvalExpression="@[out_MATLAB_MAX_TIME] &lt; DATEADD(&quot;Minute&quot;, -@[out_CHECK_MAX_PERIOD_MIN_NBR],GETDATE()) "
+      DTS:ExecutableType="STOCK:FORLOOP"
+      DTS:LocaleID="-1"
+      DTS:MaxConcurrent="1"
+      DTS:ObjectName="Email for MatLab Overtime">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Email for MatLab Overtime\Email for MatLab Overtime"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ca87464a-c0aa-455c-a2f9-c74f6bafc29c}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Email for MatLab Overtime"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::in_MAIL_PROFILE"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::in_MAIL_OBJECT_MATLAB_OVERTIME"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Email SUCCESS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{b36b7397-ad57-450d-bf9b-e25ffa37963c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Email SUCCESS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::in_MAIL_PROFILE"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_SUCCESS"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::in_MAIL_OBJECT_SUCCESS"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Ins TBLOG_PACKAGE + Max ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6c70731e-5e2b-47dc-a01a-f5d2252e59d2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ins TBLOG_PACKAGE + Max ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="MAX_ID"
+            SQLTask:DtsVariableName="User::out_MAX_ID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::in_PACKAGE_SCOPE_DESC"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_DESC"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::in_TARGET_SYSTEM_DESC"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="7"
+            SQLTask:DtsVariableName="$Project::in_USER_CD"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="8"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="9"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::in_PARENT_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Kill Excel after"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{a4f59952-0050-4a83-a014-f0460e9bdcdf}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Kill Excel after"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="D:\Matlab\TaskKill\killexcel.bat" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Kill Excel before"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{a994b2ee-5f56-46fc-a1c2-5a99726e1d6e}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Kill Excel before"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="D:\Matlab\TaskKill\killexcel.bat" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Kill MatLab after"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{b033e7e7-75d4-4d3f-86f5-180095c57f36}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Kill MatLab after"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="D:\Matlab\TaskKill\killmatlab.bat" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Kill MatLab before"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{c12adfa4-eef0-45ed-8b79-436f1ea67776}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Kill MatLab before"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="D:\Matlab\TaskKill\killmatlab.bat" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Last Upd TBLOG_PACKAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9459cd1f-dcf4-4ed0-b3c9-5ec0b97d322f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Last Upd TBLOG_PACKAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_SUCCESS_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_PACKAGE_RUN_FLG = 1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE&#xA;SET END_DT = getdate(), LAST_SUCCESS_PACKAGE_RUN_FLG=1&#xA;WHERE ID=?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::out_MAX_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::out_MAX_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Run MatLab"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{06BFB5E2-EA82-4B43-BBA1-8892E55AA95A}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Run MatLab"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="D:\Matlab\TaskStart\Main.bat" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TBLOG_TRAFFICLIGHT to 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C26A62EF-892C-480E-A3A7-B210B7126D32}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TBLOG_TRAFFICLIGHT to 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2064"
+              name="RUN_FLG to 1 INTO TRAFFICLIGHT csv"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Connections[FlatFileConnection]"
+                  connectionManagerID="{CB6E9267-0E74-4558-BFD4-E9FA27DBA29E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TBLOG_TRAFFICLIGHT]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].Columns[FLOW_NAME_CD]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="FLOW_NAME_CD"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[FLOW_NAME_CD]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[FLOW_NAME_CD]" />
+                    <inputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].Columns[RUN_FLG]"
+                      cachedDataType="i2"
+                      cachedName="RUN_FLG"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[RUN_FLG]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[RUN_FLG]" />
+                    <inputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].Columns[START_DT]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="START_DT"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[START_DT]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[START_DT]" />
+                    <inputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].Columns[END_DT]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="END_DT"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[END_DT]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[END_DT]" />
+                    <inputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].Columns[START_USER_CD]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="START_USER_CD"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[START_USER_CD]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[START_USER_CD]" />
+                    <inputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].Columns[END_USER_CD]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="END_USER_CD"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[END_USER_CD]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[END_USER_CD]" />
+                    <inputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].Columns[ID]"
+                      cachedDataType="i8"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].Columns[SYSTEM_CD]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="SYSTEM_CD"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[SYSTEM_CD]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[SYSTEM_CD]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[FLOW_NAME_CD]"
+                      dataType="wstr"
+                      length="100"
+                      name="FLOW_NAME_CD" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[RUN_FLG]"
+                      dataType="i4"
+                      name="RUN_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[START_DT]"
+                      dataType="date"
+                      name="START_DT" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[START_USER_CD]"
+                      dataType="wstr"
+                      length="100"
+                      name="START_USER_CD" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[END_DT]"
+                      dataType="date"
+                      name="END_DT" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[END_USER_CD]"
+                      dataType="wstr"
+                      length="100"
+                      name="END_USER_CD" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input].ExternalColumns[SYSTEM_CD]"
+                      dataType="wstr"
+                      length="100"
+                      name="SYSTEM_CD" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="TBLOG_TRAFFICLIGHT"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[db_owner].[TBLOG_TRAFFICLIGHT]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Connections[OleDbConnection]"
+                  connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[SYSTEM_CD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[SYSTEM_CD]"
+                      length="100"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[SYSTEM_CD]"
+                      name="SYSTEM_CD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[FLOW_NAME_CD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[FLOW_NAME_CD]"
+                      length="100"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[FLOW_NAME_CD]"
+                      name="FLOW_NAME_CD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[RUN_FLG]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[RUN_FLG]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[RUN_FLG]"
+                      name="RUN_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[START_DT]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[START_DT]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[START_DT]"
+                      name="START_DT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[END_DT]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[END_DT]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[END_DT]"
+                      name="END_DT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[START_USER_CD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[START_USER_CD]"
+                      length="100"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[START_USER_CD]"
+                      name="START_USER_CD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[END_USER_CD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[END_USER_CD]"
+                      length="100"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[END_USER_CD]"
+                      name="END_USER_CD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      name="CHECK_MAX_PERIOD_MIN_NBR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[CHECK_FREQUENCE_MIN_NBR]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[CHECK_FREQUENCE_MIN_NBR]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[CHECK_FREQUENCE_MIN_NBR]"
+                      name="CHECK_FREQUENCE_MIN_NBR"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="i8"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[SYSTEM_CD]"
+                      dataType="wstr"
+                      length="100"
+                      name="SYSTEM_CD" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[FLOW_NAME_CD]"
+                      dataType="wstr"
+                      length="100"
+                      name="FLOW_NAME_CD" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[RUN_FLG]"
+                      dataType="i2"
+                      name="RUN_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[START_DT]"
+                      dataType="dbTimeStamp"
+                      name="START_DT" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[END_DT]"
+                      dataType="dbTimeStamp"
+                      name="END_DT" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[START_USER_CD]"
+                      dataType="wstr"
+                      length="100"
+                      name="START_USER_CD" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[END_USER_CD]"
+                      dataType="wstr"
+                      length="100"
+                      name="END_USER_CD" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      dataType="i4"
+                      name="CHECK_MAX_PERIOD_MIN_NBR" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[CHECK_FREQUENCE_MIN_NBR]"
+                      dataType="i4"
+                      name="CHECK_FREQUENCE_MIN_NBR" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="i8"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[SYSTEM_CD]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[SYSTEM_CD]"
+                      name="SYSTEM_CD" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[FLOW_NAME_CD]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[FLOW_NAME_CD]"
+                      name="FLOW_NAME_CD" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[RUN_FLG]"
+                      dataType="i2"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[RUN_FLG]"
+                      name="RUN_FLG" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[START_DT]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[START_DT]"
+                      name="START_DT" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[END_DT]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[END_DT]"
+                      name="END_DT" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[START_USER_CD]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[START_USER_CD]"
+                      name="START_USER_CD" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[END_USER_CD]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[END_USER_CD]"
+                      name="END_USER_CD" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      dataType="i4"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      name="CHECK_MAX_PERIOD_MIN_NBR" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[CHECK_FREQUENCE_MIN_NBR]"
+                      dataType="i4"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[CHECK_FREQUENCE_MIN_NBR]"
+                      name="CHECK_FREQUENCE_MIN_NBR" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\TBLOG_TRAFFICLIGHT to 1.Paths[OLE DB Source Output]"
+              endId="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Upd MATLAB_RUN_FLG to 1 and set MATLAB variables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c1d09f82-9f2f-43f7-bc1b-44b0e872ae50}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Upd MATLAB_RUN_FLG to 1 and set MATLAB variables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="update TBLOG_TRAFFICLIGHT&#xA;set RUN_FLG=1, START_DT=getdate(), START_USER_CD='SSIS'&#xA;where system_cd ='MATLAB' and flow_name_cd='MAIN';&#xA;&#xA;select RUN_FLG, getdate() as MATLAB_MAX_TIME, CHECK_MAX_PERIOD_MIN_NBR, CHECK_FREQUENCE_MIN_NBR&#xA;from TBLOG_TRAFFICLIGHT&#xA;where system_cd ='MATLAB' and flow_name_cd='MAIN'; "
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="RUN_FLG"
+            SQLTask:DtsVariableName="User::out_MATLAB_RUN_FLG" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="MATLAB_MAX_TIME"
+            SQLTask:DtsVariableName="User::out_MATLAB_MAX_TIME" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CHECK_MAX_PERIOD_MIN_NBR"
+            SQLTask:DtsVariableName="User::out_CHECK_MAX_PERIOD_MIN_NBR" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CHECK_FREQUENCE_MIN_NBR"
+            SQLTask:DtsVariableName="User::out_CHECK_FREQUENCE_MIN_NBR" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Upd TBLOG_PACKAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{39baeede-3c86-4872-8d34-cc7ed99558a5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Upd TBLOG_PACKAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="--update previous last package run to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and  LAST_PACKAGE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::out_MAX_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Wait for MatLab"
+      DTS:CreationName="STOCK:FORLOOP"
+      DTS:Description="For Loop Container"
+      DTS:DTSID="{F103C564-4DB4-4F8A-9AAB-6F671727F14D}"
+      DTS:EvalExpression="@[out_MATLAB_RUN_FLG]==1 &amp;&amp; @[out_MATLAB_MAX_TIME] &gt; DATEADD(&quot;Minute&quot;, -@[out_CHECK_MAX_PERIOD_MIN_NBR],GETDATE()) "
+      DTS:ExecutableType="STOCK:FORLOOP"
+      DTS:LocaleID="-1"
+      DTS:MaxConcurrent="1"
+      DTS:ObjectName="Wait for MatLab">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Wait for MatLab\Assign MATLAB_RUN_FLG"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{eaa5aec3-2c77-48cf-bab5-226257ab7531}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Assign MATLAB_RUN_FLG"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="select RUN_FLG&#xA;from TBLOG_TRAFFICLIGHT&#xA;where system_cd ='MATLAB' and flow_name_cd='MAIN';"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="RUN_FLG"
+                SQLTask:DtsVariableName="User::out_MATLAB_RUN_FLG" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{55C79744-331B-4BB1-B1D0-1090E66E3AED}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Check TBLOG_TRAFFICLIGHT if equal to 0"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update TBLOG_TRAFFICLIGHT
+set RUN_FLG=?, END_DT=?, END_USER_CD=?
+where id=?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID]"
+                          cachedDataType="i4"
+                          cachedName="ID"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[ID]" />
+                        <inputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].Columns[END_USER_CD]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="END_USER_CD"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_USER_CD]" />
+                        <inputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].Columns[END_DT]"
+                          cachedDataType="date"
+                          cachedName="END_DT"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_DT]" />
+                        <inputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].Columns[RUN_FLG]"
+                          cachedDataType="i4"
+                          cachedName="RUN_FLG"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="i2"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="dbTimeStamp"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="wstr"
+                          length="100"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i8"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="2064"
+                  name="TBLOG_TRAFFICLIGHT csv"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Connections[FlatFileConnection]"
+                      connectionManagerID="{CB6E9267-0E74-4558-BFD4-E9FA27DBA29E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[TBLOG_TRAFFICLIGHT]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[ID]"
+                          name="ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[SYSTEM_CD]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_CD]"
+                          length="100"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[SYSTEM_CD]"
+                          name="SYSTEM_CD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[FLOW_NAME_CD]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[FLOW_NAME_CD]"
+                          length="100"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[FLOW_NAME_CD]"
+                          name="FLOW_NAME_CD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[RUN_FLG]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]"
+                          name="RUN_FLG"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_DT]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_DT]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_DT]"
+                          name="START_DT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_DT]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_DT]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_DT]"
+                          name="END_DT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_USER_CD]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_USER_CD]"
+                          length="100"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_USER_CD]"
+                          name="START_USER_CD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_USER_CD]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_USER_CD]"
+                          length="100"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_USER_CD]"
+                          name="END_USER_CD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                          dataType="i4"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_CD]"
+                          dataType="wstr"
+                          length="100"
+                          name="SYSTEM_CD" />
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[FLOW_NAME_CD]"
+                          dataType="wstr"
+                          length="100"
+                          name="FLOW_NAME_CD" />
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[RUN_FLG]"
+                          dataType="i4"
+                          name="RUN_FLG" />
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_DT]"
+                          dataType="date"
+                          name="START_DT" />
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_DT]"
+                          dataType="date"
+                          name="END_DT" />
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_USER_CD]"
+                          dataType="wstr"
+                          length="100"
+                          name="START_USER_CD" />
+                        <externalMetadataColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_USER_CD]"
+                          dataType="wstr"
+                          length="100"
+                          name="END_USER_CD" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Test RUN_FLG equal to 0"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input].Columns[RUN_FLG]"
+                          cachedDataType="i4"
+                          cachedName="RUN_FLG"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[RUN_FLG 0]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="RUN_FLG 0"
+                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]} == 0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">RUN_FLG == 0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0.Paths[Flat File Source Output]"
+                  endId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0.Paths[RUN_FLG 0]"
+                  endId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="RUN_FLG 0"
+                  startId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[RUN_FLG 0]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Wait for MatLab\Wait For X minutes"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{814459CE-861A-4C98-9932-6DFFB262F878}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Wait For X minutes"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">@[User::out_CHECK_FREQUENCE_MIN_NBR]&lt;10 ? "WAITFOR DELAY '00:0" +  (DT_WSTR, 1) @[User::out_CHECK_FREQUENCE_MIN_NBR] +"'" : "WAITFOR DELAY '00:" +  (DT_WSTR, 2) @[User::out_CHECK_FREQUENCE_MIN_NBR] +"'"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="WAITFOR DELAY '00:00'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Wait for MatLab.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{CEA53130-918D-4913-9124-996BDF824095}"
+          DTS:From="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Wait for MatLab\Assign MATLAB_RUN_FLG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Wait for MatLab.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{EFF93A06-080C-4DC4-AD01-CCC9F275D260}"
+          DTS:From="Package\Wait for MatLab\Wait For X minutes"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F3AD559C-860A-4A50-95AC-CE11195A15CB}"
+      DTS:From="Package\Run MatLab"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Wait for MatLab" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A79708AA-92FE-4896-899B-352CA7FE528B}"
+      DTS:From="Package\Last Upd TBLOG_PACKAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Email SUCCESS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{4D2B4A73-9AB8-4732-96A2-4D565B3190DA}"
+      DTS:From="Package\TBLOG_TRAFFICLIGHT to 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\Kill Excel before" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{F90F6419-2E25-458A-A6A6-CC386CCC68C7}"
+      DTS:From="Package\Kill Excel after"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\Last Upd TBLOG_PACKAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{6D55DDA0-6044-4CD1-BD82-F6ECAFBB4580}"
+      DTS:From="Package\Kill MatLab before"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 12"
+      DTS:To="Package\Run MatLab" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
+      DTS:CreationName=""
+      DTS:DTSID="{B043CED8-4B74-4DAD-8AC0-138321A27953}"
+      DTS:From="Package\TBLOG_TRAFFICLIGHT to 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 13"
+      DTS:To="Package\Kill MatLab before" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 14]"
+      DTS:CreationName=""
+      DTS:DTSID="{D3BB8F68-2AE6-4A2D-B74A-E0377AA33C59}"
+      DTS:From="Package\Kill Excel before"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 14"
+      DTS:To="Package\Run MatLab" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 15]"
+      DTS:CreationName=""
+      DTS:DTSID="{91E7B06E-A21D-4FC2-8A5B-27D26DBD9AD4}"
+      DTS:From="Package\Wait for MatLab"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 15"
+      DTS:To="Package\Email for MatLab Overtime" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 16]"
+      DTS:CreationName=""
+      DTS:DTSID="{D154CBC8-B630-4DAE-96BB-54D72A35E2C7}"
+      DTS:From="Package\Email for MatLab Overtime"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 16"
+      DTS:To="Package\Last Upd TBLOG_PACKAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{845a7776-dfdf-4752-a6e7-7725b91a708b}"
+      DTS:From="Package\Ins TBLOG_PACKAGE + Max ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Upd TBLOG_PACKAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{eab3db1d-333b-4218-aa20-1fa75b77c810}"
+      DTS:From="Package\Assign SOURCE_SYSTEM_ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Ins TBLOG_PACKAGE + Max ID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{e3177354-8d0f-4936-b345-9c091a90c394}"
+      DTS:From="Package\Assign SITE_ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Ins TBLOG_PACKAGE + Max ID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{6BBAC43D-DE78-40C0-BAA4-EC6C8F8D2F04}"
+      DTS:From="Package\Wait for MatLab"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Kill Excel after" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{910CBE14-1F3D-4EA3-9A18-F8F6F9DB7E1E}"
+      DTS:From="Package\Kill MatLab after"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Last Upd TBLOG_PACKAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{96AD76FE-B364-4BF3-A973-3DE01C9BB5A7}"
+      DTS:From="Package\Wait for MatLab"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Kill MatLab after" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{23EEB594-4961-452A-A81F-207C556AB061}"
+      DTS:From="Package\Upd TBLOG_PACKAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Upd MATLAB_RUN_FLG to 1 and set MATLAB variables" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{4567CEAF-A8BA-46EC-9161-87FD8187DDE7}"
+      DTS:From="Package\Upd MATLAB_RUN_FLG to 1 and set MATLAB variables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\TBLOG_TRAFFICLIGHT to 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{7BC2B740-8CAC-4D75-80B5-6B4888D8C7AB}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{8CA9C80B-1CFC-4749-AE6D-1529C30F9CD9}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{e4be2642-2790-4609-ad09-f300e870570a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Email ERROR"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::in_MAIL_PROFILE"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Assign SITE_ID"
+          TopLeft="171,109" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Assign SOURCE_SYSTEM_ID"
+          TopLeft="154,28" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Email for MatLab Overtime\Email for MatLab Overtime"
+          TopLeft="23.5,26" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="256,123"
+          Size="256,166"
+          Id="Package\Email for MatLab Overtime"
+          TopLeft="214.333333333333,633.888888888889" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Email SUCCESS"
+          TopLeft="805.444444444444,613.333333333333" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Ins TBLOG_PACKAGE + Max ID"
+          TopLeft="567.571428571435,102.587301587301" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Kill Excel after"
+          TopLeft="273.222222222222,482.666666666667" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Kill Excel before"
+          TopLeft="264.5,205" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Kill MatLab after"
+          TopLeft="77.2222222222222,513" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Kill MatLab before"
+          TopLeft="48.5,205" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Last Upd TBLOG_PACKAGE"
+          TopLeft="444.333333333333,563.333333333333" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Run MatLab"
+          TopLeft="205.333333333333,347.333333333333" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\TBLOG_TRAFFICLIGHT to 1"
+          TopLeft="573,354" />
+        <NodeLayout
+          Size="357,42"
+          Id="Package\Upd MATLAB_RUN_FLG to 1 and set MATLAB variables"
+          TopLeft="568,254" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Upd TBLOG_PACKAGE"
+          TopLeft="588.349206349204,179.142857142857" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Wait for MatLab\Assign MATLAB_RUN_FLG"
+          TopLeft="86,163" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0"
+          TopLeft="47,90" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Wait for MatLab\Wait For X minutes"
+          TopLeft="113,15" />
+        <EdgeLayout
+          Id="Package\Wait for MatLab.PrecedenceConstraints[Constraint]"
+          TopLeft="242.333333333333,132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-48.3333333333333,31"
+              Start="0,0"
+              End="-48.3333333333333,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.50033715441672" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.50033715441672"
+                    Point2="0,12.5003371544167"
+                    Point3="-4,12.5003371544167" />
+                  <mssgle:LineSegment
+                    End="-44.3333333333333,12.5003371544167" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44.3333333333333,12.5003371544167"
+                    Point2="-48.3333333333333,12.5003371544167"
+                    Point3="-48.3333333333333,16.5003371544167" />
+                  <mssgle:LineSegment
+                    End="-48.3333333333333,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Wait for MatLab.PrecedenceConstraints[Constraint 1]"
+          TopLeft="196.75,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="364,285"
+          Size="179,43"
+          Id="Package\Wait for MatLab"
+          TopLeft="75.0555555555555,418.666666666667" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="274.833333333333,389.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-110.277777777778,29.3333333333333"
+              Start="0,0"
+              End="-110.277777777778,21.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.6666666666667"
+                    Point2="0,14.6666666666667"
+                    Point3="-4,14.6666666666667" />
+                  <mssgle:LineSegment
+                    End="-106.277777777778,14.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-106.277777777778,14.6666666666667"
+                    Point2="-110.277777777778,14.6666666666667"
+                    Point3="-110.277777777778,18.6666666666667" />
+                  <mssgle:LineSegment
+                    End="-110.277777777778,21.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="666.333333333333,584.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="139.111111111111,50.0000000000001"
+              Start="0,0"
+              End="131.611111111111,50.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.5555555555556,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="65.5555555555556,0"
+                    Point2="69.5555555555556,0"
+                    Point3="69.5555555555556,4" />
+                  <mssgle:LineSegment
+                    End="69.5555555555556,46.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.5555555555556,46.0000000000001"
+                    Point2="69.5555555555556,50.0000000000001"
+                    Point3="73.5555555555556,50.0000000000001" />
+                  <mssgle:LineSegment
+                    End="131.611111111111,50.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="684,354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-315.5,-107"
+              Start="0,0"
+              End="-315.5,-99.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-59.5563909774436" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-59.5563909774436"
+                    Point2="0,-63.5563909774436"
+                    Point3="-4,-63.5563909774436" />
+                  <mssgle:LineSegment
+                    End="-311.5,-63.5563909774436" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-311.5,-63.5563909774436"
+                    Point2="-315.5,-63.5563909774436"
+                    Point3="-315.5,-67.5563909774436" />
+                  <mssgle:LineSegment
+                    End="-315.5,-99.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="347.722222222222,524.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="207.611111111111,38.6666666666667"
+              Start="0,0"
+              End="207.611111111111,31.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.3333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.3333333333334"
+                    Point2="0,19.3333333333334"
+                    Point3="4,19.3333333333334" />
+                  <mssgle:LineSegment
+                    End="203.611111111111,19.3333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="203.611111111111,19.3333333333334"
+                    Point2="207.611111111111,19.3333333333334"
+                    Point3="207.611111111111,23.3333333333334" />
+                  <mssgle:LineSegment
+                    End="207.611111111111,31.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="105.833333333333,247">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147.166666666667,100.333333333333"
+              Start="0,0"
+              End="147.166666666667,92.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.0452585607388" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.0452585607388"
+                    Point2="0,50.0452585607388"
+                    Point3="4,50.0452585607388" />
+                  <mssgle:LineSegment
+                    End="143.166666666667,50.0452585607388" />
+                  <mssgle:CubicBezierSegment
+                    Point1="143.166666666667,50.0452585607388"
+                    Point2="147.166666666667,50.0452585607388"
+                    Point3="147.166666666667,54.0452585607388" />
+                  <mssgle:LineSegment
+                    End="147.166666666667,92.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="630.5,354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-471.333333333333,-107"
+              Start="0,0"
+              End="-471.333333333333,-99.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-42.168483115955" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-42.168483115955"
+                    Point2="0,-46.168483115955"
+                    Point3="-4,-46.168483115955" />
+                  <mssgle:LineSegment
+                    End="-467.333333333333,-46.168483115955" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-467.333333333333,-46.168483115955"
+                    Point2="-471.333333333333,-46.168483115955"
+                    Point3="-471.333333333333,-50.168483115955" />
+                  <mssgle:LineSegment
+                    End="-471.333333333333,-99.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 14]"
+          TopLeft="318.5,247">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.8333333333334,100.333333333333"
+              Start="0,0"
+              End="-21.8333333333334,92.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.0821510906189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.0821510906189"
+                    Point2="0,50.0821510906189"
+                    Point3="-4,50.0821510906189" />
+                  <mssgle:LineSegment
+                    End="-17.8333333333334,50.0821510906189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.8333333333334,50.0821510906189"
+                    Point2="-21.8333333333334,50.0821510906189"
+                    Point3="-21.8333333333334,54.0821510906189" />
+                  <mssgle:LineSegment
+                    End="-21.8333333333334,92.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 15]"
+          TopLeft="193.055555555556,461.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.944444444444,172.222222222222"
+              Start="0,0"
+              End="107.944444444444,164.722222222222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.3951114347311" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,82.3951114347311"
+                    Point2="0,86.3951114347311"
+                    Point3="4,86.3951114347311" />
+                  <mssgle:LineSegment
+                    End="103.944444444444,86.3951114347311" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.944444444444,86.3951114347311"
+                    Point2="107.944444444444,86.3951114347311"
+                    Point3="107.944444444444,90.3951114347311" />
+                  <mssgle:LineSegment
+                    End="107.944444444444,164.722222222222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 16]"
+          TopLeft="383.666666666667,633.888888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="171.666666666667,-28.5555555555557"
+              Start="0,0"
+              End="171.666666666667,-21.0555555555557">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-7.52864044168396" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-7.52864044168396"
+                    Point2="0,-11.528640441684"
+                    Point3="4,-11.528640441684" />
+                  <mssgle:LineSegment
+                    End="167.666666666667,-11.528640441684" />
+                  <mssgle:CubicBezierSegment
+                    Point1="167.666666666667,-11.528640441684"
+                    Point2="171.666666666667,-11.528640441684"
+                    Point3="171.666666666667,-15.528640441684" />
+                  <mssgle:LineSegment
+                    End="171.666666666667,-21.0555555555557" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="687.71031746032,144.587301587301">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.555555555556"
+              Start="0,0"
+              End="0,27.055555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.055555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="269,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="418.571428571435,32.587301587301"
+              Start="0,0"
+              End="418.571428571435,25.087301587301">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.2936507936505" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.2936507936505"
+                    Point2="0,16.2936507936505"
+                    Point3="4,16.2936507936505" />
+                  <mssgle:LineSegment
+                    End="414.571428571435,16.2936507936505" />
+                  <mssgle:CubicBezierSegment
+                    Point1="414.571428571435,16.2936507936505"
+                    Point2="418.571428571435,16.2936507936505"
+                    Point3="418.571428571435,20.2936507936505" />
+                  <mssgle:LineSegment
+                    End="418.571428571435,25.087301587301" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="328,126.793650793651">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="239.571428571435,0"
+              Start="0,0"
+              End="232.071428571435,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="232.071428571435,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="254.055555555556,440.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93.6666666666667,42.4999999999999"
+              Start="0,0"
+              End="93.6666666666667,34.9999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="89.6666666666667,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="89.6666666666667,0"
+                    Point2="93.6666666666667,0"
+                    Point3="93.6666666666667,4" />
+                  <mssgle:LineSegment
+                    End="93.6666666666667,34.9999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="235.222222222222,534">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="209.111111111111,50.3333333333333"
+              Start="0,0"
+              End="201.611111111111,50.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="100.555555555556,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="100.555555555556,0"
+                    Point2="104.555555555556,0"
+                    Point3="104.555555555556,4" />
+                  <mssgle:LineSegment
+                    End="104.555555555556,46.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104.555555555556,46.3333333333333"
+                    Point2="104.555555555556,50.3333333333333"
+                    Point3="108.555555555556,50.3333333333333" />
+                  <mssgle:LineSegment
+                    End="201.611111111111,50.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="136.055555555556,461.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.1666666666667,51.3333333333334"
+              Start="0,0"
+              End="20.1666666666667,43.8333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8062015503876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.8062015503876"
+                    Point2="0,20.8062015503876"
+                    Point3="4,20.8062015503876" />
+                  <mssgle:LineSegment
+                    End="16.1666666666667,20.8062015503876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.1666666666667,20.8062015503876"
+                    Point2="20.1666666666667,20.8062015503876"
+                    Point3="20.1666666666667,24.8062015503876" />
+                  <mssgle:LineSegment
+                    End="20.1666666666667,43.8333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="687.849206349204,221.142857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="58.650793650796,32.857142857143"
+              Start="0,0"
+              End="58.650793650796,25.357142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.4285714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.4285714285715"
+                    Point2="0,16.4285714285715"
+                    Point3="4,16.4285714285715" />
+                  <mssgle:LineSegment
+                    End="54.650793650796,16.4285714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.650793650796,16.4285714285715"
+                    Point2="58.650793650796,16.4285714285715"
+                    Point3="58.650793650796,20.4285714285715" />
+                  <mssgle:LineSegment
+                    End="58.650793650796,25.357142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="746.5,296">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,58"
+              Start="0,0"
+              End="-9,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.2077151335312" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.2077151335312"
+                    Point2="0,38.2077151335312"
+                    Point3="-4,38.2077151335312" />
+                  <mssgle:LineSegment
+                    End="-5,38.2077151335312" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,38.2077151335312"
+                    Point2="-9,38.2077151335312"
+                    Point3="-9,42.2077151335312" />
+                  <mssgle:LineSegment
+                    End="-9,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Exit from the loop if MatLab has finished (RUN_FLG=0) or&#xA;if MatLab takes more than X minutes to be completed &#xA;(X is retrieved from TBLOG_TRAFFICLIGHT table)"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="331,72"
+          Id="409e098b-c0ae-44d8-ad3a-51b9a16271ca"
+          TopLeft="470.666666666667,434.333333333333" />
+        <AnnotationLayout
+          Text="If Matlab takes more than X minutes to be&#xA;completed an email is sent to inform technical&#xA;company point of contacts"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="273,72"
+          Id="d6967829-60de-4730-a1d3-8a09cf390ad1"
+          TopLeft="509.666666666667,693.444444444444" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\TBLOG_TRAFFICLIGHT to 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="201,42"
+          Id="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT"
+          TopLeft="298,132" />
+        <NodeLayout
+          Size="282,42"
+          Id="Package\TBLOG_TRAFFICLIGHT to 1\RUN_FLG to 1 INTO TRAFFICLIGHT csv"
+          TopLeft="360,285" />
+        <EdgeLayout
+          Id="Package\TBLOG_TRAFFICLIGHT to 1.Paths[OLE DB Source Output]"
+          TopLeft="398.5,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.5,111"
+              Start="0,0"
+              End="102.5,103.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.5"
+                    Point2="0,55.5"
+                    Point3="4,55.5" />
+                  <mssgle:LineSegment
+                    End="98.5,55.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="98.5,55.5"
+                    Point2="102.5,55.5"
+                    Point3="102.5,59.5" />
+                  <mssgle:LineSegment
+                    End="102.5,103.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0"
+          TopLeft="621,253" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv"
+          TopLeft="293,102" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command"
+          TopLeft="314,347" />
+        <EdgeLayout
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0.Paths[RUN_FLG 0]"
+          TopLeft="724,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-323.5,52"
+              Start="0,0"
+              End="-323.5,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="-4,26" />
+                  <mssgle:LineSegment
+                    End="-319.5,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-319.5,26"
+                    Point2="-323.5,26"
+                    Point3="-323.5,30" />
+                  <mssgle:LineSegment
+                    End="-323.5,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-187.353203125,31,51.20640625,10.8818359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0.Paths[Flat File Source Output]"
+          TopLeft="403.5,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="320.5,109"
+              Start="0,0"
+              End="320.5,101.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.5"
+                    Point2="0,54.5"
+                    Point3="4,54.5" />
+                  <mssgle:LineSegment
+                    End="316.5,54.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="316.5,54.5"
+                    Point2="320.5,54.5"
+                    Point3="320.5,58.5" />
+                  <mssgle:LineSegment
+                    End="320.5,101.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
