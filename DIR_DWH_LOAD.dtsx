@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="144"
-  DTS:VersionGUID="{3B772BE8-2CA4-4696-8133-A7590007AE2E}">
+  DTS:VersionBuild="147"
+  DTS:VersionGUID="{064442F3-D216-4622-B64F-400D11978D25}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -134,12 +134,12 @@
               <PackageName>AUDIT_TRAIL_DW.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="9pfxQatxDH8="
-                IV="rnpq+4snDCAnIl1b6iKjLA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="2gQde+Ka7rE="
+                IV="9LL5x9twhO3lsCnqVVc/4A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>rnpq+4snDCAnIl1b6iKjLGBOplnm7lzo3mfsBSGVdLVhRE/uLeEByCShqCZfc3gjC2YQjyON1Kpmk/IzoGDTw8Sfj9/imlnuZmWmsWtZuVY=</CipherValue>
+                  <CipherValue>9LL5x9twhO3lsCnqVVc/4NSnfYXJAPonYT2sbvXGQszAl9zJflO07TXlKJPeAJJ2V9QWHkQnA5eirjz4hdo8a5+NgZohWR74kNkuJW/LFQA=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -149,7 +149,6 @@
           DTS:refId="Package\DIR_DWH_LOAD\AUDIT_TRAIL_FLAT_FILES"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{EE0B42BB-341C-42E2-BD1F-7B2EE664188A}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -200,12 +199,12 @@
               <PackageName>PARCEL_MFG_DWAN.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="q6BsIL5j0dU="
-                IV="HRYbOSAVIaTbzeM+3FTI4g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="jwuM2kBO+Lk="
+                IV="F/8X85mVb6Ytn/iTVeFQtA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>HRYbOSAVIaTbzeM+3FTI4hHnK4JjEgeOs3BVeukuopBHrSI/PHwy4FRE3KnIcHlGwOb95ntzs7g7ezEWoQaGfsr+FPNcYS9DiBtNsijV/qU=</CipherValue>
+                  <CipherValue>F/8X85mVb6Ytn/iTVeFQtJxPADZcatJ8Cv3FCAMW7RvqKW8c5khq77h9awgWhqMGdp3ue9YWkQKFS7TJUMLU1QLx+tq1IOBMe4VQN6616WA=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -248,12 +247,12 @@
               <PackageName>SEA_VISION_DWFT.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="TO2owLrPMoo="
-                IV="ZcQ2gstY85lNWS9P7jZaog==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="V/VgTqEN07o="
+                IV="3y7wK7AtYXpDszX8SniWNg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>ZcQ2gstY85lNWS9P7jZaojU/XkkAO8QDitv5/FSQq/edZwo/0GiVworF+K3dvSJl1WaHA7JCsR65Q+JXJcndjr2MHU8W1EAnTWpUA5Cble4=</CipherValue>
+                  <CipherValue>3y7wK7AtYXpDszX8SniWNqCeqk26aeFjmWSgZYYWQSP7jOQ5u+PeOJDxb+o2l4Z9UIsNL4z5PzyEH9vstLLHoZkBFAs6hz2gfFAoMKIx4eI=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -970,7 +969,7 @@
         <NodeLayout
           Size="174,42"
           Id="Package\DIR_DWH_LOAD\AUDIT_TRAIL_DW"
-          TopLeft="622.5,216" />
+          TopLeft="625.5,216" />
         <NodeLayout
           Size="219,42"
           Id="Package\DIR_DWH_LOAD\AUDIT_TRAIL_FLAT_FILES"
@@ -978,26 +977,26 @@
         <NodeLayout
           Size="178,42"
           Id="Package\DIR_DWH_LOAD\AUDIT_TRAIL_STG"
-          TopLeft="264.5,211" />
+          TopLeft="267.5,211" />
         <NodeLayout
           Size="193,42"
           Id="Package\DIR_DWH_LOAD\PARCEL_MFG_DWAN"
-          TopLeft="254.5,31" />
+          TopLeft="257.5,31" />
         <NodeLayout
           Size="191,42"
           Id="Package\DIR_DWH_LOAD\PARCEL_MFG_STG"
-          TopLeft="5.5,30" />
+          TopLeft="8.5,30" />
         <NodeLayout
           Size="182,42"
           Id="Package\DIR_DWH_LOAD\SEA_VISION_DWFT"
-          TopLeft="486.5,125" />
+          TopLeft="489.5,125" />
         <NodeLayout
           Size="173,42"
           Id="Package\DIR_DWH_LOAD\SEA_VISION_STG"
-          TopLeft="6.5,108" />
+          TopLeft="9.5,108" />
         <EdgeLayout
           Id="Package\DIR_DWH_LOAD.PrecedenceConstraints[Constraint]"
-          TopLeft="196.5,51.5">
+          TopLeft="199.5,51.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1019,7 +1018,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIR_DWH_LOAD.PrecedenceConstraints[Constraint 1]"
-          TopLeft="351,73">
+          TopLeft="354,73">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1053,7 +1052,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIR_DWH_LOAD.PrecedenceConstraints[Constraint 2]"
-          TopLeft="179.5,129">
+          TopLeft="182.5,129">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1087,7 +1086,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIR_DWH_LOAD.PrecedenceConstraints[Constraint 3]"
-          TopLeft="442.5,234.5">
+          TopLeft="445.5,234.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1109,7 +1108,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIR_DWH_LOAD.PrecedenceConstraints[Constraint 4]"
-          TopLeft="577.5,167">
+          TopLeft="580.5,167">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1147,14 +1146,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="38.5,0"
+              EndConnector="41.5,0"
               Start="0,0"
-              End="31,0">
+              End="34,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="31,0" />
+                    End="34,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
