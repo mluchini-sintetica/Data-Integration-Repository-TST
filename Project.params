@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">support@sintetica.com; mluchini@sintetica.com; mvalsecchi@sintetica.com; fflain@sintetica.com</SSIS:Property>
+        SSIS:Name="Value">mluchini@sintetica.com; mvalsecchi@sintetica.com; fflain@sintetica.com</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

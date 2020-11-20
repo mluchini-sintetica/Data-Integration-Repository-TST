@@ -25,7 +25,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">SRV-DIR-TST</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="MJrfLRCVYSM=" SSIS:IV="DxYyXX/OGti0R4HhArd+mQ==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">Y0DjH5GyF2uw5Voi9MhhaFECK9PGIVKnDiAlA58ul413/Lu+pSZsSutQ9JiK8yAb2bMfqxoc7MCs8oYZfQnP/jBHL1wn4R+2JdsD+ED8sYQgM8lKIKaSgt1IjdfsFJ9aSHTIihYUSi8qVy7U2192Kg/eWv9onxjGcwE7z0tIFg+1mmTxjV5Z1Wz73yeM7K7l</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="Glym8VYdiQk=" SSIS:IV="gyFesIwnvq63vUnqN8QBJg==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">ilS+6YDDUnLojpKlaCMm9oSgqD/0v3mAlOgAMi0yUfxThWgJekzkm11vQjgOY5lTy8z2YekJOdZjii71vdohOdpYtaDz0mymXSp3ziQPDR5taJ7T3R7CdF2c+aBibDNdr66mie+zF8DGEHi8Wnw7aqZsuUffw0iJrSrDcDWyLemaY5mJBg2yCQdQpk1tT342</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -4157,10 +4157,10 @@
                 <SSIS:Property SSIS:Name="Name">AUDIT_TRAIL_FLAT_FILES</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">176</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">180</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D08926F5-567A-4758-AC2B-AEC25E9C4CC9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6C6AAFB5-176A-4ACF-85C7-791F4135B97F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

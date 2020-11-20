@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="147"
-  DTS:VersionGUID="{064442F3-D216-4622-B64F-400D11978D25}">
+  DTS:VersionBuild="151"
+  DTS:VersionGUID="{93EB9471-7DB6-4722-990B-6A5904DFD260}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -134,12 +134,12 @@
               <PackageName>AUDIT_TRAIL_DW.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="2gQde+Ka7rE="
-                IV="9LL5x9twhO3lsCnqVVc/4A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="dGqvPmSkaeE="
+                IV="LWyAEDDRJJrTcAny60BamA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>9LL5x9twhO3lsCnqVVc/4NSnfYXJAPonYT2sbvXGQszAl9zJflO07TXlKJPeAJJ2V9QWHkQnA5eirjz4hdo8a5+NgZohWR74kNkuJW/LFQA=</CipherValue>
+                  <CipherValue>LWyAEDDRJJrTcAny60BamCFNjuGZG2tCS1d9hku6cD7xWKL8CHJlDjDKb3nNPoT9RMAKqGlGAgATJZS5cfBUWAsrQJltNXstaqMLxkKdwOQ=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -199,12 +199,12 @@
               <PackageName>PARCEL_MFG_DWAN.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="jwuM2kBO+Lk="
-                IV="F/8X85mVb6Ytn/iTVeFQtA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="BSnNOyXWic0="
+                IV="kkmXGz3TMFHnNIXhgdyVZw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>F/8X85mVb6Ytn/iTVeFQtJxPADZcatJ8Cv3FCAMW7RvqKW8c5khq77h9awgWhqMGdp3ue9YWkQKFS7TJUMLU1QLx+tq1IOBMe4VQN6616WA=</CipherValue>
+                  <CipherValue>kkmXGz3TMFHnNIXhgdyVZ1Du9Qo73TfC51eH9DZg8qC8wr2Oe+6ko19hMnk9506qd98+1AubNiDKgtc8oq+U65cOj5xh6zbnjLQxKJq3MFA=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -247,12 +247,12 @@
               <PackageName>SEA_VISION_DWFT.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="V/VgTqEN07o="
-                IV="3y7wK7AtYXpDszX8SniWNg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="0mfocrn5AB0="
+                IV="A7hFpm24DqBT8+jstr1chw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>3y7wK7AtYXpDszX8SniWNqCeqk26aeFjmWSgZYYWQSP7jOQ5u+PeOJDxb+o2l4Z9UIsNL4z5PzyEH9vstLLHoZkBFAs6hz2gfFAoMKIx4eI=</CipherValue>
+                  <CipherValue>A7hFpm24DqBT8+jstr1ch4tgRcFe/61cSX4y0NaEkfhxBFx7ZA6RyIQkuNB1qe2n40qi4GZvKNaS3MuveDeRwo3x8cDZOgqYq/IFJLI5DBc=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -356,6 +356,7 @@
       DTS:refId="Package\Email START"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{269e04a0-5ad3-41e6-9671-5c9a66c66e8d}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -457,6 +458,7 @@
       DTS:refId="Package\Email SUCCESS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{405eba78-7757-4bbf-a498-94ef499e0781}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
