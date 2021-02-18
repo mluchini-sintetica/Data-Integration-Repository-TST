@@ -3,7 +3,7 @@
   DTS:refId="Package"
   DTS:CreationDate="7/10/2020 11:19:22 AM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="SRV-DIR-DEV"
+  DTS:CreatorComputerName="SRV-DIR-TST"
   DTS:CreatorName="SINTE00\mluchini"
   DTS:DTSID="{A2257612-AE91-408E-87C6-F9E921AC76A2}"
   DTS:ExecutableType="Microsoft.Package"
@@ -11,8 +11,9 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
-  DTS:VersionBuild="220"
-  DTS:VersionGUID="{77339BAA-650A-47E2-A7DC-FBA360A6E0B2}">
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="222"
+  DTS:VersionGUID="{74207537-1020-465B-B0C6-428AEDE50A46}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>

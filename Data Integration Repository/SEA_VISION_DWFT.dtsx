@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/27/2020 2:32:19 PM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="SRV-DIR-DEV"
+  DTS:CreatorComputerName="SRV-DIR-TST"
   DTS:CreatorName="SINTE00\mluchini"
   DTS:DTSID="{E3832917-21CE-48CA-8320-1DB4CF94B807}"
   DTS:EnableConfig="True"
@@ -12,8 +12,9 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
-  DTS:VersionBuild="477"
-  DTS:VersionGUID="{F8150AD6-2569-474B-A594-D6E78AD4ECE5}">
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="478"
+  DTS:VersionGUID="{A736D952-1492-4C5C-A709-434B144154F4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,10 +26,16 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATWjG3D/Ve0m+ODeeewChpAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC4YzOvMDz1+J8mKuMSKJGrAAAAAASAAACgAAAAEAAAAOqHk+/xRDnG7bbIJjmQfO0gAAAAjeINq/y7vXWk2lleRW1Qxsz0t2abyQTCNSQy9qD9ydYUAAAARywZ3Es0JLf4WZQ9gU74+1aolxY</DTS:Password>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="r3t0AjubGVE="
+            IV="9FNnfRGreKEvDmVNKnRQ2w==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>9FNnfRGreKEvDmVNKnRQ2ywJiPaTvET3hMatFhFCLzp/K3n/H3EbjOlyEkU2phuutUHEzuZ8Z6AOBfEWLvkYXIPCvX9FNq0eyMTRDipz4mnxbtR4/o8UwJy9MwCu9RKQjRHFllGKhSpLzHpgAFOkOfYc74/o83/VSYpfk5nFATAAbetkVLC0EVZiki0RqQ5o</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -178,7 +185,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -206,7 +213,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4154,19 +4161,6 @@ FROM
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\INS TRG table">
     <Properties>
       <Property>
@@ -4184,6 +4178,19 @@ FROM
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

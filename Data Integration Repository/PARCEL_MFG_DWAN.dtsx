@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/27/2020 2:32:19 PM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="SRV-DIR-DEV"
+  DTS:CreatorComputerName="SRV-DIR-TST"
   DTS:CreatorName="SINTE00\mluchini"
   DTS:DTSID="{E200E86F-A4C7-4DCA-B911-E796B3C87AD0}"
   DTS:EnableConfig="True"
@@ -12,8 +12,9 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="PARCEL_MFG_DWAN"
   DTS:PackageType="5"
-  DTS:VersionBuild="438"
-  DTS:VersionGUID="{EE71DB5D-FAA1-46C9-B614-6DE24D1EED9F}">
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="439"
+  DTS:VersionGUID="{1A565151-48F9-4EB8-8750-49F41B4C2E34}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,10 +26,16 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATWjG3D/Ve0m+ODeeewChpAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAx80Vz/Ab3gWENxc5blzhKAAAAAASAAACgAAAAEAAAAE2VIVgmFuj2cn7eXhodgJcgAAAAMP9yJIfzL7cXjE4M6/G71t1O33/vhaB7RPq6vFrPbvMUAAAAM43/cmZpjVqe8bxTSyY8PiEdg9w</DTS:Password>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="odpvYTCGWa0="
+            IV="1Tv1I0pmTMmD0B0PeECofg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>1Tv1I0pmTMmD0B0PeECofjSn5pJmcFhxG2Oq0Z//7+TgPSgszxXyfxfqlpRijVoNN+jlCu5Ynwolz0C18k9T5BwMJUo6aOaDkh28X4fZhSnVQNLEFJjh6wbmIWTfWzKAw8WNbDcik5WInSvSN/3vt6t1JLlqLoj1ES3bKv89XVtZPo4YMoAz/zvzuvhA7qri</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
