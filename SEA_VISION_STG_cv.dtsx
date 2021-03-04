@@ -5,16 +5,16 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SRV-DIR-TST"
   DTS:CreatorName="SINTE00\mluchini"
-  DTS:DTSID="{712DB377-7415-4189-BC93-55563FD9B6B6}"
+  DTS:DTSID="{25D979A8-DE3C-41FD-B5F3-F66A84D855E1}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="2064"
-  DTS:ObjectName="SEA_VISION_STG_me"
+  DTS:ObjectName="SEA_VISION_STG_cv"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="321"
-  DTS:VersionGUID="{4360242B-0250-4B5B-A517-4CAAFCC3D345}">
+  DTS:VersionBuild="323"
+  DTS:VersionGUID="{90B911D3-2D87-4F27-A5C4-06192D7D96FA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -22,14 +22,14 @@
       DTS:ConfigurationString="out_MAX_ID"
       DTS:ConfigurationVariable="\Package.Variables[User::in_PARENT_ID].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{8D4BA019-FE91-453E-BB5F-39297B44EE31}"
+      DTS:DTSID="{A777B6C5-FB6C-4D1B-A9C9-8FC7B8DC9490}"
       DTS:ObjectName="in_PARENT_ID" />
   </DTS:Configurations>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{22078972-0EE9-45E2-B827-7CAAACE1F0EF}"
+      DTS:DTSID="{423945CA-B994-4D4B-98C5-4108B194C875}"
       DTS:ObjectName="in_SITE_CD">
       <DTS:Property
         DTS:DataType="8"
@@ -39,7 +39,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{F94FED49-F813-4A05-BCAE-1ED4827DD21F}"
+      DTS:DTSID="{C989E76C-018C-4A60-87AA-F778BE4E1C8D}"
       DTS:ObjectName="in_SOURCE_SYSTEM_CD">
       <DTS:Property
         DTS:DataType="8"
@@ -50,42 +50,42 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7BE07F97-216D-4A96-8AC2-89171D3BD3E7}"
+      DTS:DTSID="{FE2AB845-492B-43D8-A3ED-10E8A654F350}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_ERROR">
       <DTS:VariableValue
-        DTS:DataType="8">SRV-DIR-TST - SSIS package: SEA_VISION_STG_me ERROR</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-TST - SSIS package: SEA_VISION_STG_cv ERROR</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{625E8455-33AC-427F-843C-6CBB63FFFDC1}"
+      DTS:DTSID="{04A4A590-9659-4FED-B740-C99DCAF35A5C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
       <DTS:VariableValue
-        DTS:DataType="8">SRV-DIR-TST - SSIS package: SEA_VISION_STG_me completed SUCCESSFULLY</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-TST - SSIS package: SEA_VISION_STG_cv completed SUCCESSFULLY</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The package name"
-      DTS:DTSID="{3B9B763D-5507-4933-AD6F-E94138634BC2}"
+      DTS:DTSID="{B2494B71-F4B4-4047-AB0E-7A627CFDA39E}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::PackageName] "
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_NAME_CD">
       <DTS:VariableValue
-        DTS:DataType="8">SEA_VISION_STG_me</DTS:VariableValue>
+        DTS:DataType="8">SEA_VISION_STG_cv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The package scope"
-      DTS:DTSID="{CD0556C3-9B87-4069-84D6-1C01A31C80DC}"
+      DTS:DTSID="{72A3408C-419A-452A-9067-04173A49201C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
@@ -95,7 +95,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="If the package is called by the parent package, it represents the run ID of the parente"
-      DTS:DTSID="{26EED573-6FCB-496E-9DBC-383E1592C061}"
+      DTS:DTSID="{1EE2D81C-CA4C-4686-A269-8E0FD66D1526}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="in_PARENT_ID">
@@ -105,7 +105,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The source system of this package"
-      DTS:DTSID="{1C121D86-AE56-4630-8AFA-3D20B1098E29}"
+      DTS:DTSID="{DC3907D2-8D4F-4AC8-9ED3-1601512E799D}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_SOURCE_SYSTEM_DESC">
@@ -115,7 +115,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The target system of this package"
-      DTS:DTSID="{E45AA0A3-BD54-4B35-8DE3-0EFE26B668CD}"
+      DTS:DTSID="{34903477-E8F9-406A-88D9-F3AF33CBC847}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_TARGET_SYSTEM_DESC">
@@ -125,7 +125,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="Output related to the last ID run for the package"
-      DTS:DTSID="{F1989C32-9032-45AE-8368-0DACFD82104A}"
+      DTS:DTSID="{D47024D6-B802-4718-9749-493999AB8EFA}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="out_MAX_ID">
@@ -135,7 +135,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="Mendrisio ID, refer to TBDWMN_SITE"
-      DTS:DTSID="{76FC5D4A-29BF-4D02-9160-8F3FE1E681BF}"
+      DTS:DTSID="{53CAD4AB-50EF-4174-BD80-540B2949F38D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="out_SITE_ID">
@@ -145,7 +145,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="Source System ID, calculated by the flow from table TBDWMN_SOURCE_SYSTEM"
-      DTS:DTSID="{6F909829-291B-4652-ADCC-7BC8214921FA}"
+      DTS:DTSID="{42083844-E538-4A71-91EE-6039215551FB}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="out_SOURCE_SYSTEM_ID">
@@ -158,12 +158,12 @@
       DTS:refId="Package\Assign SITE_ID"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{075abfca-3ddd-46d1-910f-42da1d9dcfc9}"
+      DTS:DTSID="{E7F069ED-33DF-4828-9A92-2A4978B49666}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -186,12 +186,12 @@
       DTS:refId="Package\Assign SOURCE_SYSTEM_ID"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{474fe726-3a0d-4782-9fc6-b34db658175f}"
+      DTS:DTSID="{32B7858F-4A11-44FD-B016-B0B4CBF7B00B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -215,7 +215,7 @@
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:Disabled="True"
-      DTS:DTSID="{83DE0049-E0EA-439E-9246-FA1D31B653CC}"
+      DTS:DTSID="{5C4657C8-749B-4D77-B8B2-C49E189255C4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Email SUCCESS"
@@ -251,7 +251,7 @@
       DTS:refId="Package\Ins TBLOG_PACKAGE + Max ID"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E822B838-CEBA-46E4-A877-FB2F2CFA7415}"
+      DTS:DTSID="{16810229-D0DF-458E-A9F4-0A254E10FE41}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Ins TBLOG_PACKAGE + Max ID"
@@ -339,7 +339,7 @@
       DTS:refId="Package\Last Upd TBLOG_PACKAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{ABAD6D3B-E160-4A2D-92B9-E0D65854D9C7}"
+      DTS:DTSID="{C6B6ABAB-D2DE-4724-B170-09BC1A4B1437}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Last Upd TBLOG_PACKAGE"
@@ -387,7 +387,7 @@
       DTS:refId="Package\STAGING LOAD"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{BF1B844D-F857-43E2-9899-BD1EE505E127}"
+      DTS:DTSID="{04DD31DF-C563-463A-AC3F-671C63F3A852}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="STAGING LOAD">
@@ -397,7 +397,7 @@
           DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{F438A653-D3B1-4822-AEEF-1E1C96AC42EE}"
+          DTS:DTSID="{97A5CA28-D115-40C4-81E5-30B7352B23FC}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBST_SEA_REG_BATCHES">
@@ -405,7 +405,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="Output related to the last ID run for the table"
-              DTS:DTSID="{C95ADBD6-0F59-4A29-BFFD-FAE234A1509D}"
+              DTS:DTSID="{01F1C9A8-F7E8-4E03-A0D1-215733B7D512}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
               DTS:ObjectName="out_MAX_TABLE_ID">
@@ -415,7 +415,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="Table target name to be loaded by the flow"
-              DTS:DTSID="{D4FB1B6E-6B2D-4729-A51A-78210C91F237}"
+              DTS:DTSID="{14C97E84-D52E-4DE5-B28C-942061A4D949}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
               DTS:ObjectName="out_TABLE_TARGET_CD">
@@ -429,12 +429,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\Assign TABLE_TARGET_CD"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{FCF6013D-A2E2-4EB6-8E1E-95331652F609}"
+              DTS:DTSID="{92F178DB-3F30-456E-B2B0-5A5DD0FB37F7}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -451,12 +451,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\Delete STG TRG TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{E855D17A-1C29-4E88-9993-82BB466B465A}"
+              DTS:DTSID="{21E818A5-7706-43E9-9837-7713CEEFB82A}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -470,12 +470,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{83B4CC6C-2A2F-4DA8-AA8C-4B0B8CC3B76A}"
+              DTS:DTSID="{AF040C9F-6DFE-40E2-AAD0-05397CE4752E}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -548,12 +548,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\Last Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{253E2A9A-3BC0-408A-9C8F-6E7EE2C5FACD}"
+              DTS:DTSID="{490A06A5-9431-45A7-A104-415164D76D58}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -590,12 +590,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\MAX TABLE ID"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{26361080-B62B-4DE7-B716-2D0A01682074}"
+              DTS:DTSID="{3A3A1F72-3184-475E-9EB6-630904AB1489}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -630,7 +630,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{E2E07E2E-0D98-4A27-A7B6-F0F382683545}"
+              DTS:DTSID="{AAC51772-348B-4DF1-AAF9-1069DD39F3B0}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="TBST_SEA_REG_BATCHES"
@@ -1426,8 +1426,8 @@
                       <connections>
                         <connection
                           refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES\OLE DB Source.Connections[OleDbConnection]"
-                          connectionManagerID="{BF5F313F-8994-4B14-A0D5-778310482F22}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[192.168.162.15.SeaVisionPROD_ME.SEAVISION_DIR_R]"
+                          connectionManagerID="{B9242D40-B41F-4749-81FB-39FE8BFB232A}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[192 168 162 15 SeaVisionPROD_CV SEAVISION_DIR_R]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -1918,7 +1918,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{7A4B694D-52F9-4B54-9455-94477D27B444}"
+              DTS:DTSID="{F9FF4D47-E9C9-42C6-9CE1-013E6F7D7D0E}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -1926,7 +1926,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{26F6705A-636F-4D33-B9A5-F1A65F81CAC0}"
+              DTS:DTSID="{3A98BF19-8C65-4561-B7BF-F6696891BD8D}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -1934,7 +1934,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{C16736D3-0DF5-46BC-BF31-65A8CD7E38EB}"
+              DTS:DTSID="{DD2901C1-E611-493D-9056-6D8D8EF27CAA}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\Assign TABLE_TARGET_CD"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -1942,7 +1942,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{4D12C074-3C7E-424C-B198-433EF7821EA2}"
+              DTS:DTSID="{6C9AEBC6-EBEC-43B3-8DE3-A61A1861AFF0}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -1950,7 +1950,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
-              DTS:DTSID="{DDF193BE-2F76-4756-9EC4-5397F1B398BC}"
+              DTS:DTSID="{C49C51CC-0D39-4CE1-AED0-CEDA3F4DB4F1}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\Delete STG TRG TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
@@ -1958,7 +1958,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
-              DTS:DTSID="{C00A695A-4483-4BBE-A837-D1ED82A93E4D}"
+              DTS:DTSID="{E40E2DA9-99B6-46CF-9916-E7940D605689}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\MAX TABLE ID"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
@@ -1968,7 +1968,7 @@
             <DTS:EventHandler
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES.EventHandlers[OnPreExecute]"
               DTS:CreationName="OnPreExecute"
-              DTS:DTSID="{B44A2E0F-0881-47CC-9EFB-C9788C662C31}"
+              DTS:DTSID="{95377765-7605-4C13-98EE-048DE3DBF873}"
               DTS:EventID="0"
               DTS:EventName="OnPreExecute"
               DTS:LocaleID="-1">
@@ -1976,7 +1976,7 @@
                 <DTS:Variable
                   DTS:CreationName=""
                   DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{FD3BE61F-3C27-4072-8E17-2375F11996CC}"
+                  DTS:DTSID="{CEFCF587-E61B-443E-89A7-23665037693E}"
                   DTS:IncludeInDebugDump="6789"
                   DTS:Namespace="System"
                   DTS:ObjectName="Propagate">
@@ -1992,7 +1992,7 @@
           DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{3B9FBA9B-55DD-47DF-885A-64D5A52404B8}"
+          DTS:DTSID="{AEC6B978-E068-49FC-9954-473B3DDAAB07}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBST_SEA_REG_PROCESSORDER">
@@ -2000,7 +2000,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="Output related to the last ID run for the table"
-              DTS:DTSID="{2B56355D-5E39-4B42-99FC-01D57283687D}"
+              DTS:DTSID="{4F562412-989B-45F7-AEE6-9F637C437786}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
               DTS:ObjectName="out_MAX_TABLE_ID">
@@ -2010,7 +2010,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="Table target name to be loaded by the flow"
-              DTS:DTSID="{D334573B-23D2-4239-BC95-882A0F28EFA0}"
+              DTS:DTSID="{911AD91E-349F-40ED-B47C-1C75CF29B040}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
               DTS:ObjectName="out_TABLE_TARGET_CD">
@@ -2024,12 +2024,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\Assign TABLE_TARGET_CD"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{E1A6B7E3-F937-4B54-80C8-5E0D937A1D5D}"
+              DTS:DTSID="{0E3269FF-B3FA-47B6-B226-0F4A0444E34E}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2046,12 +2046,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\Delete STG TRG TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{4DEB1513-841F-41B8-A02A-63F426C0D0F8}"
+              DTS:DTSID="{37295BD3-8104-46DB-BF98-AB53B03F2291}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -2065,12 +2065,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{E40FD3CF-D89D-4EEA-B249-33ED61AD9FD0}"
+              DTS:DTSID="{361DFA2E-30CB-4AA3-887A-A820D1C1F987}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2143,12 +2143,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\Last Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{9DC97020-5DBF-4C41-BA2C-496E73F977AB}"
+              DTS:DTSID="{83F17AA8-4A21-499A-B30E-80EC7D5E2955}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2185,12 +2185,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\MAX TABLE ID"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{9AE6A0AC-0D7C-4E1A-B989-3B753C6DF66E}"
+              DTS:DTSID="{69740F3E-1844-47A0-8CCF-4C52BCBFEDAD}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2225,7 +2225,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{FBD78270-1C67-4AFD-9576-33EB48115FEF}"
+              DTS:DTSID="{66493FB5-2E39-44D7-96CF-3DAA0C476518}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="TBST_SEA_REG_PROCESSORDER"
@@ -2773,8 +2773,8 @@
                       <connections>
                         <connection
                           refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER\OLE DB Source.Connections[OleDbConnection]"
-                          connectionManagerID="{BF5F313F-8994-4B14-A0D5-778310482F22}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[192.168.162.15.SeaVisionPROD_ME.SEAVISION_DIR_R]"
+                          connectionManagerID="{B9242D40-B41F-4749-81FB-39FE8BFB232A}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[192 168 162 15 SeaVisionPROD_CV SEAVISION_DIR_R]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -3005,7 +3005,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{696B9CA8-F5E3-44BE-AAA2-5699F19DDE27}"
+              DTS:DTSID="{C91A18CD-C746-4FC0-9FE1-BD59C0C861FF}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -3013,7 +3013,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{6EC0A6C7-8B0C-4619-A8A5-923A424DB75B}"
+              DTS:DTSID="{E3EAE4D9-8025-4B08-A33B-41C8B5587B2E}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -3021,7 +3021,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{77DCD173-26EF-4C08-ABF8-E1B6715B98AD}"
+              DTS:DTSID="{E295AE00-2C79-49BE-9164-AD2019BF3843}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\Assign TABLE_TARGET_CD"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -3029,7 +3029,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{C178A624-C66E-44AD-B808-930EA5E76F50}"
+              DTS:DTSID="{6E4FA661-B2DF-466C-9E96-D191B616A736}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -3037,7 +3037,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
-              DTS:DTSID="{D5567231-33F8-46A6-A474-BB9AD6F4FD88}"
+              DTS:DTSID="{1C558A6E-53DE-4801-B698-CDED1BEDDCBF}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\Delete STG TRG TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
@@ -3045,7 +3045,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
-              DTS:DTSID="{3387C916-C71C-4088-8070-3EED550A1434}"
+              DTS:DTSID="{529898C9-DB47-4185-9D7B-C8001FBF36ED}"
               DTS:From="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\MAX TABLE ID"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
@@ -3055,7 +3055,7 @@
             <DTS:EventHandler
               DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER.EventHandlers[OnPreExecute]"
               DTS:CreationName="OnPreExecute"
-              DTS:DTSID="{B09F73FF-3B61-4072-B1A5-8D6FF9C4CB6E}"
+              DTS:DTSID="{9D37231F-14D6-47B5-95A0-D1F6060DDD2C}"
               DTS:EventID="0"
               DTS:EventName="OnPreExecute"
               DTS:LocaleID="-1">
@@ -3063,7 +3063,7 @@
                 <DTS:Variable
                   DTS:CreationName=""
                   DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{EF9C0AF5-AD1A-4C1D-9216-A1654BA8BF74}"
+                  DTS:DTSID="{32320D38-1E38-436B-BD34-D100AC5EC6B8}"
                   DTS:IncludeInDebugDump="6789"
                   DTS:Namespace="System"
                   DTS:ObjectName="Propagate">
@@ -3081,7 +3081,7 @@
       DTS:refId="Package\Upd TBLOG_PACKAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{5CF50457-A6BB-44B3-B5F2-F2F5D70A26AB}"
+      DTS:DTSID="{52F3C693-C686-4E49-BF9C-A9FC41C7C7E8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Upd TBLOG_PACKAGE"
@@ -3124,7 +3124,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{EAB5CE21-B725-4C6A-A4DD-D2875BA10A3C}"
+      DTS:DTSID="{F58FBD6B-E9BF-4BD9-B3C2-93673BB66992}"
       DTS:From="Package\Ins TBLOG_PACKAGE + Max ID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3132,7 +3132,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{B61BD90C-1BAD-425D-8C0D-50D21FC36083}"
+      DTS:DTSID="{233D0624-30B3-4A3F-8D2F-49423308A493}"
       DTS:From="Package\STAGING LOAD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3140,7 +3140,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{83056F2C-17EB-454D-9FF5-B0C3F1192428}"
+      DTS:DTSID="{127DF90D-A3CC-4847-9621-1E4063D42F14}"
       DTS:From="Package\Upd TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -3148,7 +3148,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{AEBBA651-C69D-4B96-BBD2-A144E30282B9}"
+      DTS:DTSID="{992E927A-341E-476F-9C5F-7C196BC5EEAB}"
       DTS:From="Package\Assign SOURCE_SYSTEM_ID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -3156,7 +3156,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{20CCEBE5-3B0D-48DA-94DC-DA148246ABA2}"
+      DTS:DTSID="{CD02102D-0089-493A-AF97-789719ED644A}"
       DTS:From="Package\Assign SITE_ID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -3164,7 +3164,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{0F37661D-3D75-4CBE-BF61-40DDC39F11D7}"
+      DTS:DTSID="{017523E8-DB16-4CF7-9EEA-049EE6665CEC}"
       DTS:From="Package\Last Upd TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
@@ -3174,7 +3174,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{C3CA7F94-ED9C-4711-AFE0-0C28C8D00F4B}"
+      DTS:DTSID="{A67B43BA-A405-4532-BBCA-F1B0AC5495D9}"
       DTS:EventID="9110279"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -3182,7 +3182,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{C6C47F55-8590-48A1-AAF9-42F90C844456}"
+          DTS:DTSID="{7B8ACB29-FE1F-4384-82C0-341054401702}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -3195,7 +3195,7 @@
           DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{B60D127B-F0D7-4175-9E0B-1A6262D1838B}"
+          DTS:DTSID="{3FF34BF7-F32A-45BA-A2D2-881D1B6A3035}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Email ERROR"
@@ -3246,7 +3246,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\Assign SITE_ID"
@@ -3322,9 +3322,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3358,9 +3356,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3382,9 +3378,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3418,9 +3412,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3454,9 +3446,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3490,23 +3480,21 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES"
           FontInfo="{assembly:Null}"
-          Size="195,NaN"
+          Size="195,40"
           Id="f52648e4-4ff9-4369-af38-3505427ecc76"
           TopLeft="31,8" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\STAGING LOAD\TBST_SEA_REG_BATCHES"
           FontInfo="{assembly:Null}"
-          Size="194,NaN"
+          Size="194,40"
           Id="ea915e51-5f91-460e-a4d6-ad6b422cb1c1"
           TopLeft="37.5,314.5" />
         <ContainerLayout
@@ -3571,9 +3559,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3607,9 +3593,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3631,9 +3615,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3667,9 +3649,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3703,9 +3683,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3739,23 +3717,21 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER"
           FontInfo="{assembly:Null}"
-          Size="194,NaN"
+          Size="194,40"
           Id="3a32ec32-6ec9-4287-8f3a-b58ed7f11262"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER"
           FontInfo="{assembly:Null}"
-          Size="195,NaN"
+          Size="195,40"
           Id="c6f553ec-c823-4c2c-9643-8a8ddd9f60c6"
           TopLeft="29.5,10.5" />
         <ContainerLayout
@@ -3767,9 +3743,9 @@
           TopLeft="559.5,5.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="1455,996"
-          Size="184,43"
+          Size="1455,1039"
           Id="Package\STAGING LOAD"
           TopLeft="208,255" />
         <NodeLayout
@@ -3800,30 +3776,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="300,298">
+          TopLeft="935.5,1294">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="441.333333333333,315.111111111111"
+              EndConnector="-194.166666666667,-680.888888888889"
               Start="0,0"
-              End="441.333333333333,307.611111111111">
+              End="-194.166666666667,-673.388888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,153.555555555555" />
+                    End="0,-336.444444444445" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,153.555555555555"
-                    Point2="0,157.555555555555"
-                    Point3="4,157.555555555555" />
+                    Point1="0,-336.444444444445"
+                    Point2="0,-340.444444444445"
+                    Point3="-4,-340.444444444445" />
                   <mssgle:LineSegment
-                    End="437.333333333333,157.555555555555" />
+                    End="-190.166666666667,-340.444444444445" />
                   <mssgle:CubicBezierSegment
-                    Point1="437.333333333333,157.555555555555"
-                    Point2="441.333333333333,157.555555555555"
-                    Point3="441.333333333333,161.555555555555" />
+                    Point1="-190.166666666667,-340.444444444445"
+                    Point2="-194.166666666667,-340.444444444445"
+                    Point3="-194.166666666667,-344.444444444445" />
                   <mssgle:LineSegment
-                    End="441.333333333333,307.611111111111" />
+                    End="-194.166666666667,-673.388888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3838,9 +3814,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-448.944444444444,86.666666666667"
+              EndConnector="186.555555555556,86.666666666667"
               Start="0,0"
-              End="-448.944444444444,79.166666666667">
+              End="186.555555555556,79.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3849,15 +3825,15 @@
                   <mssgle:CubicBezierSegment
                     Point1="0,39.3333333333335"
                     Point2="0,43.3333333333335"
-                    Point3="-4,43.3333333333335" />
+                    Point3="4,43.3333333333335" />
                   <mssgle:LineSegment
-                    End="-444.944444444444,43.3333333333335" />
+                    End="182.555555555556,43.3333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="-444.944444444444,43.3333333333335"
-                    Point2="-448.944444444444,43.3333333333335"
-                    Point3="-448.944444444444,47.3333333333335" />
+                    Point1="182.555555555556,43.3333333333335"
+                    Point2="186.555555555556,43.3333333333335"
+                    Point3="186.555555555556,47.3333333333335" />
                   <mssgle:LineSegment
-                    End="-448.944444444444,79.166666666667" />
+                    End="186.555555555556,79.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3999,7 +3975,7 @@
     design-time-name="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES\OLE DB Source"
@@ -4035,9 +4011,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4071,9 +4045,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4095,9 +4067,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4145,7 +4115,7 @@
     design-time-name="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER\OLE DB Source"
@@ -4189,9 +4159,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4225,9 +4193,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

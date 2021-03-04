@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="638"
-  DTS:VersionGUID="{A19E108C-A698-474C-9EA2-CD006789B827}">
+  DTS:VersionBuild="651"
+  DTS:VersionGUID="{583A1FD5-22CB-4BE6-9F5A-5900FF5AC3BB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="Vzxb4m/MMto="
-            IV="rBN3Rpvl+c+IW1FIA+TOfA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="D42n/O/lmQA="
+            IV="w9He7GKVXGuuSYcsEct8mw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>rBN3Rpvl+c+IW1FIA+TOfOVIX1Q1k1WZnFNx74IhuXzwl+xe1g7vqaoxijv7dRYFSolv/R9xQDVhZDqNkOUddDfyHXHswXX2qN14NkrTmEiIKE73/komw56gQ0o4H62QeilcQLPF0MOec/8hp8eYY+f+HKorbhxEQRlMuCjwf6Bz0LDIh2lJH0bWiLxwSWkY</CipherValue>
+              <CipherValue>w9He7GKVXGuuSYcsEct8myFEFNloBLc1wHLqoinRfLDjhF1v0ebyZHu81a1mzu9Zysj+G8PCffYIz64KV/20A2Gn61d7ZnMw0XOBEE9M6YenTfo2TUNKmhg5gPc3wI6GML25Dvq+Uh/ftyWULsacqwJuOS2t/2a0tXeXrTkE/rEqqqHKc3Y16bXg2ykzWPry</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -51,12 +51,23 @@
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
-      DTS:DataType="3"
+      DTS:DataType="8"
       DTS:DTSID="{73B3801C-DF8E-478D-AC7C-2F3953A679DC}"
-      DTS:ObjectName="Parameter">
+      DTS:ObjectName="in_SITE_CD">
       <DTS:Property
-        DTS:DataType="3"
-        DTS:Name="ParameterValue">0</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{C94ED818-F6C9-4CF4-85E8-4DB3E7734784}"
+      DTS:ObjectName="in_SOURCE_SYSTEM_CD">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -113,16 +124,6 @@
       DTS:ObjectName="in_PARENT_ID">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:Description="Mendrisio source system code, refer to TBDWMN_SOURCE_SYSTEM"
-      DTS:DTSID="{F144AAF6-2FC2-42DD-9ACA-B6AD17D61EB8}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="in_SOURCE_SYSTEM_CD">
-      <DTS:VariableValue
-        DTS:DataType="8">Audit_Trail_Equipment_ME</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -206,7 +207,7 @@
             SQLTask:DtsVariableName="User::out_SITE_ID" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="$Project::in_SITE_CD"
+            SQLTask:DtsVariableName="$Package::in_SITE_CD"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
@@ -234,9 +235,9 @@
             SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_CD"
+            SQLTask:DtsVariableName="$Package::in_SOURCE_SYSTEM_CD"
             SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="131"
+            SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -319,7 +320,7 @@
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -374,6 +375,12 @@
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
             </DTS:Executable>
@@ -391,7 +398,7 @@
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="1"
                     SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
@@ -399,7 +406,7 @@
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="2"
+                    SQLTask:ParameterName="3"
                     SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
@@ -409,6 +416,12 @@
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -427,7 +440,7 @@
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? "
+                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? &#xA;and SITE_ID = ?"
                   SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ResultBinding
                     SQLTask:ResultName="MAX_TABLE_ID"
@@ -443,6 +456,12 @@
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -2667,7 +2686,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1&#xA;and SITE_ID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -2722,6 +2741,12 @@ FROM
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
             </DTS:Executable>
@@ -2739,7 +2764,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="1"
                     SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
@@ -2747,7 +2772,7 @@ FROM
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="2"
+                    SQLTask:ParameterName="3"
                     SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
@@ -2757,6 +2782,12 @@ FROM
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -2775,7 +2806,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? "
+                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? &#xA;and SITE_ID = ?"
                   SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ResultBinding
                     SQLTask:ResultName="MAX_TABLE_ID"
@@ -2791,6 +2822,12 @@ FROM
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -3599,7 +3636,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -3654,6 +3691,12 @@ FROM
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
             </DTS:Executable>
@@ -3666,7 +3709,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Max DATE Loaded and DWH_DELTA_DT"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3714,7 +3757,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="1"
                     SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
@@ -3722,7 +3765,7 @@ FROM
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="2"
+                    SQLTask:ParameterName="3"
                     SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
@@ -3732,6 +3775,12 @@ FROM
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -3750,7 +3799,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? "
+                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? &#xA;and SITE_ID = ?"
                   SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ResultBinding
                     SQLTask:ResultName="MAX_TABLE_ID"
@@ -3767,6 +3816,12 @@ FROM
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
             </DTS:Executable>
@@ -3779,7 +3834,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="New Max DATE Loaded"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -4332,7 +4387,7 @@ FROM
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-          SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
+          SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?&#xA;and site_id =?;"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="MAX_ID"
@@ -4397,6 +4452,12 @@ FROM
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="10"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -4414,7 +4475,7 @@ FROM
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-          SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_SUCCESS_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_PACKAGE_RUN_FLG = 1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE&#xA;SET END_DT = getdate(), LAST_SUCCESS_PACKAGE_RUN_FLG=1&#xA;WHERE ID=?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_SUCCESS_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_PACKAGE_RUN_FLG = 1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE&#xA;SET END_DT = getdate(), LAST_SUCCESS_PACKAGE_RUN_FLG=1&#xA;WHERE ID=?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -4434,8 +4495,14 @@ FROM
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="3"
+            SQLTask:ParameterName="4"
             SQLTask:DtsVariableName="User::out_MAX_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
@@ -4456,7 +4523,7 @@ FROM
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-          SQLTask:SqlStatementSource="--update previous last package run to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and  LAST_PACKAGE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="--update previous last package run to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and  LAST_PACKAGE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -4474,6 +4541,12 @@ FROM
             SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -4617,11 +4690,11 @@ FROM
         <NodeLayout
           Size="157,42"
           Id="Package\Assign SITE_ID"
-          TopLeft="432.888888888889,140" />
+          TopLeft="480.888888888889,140" />
         <NodeLayout
           Size="230,42"
           Id="Package\Assign SOURCE_SYSTEM_ID"
-          TopLeft="415.888888888889,59" />
+          TopLeft="463.888888888889,59" />
         <NodeLayout
           Size="222,42"
           Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\Assign TABLE_TARGET_CD"
@@ -4665,7 +4738,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4699,7 +4774,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4721,7 +4798,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4755,7 +4834,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4789,35 +4870,37 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="bb83133a-472b-4887-9336-8712d47cb94d"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="195,40"
+          Size="195,NaN"
           Id="684b34f8-e38a-41f5-b322-4f0da67188f1"
           TopLeft="29.5,10.5" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="f03cdc76-5c83-4f48-a957-1b328cc50b11"
           TopLeft="41.5,402.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="512,712"
-          Size="512,755"
+          Size="512,43"
           Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           TopLeft="86.5,47" />
         <NodeLayout
@@ -4966,35 +5049,43 @@ FROM
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="512,712"
-          Size="512,43"
+          Size="266,43"
           Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
           TopLeft="143,180" />
         <EdgeLayout
           Id="Package\DWH AN LOAD.PrecedenceConstraints[Constraint]"
-          TopLeft="598.5,424.5">
+          TopLeft="342.5,90">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-199.5,-201.5"
+              EndConnector="-66.5,90"
               Start="0,0"
-              End="-199.5,-194">
+              End="-66.5,82.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-195.5,0" />
+                    End="0,41" />
                   <mssgle:CubicBezierSegment
-                    Point1="-195.5,0"
-                    Point2="-199.5,0"
-                    Point3="-199.5,-4" />
+                    Point1="0,41"
+                    Point2="0,45"
+                    Point3="-4,45" />
                   <mssgle:LineSegment
-                    End="-199.5,-194" />
+                    End="-62.5,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62.5,45"
+                    Point2="-66.5,45"
+                    Point3="-66.5,49" />
+                  <mssgle:LineSegment
+                    End="-66.5,82.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -5003,7 +5094,7 @@ FROM
           PanelSize="1136,990"
           Size="1136,45"
           Id="Package\DWH AN LOAD"
-          TopLeft="578.888888888889,378" />
+          TopLeft="626.888888888889,378" />
         <NodeLayout
           Size="222,42"
           Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Assign TABLE_TARGET_CD"
@@ -5067,7 +5158,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5089,7 +5182,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5117,7 +5212,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5151,7 +5248,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5173,7 +5272,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5207,7 +5308,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5235,7 +5338,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5263,7 +5368,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5291,7 +5398,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5325,7 +5434,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5359,42 +5470,44 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="81e5fc78-a1c5-460e-b948-96504377c887"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL"
           FontInfo="{assembly:Null}"
-          Size="195,40"
+          Size="195,NaN"
           Id="29d5484a-db39-47b9-9066-dea8063511cc"
           TopLeft="29.5,10.5" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="d58cef95-99df-4f7f-8bfd-2616e9041ef2"
           TopLeft="37.5,402.5" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="5e5546b5-1b41-4a88-b50a-43759681f9d2"
           TopLeft="51.5,478.5" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="b6bbb5f3-0ccd-4968-a623-8210e63f0d35"
           TopLeft="37.5,565.5" />
         <ContainerLayout
@@ -5406,30 +5519,30 @@ FROM
           TopLeft="86.5000000000001,46" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="827,1055"
-          Size="827,1098"
+          Size="178,43"
           Id="Package\DWH FT LOAD"
-          TopLeft="117.269841269842,472.761904761904" />
+          TopLeft="111.269841269842,532.761904761904" />
         <NodeLayout
           Size="163,42"
           Id="Package\Email SUCCESS"
-          TopLeft="839.793650793653,804.809523809525" />
+          TopLeft="887.793650793653,804.809523809525" />
         <NodeLayout
           Size="240,42"
           Id="Package\Ins TBLOG_PACKAGE + Max ID"
-          TopLeft="829.460317460324,133.587301587301" />
+          TopLeft="877.460317460324,133.587301587301" />
         <NodeLayout
           Size="222,42"
           Id="Package\Last Upd TBLOG_PACKAGE"
-          TopLeft="831.126984126983,696.920634920634" />
+          TopLeft="879.126984126983,696.920634920634" />
         <NodeLayout
           Size="199,42"
           Id="Package\Upd TBLOG_PACKAGE"
-          TopLeft="850.238095238093,210.142857142857" />
+          TopLeft="898.238095238093,210.142857142857" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="949.599206349204,175.587301587301">
+          TopLeft="997.599206349204,175.587301587301">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5451,24 +5564,30 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="944.269841269842,1021.7619047619">
+          TopLeft="200.269841269842,575.761904761904">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-37.8095238095257,-282.84126984127"
+              EndConnector="789.857142857141,121.15873015873"
               Start="0,0"
-              End="-37.8095238095257,-275.34126984127">
+              End="789.857142857141,113.65873015873">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-33.8095238095257,0" />
+                    End="0,56.5793650793649" />
                   <mssgle:CubicBezierSegment
-                    Point1="-33.8095238095257,0"
-                    Point2="-37.8095238095257,0"
-                    Point3="-37.8095238095257,-4" />
+                    Point1="0,56.5793650793649"
+                    Point2="0,60.5793650793649"
+                    Point3="4,60.5793650793649" />
                   <mssgle:LineSegment
-                    End="-37.8095238095257,-275.34126984127" />
+                    End="785.857142857141,60.5793650793649" />
+                  <mssgle:CubicBezierSegment
+                    Point1="785.857142857141,60.5793650793649"
+                    Point2="789.857142857141,60.5793650793649"
+                    Point3="789.857142857141,64.5793650793649" />
+                  <mssgle:LineSegment
+                    End="789.857142857141,113.65873015873" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5479,30 +5598,30 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1146.88888888889,423">
+          TopLeft="1194.88888888889,423">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-616.119047619047,49.761904761904"
+              EndConnector="-994.619047619047,109.761904761904"
               Start="0,0"
-              End="-616.119047619047,42.261904761904">
+              End="-994.619047619047,102.261904761904">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.880952380952" />
+                    End="0,50.8809523809521" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.880952380952"
-                    Point2="0,24.880952380952"
-                    Point3="-4,24.880952380952" />
+                    Point1="0,50.8809523809521"
+                    Point2="0,54.8809523809521"
+                    Point3="-4,54.8809523809521" />
                   <mssgle:LineSegment
-                    End="-612.119047619047,24.880952380952" />
+                    End="-990.619047619047,54.8809523809521" />
                   <mssgle:CubicBezierSegment
-                    Point1="-612.119047619047,24.880952380952"
-                    Point2="-616.119047619047,24.880952380952"
-                    Point3="-616.119047619047,28.880952380952" />
+                    Point1="-990.619047619047,54.8809523809521"
+                    Point2="-994.619047619047,54.8809523809521"
+                    Point3="-994.619047619047,58.8809523809521" />
                   <mssgle:LineSegment
-                    End="-616.119047619047,42.261904761904" />
+                    End="-994.619047619047,102.261904761904" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5513,7 +5632,7 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="530.888888888889,101">
+          TopLeft="578.888888888889,101">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5547,7 +5666,7 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="589.888888888889,157.793650793651">
+          TopLeft="637.888888888889,157.793650793651">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5569,7 +5688,7 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="949.738095238093,252.142857142857">
+          TopLeft="997.738095238093,252.142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5603,7 +5722,7 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="942.126984126983,738.920634920634">
+          TopLeft="990.126984126983,738.920634920634">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5920,7 +6039,7 @@ FROM
     design-time-name="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="162,42"
           Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables"
@@ -5964,7 +6083,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5998,7 +6119,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

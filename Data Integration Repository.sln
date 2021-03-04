@@ -3,20 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Data Integration Repository", "Data Integration Repository\Data Integration Repository.dtproj", "{194ACA7E-C5E1-4D26-AFB2-90B146300872}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Data Integration Repository", "Data Integration Repository.dtproj", "{D7416E82-8E23-4FF9-8C10-C95486300594}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
+		Test|Default = Test|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{194ACA7E-C5E1-4D26-AFB2-90B146300872}.Development|Default.ActiveCfg = Development
-		{194ACA7E-C5E1-4D26-AFB2-90B146300872}.Development|Default.Build.0 = Development
+		{D7416E82-8E23-4FF9-8C10-C95486300594}.Development|Default.ActiveCfg = Development
+		{D7416E82-8E23-4FF9-8C10-C95486300594}.Development|Default.Build.0 = Development
+		{D7416E82-8E23-4FF9-8C10-C95486300594}.Test|Default.ActiveCfg = Test
+		{D7416E82-8E23-4FF9-8C10-C95486300594}.Test|Default.Build.0 = Test
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {58A992B8-A0E3-4911-8D2F-A82B3EF5047F}
+		SolutionGuid = {7F8CB511-8D86-494B-B44E-03691DE4E3CF}
 	EndGlobalSection
 EndGlobal
