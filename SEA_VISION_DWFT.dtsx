@@ -13,8 +13,8 @@
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="478"
-  DTS:VersionGUID="{D423A225-41EC-4AC7-8608-46BC366E4D4C}">
+  DTS:VersionBuild="479"
+  DTS:VersionGUID="{1B9401B4-E977-4E8D-B948-C26DE49601DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="0iEb5FD42Cs="
-            IV="ngpAP3NB52sQBOILV9GiKA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="D/C4SNoBLz8="
+            IV="0lWLmlc+z5UX0dY9wZ9+1A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>ngpAP3NB52sQBOILV9GiKNcz/q50HtRScVniv0l5TP12VE1zUwFw8N1XBZJJ80IqWncLD5/t0Fpf+kkID49ShK4iMCifHX16fBhajEcFUCopTBkefGFEI1X2RD5D3RZ7gcX77AhRkRCcsO8CbGIh+5TMAKO4QHiEdch2uQHp2qWmki9J/81VGKEQSBKOW4o3</CipherValue>
+              <CipherValue>0lWLmlc+z5UX0dY9wZ9+1NeuA/hzql2bSW/pM6SllEO8m+6+estdWoam5TjeqVBh0EdCPRG0/epB+SIwdPQH90H+pEmi6mlWfArFM7EcbdCUdX9og3IZXrb9/rLgcH2Qq4pRl3Pf+PF/ec+FX2p2ZgNLfft8MEPkXZjob9iAohfD1GQu+GnYzWjVCGjHZjIh</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -185,7 +185,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -213,7 +213,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1901,7 +1901,7 @@ b.operatorID2, b.OperatorID3, b.RecipeVersion, b.SerializationFlag, b.QARelease,
 b.Status, b.ReportPrintCounter, c.tbdwan_batch_id, d.tbdwan_article_id, trg.trg_ID, trg.trg_row_sts_flg, x.id as PRODUCTION_LINE_ID
 FROM
 (SELECT * FROM TBST_SEA_REG_PROCESSORDER WHERE site_id = ? and row_sts_flg=1) a join
-(SELECT * FROM TBST_SEA_REG_BATCHES WHERE site_id = ? and row_sts_flg=1) b on a.batchID = b.batchID join
+(SELECT * FROM TBST_SEA_REG_BATCHES WHERE site_id = ? and row_sts_flg=1 and processorder&lt;&gt;'') b on a.batchID = b.batchID join
 (SELECT id, vision_system_line_id FROM TBDWMN_PRODUCTION_LINE WHERE site_cd = ? and phase_cd = 'Packaging' and getdate() between VALIDITY_START_DT and VALIDITY_END_DT) x on b.lineid = x.vision_system_line_id left join
 (SELECT id as tbdwan_batch_id, batch_cd, article_cd FROM TBDWAN_BATCH WHERE SITE_ID = ?) c on b.batchname = c.batch_cd and b.recipeid = c.ARTICLE_CD left join
 (SELECT id as tbdwan_article_id, article_cd FROM tbdwan_article WHERE site_id = ? and row_sts_flg=1) d on b.recipeid = d.ARTICLE_CD full join
@@ -3962,10 +3962,6 @@ FROM
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table"
           TopLeft="641,523" />
         <NodeLayout
-          Size="240,42"
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER"
-          TopLeft="330,522" />
-        <NodeLayout
           Size="174,42"
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Split INS-UPD-DEL"
           TopLeft="226,266" />
@@ -3981,6 +3977,82 @@ FROM
           Size="251,42"
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Add Technical Fields and renaming"
           TopLeft="205,142" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER"
+          TopLeft="330,522" />
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[DEL]"
+          TopLeft="354.5,308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="363,215"
+              Start="0,0"
+              End="363,207.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.8301886792453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,69.8301886792453"
+                    Point2="0,73.8301886792453"
+                    Point3="4,73.8301886792453" />
+                  <mssgle:LineSegment
+                    End="359,73.8301886792453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="359,73.8301886792453"
+                    Point2="363,73.8301886792453"
+                    Point3="363,77.8301886792453" />
+                  <mssgle:LineSegment
+                    End="363,207.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="172.19806640625,78.8301886792453,18.6038671875,9.2705078125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[UPD]"
+          TopLeft="313,308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137,214"
+              Start="0,0"
+              End="137,206.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,103" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,103"
+                    Point2="0,107"
+                    Point3="4,107" />
+                  <mssgle:LineSegment
+                    End="133,107" />
+                  <mssgle:CubicBezierSegment
+                    Point1="133,107"
+                    Point2="137,107"
+                    Point3="137,111" />
+                  <mssgle:LineSegment
+                    End="137,206.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="58.55484375,112,19.8903125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[OLE DB Source Output]"
           TopLeft="206,69">
@@ -4083,78 +4155,6 @@ FROM
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[DEL]"
-          TopLeft="354.5,308">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="363,215"
-              Start="0,0"
-              End="363,207.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.8301886792453" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,69.8301886792453"
-                    Point2="0,73.8301886792453"
-                    Point3="4,73.8301886792453" />
-                  <mssgle:LineSegment
-                    End="359,73.8301886792453" />
-                  <mssgle:CubicBezierSegment
-                    Point1="359,73.8301886792453"
-                    Point2="363,73.8301886792453"
-                    Point3="363,77.8301886792453" />
-                  <mssgle:LineSegment
-                    End="363,207.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="172.19806640625,78.8301886792453,18.6038671875,9.2705078125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[UPD]"
-          TopLeft="313,308">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="137,214"
-              Start="0,0"
-              End="137,206.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,103" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,103"
-                    Point2="0,107"
-                    Point3="4,107" />
-                  <mssgle:LineSegment
-                    End="133,107" />
-                  <mssgle:CubicBezierSegment
-                    Point1="133,107"
-                    Point2="137,107"
-                    Point3="137,111" />
-                  <mssgle:LineSegment
-                    End="137,206.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="58.55484375,112,19.8903125,9.421875"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
