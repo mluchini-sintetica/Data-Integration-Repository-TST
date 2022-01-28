@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="192 168 200 40 SeryalPROD SERYAL_DIR_R"
+  DTS:DTSID="{BC7D1D64-399F-43DB-AC89-256C7E0D290A}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=192.168.200.40;User ID=SERYAL_DIR_R;Initial Catalog=seryal;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="K/e7gmF5ios="
+        p4:IV="O9xdIHSj+JGgGBmwQJ6bWA=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">ez8Jtyc2SdMSyJcsbQKWXyoEbP87ptXXVwHV8T42xR4QZCXgnsngEfLB0/7xiOxTjzUtwn7Em+RnHmdoOp/zOwT3qt6gkmL6INt2EpyRIL5WsHU2bEYLVeOgNf4ebaGiIPUhttgs4x28+s4vV1wy53feUhXAanu6kWRQaNZUNzs=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

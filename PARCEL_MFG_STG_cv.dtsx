@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_STG_cv"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="325"
-  DTS:VersionGUID="{F7E11616-123D-4806-8169-6D3909168671}">
+  DTS:VersionBuild="326"
+  DTS:VersionGUID="{60C9FDC5-A95D-4D64-9BF7-3039163726B0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -1906,7 +1906,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -2045,7 +2045,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -9387,269 +9387,6 @@
                               lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Anagrafica_BU]"
                               name="C_Anagrafica_BU"
                               truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[CoefficienteUBS]"
-                              dataType="numeric"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CoefficienteUBS]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[CoefficienteUBS]"
-                              name="CoefficienteUBS"
-                              precision="19"
-                              scale="5"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flag_XAB]"
-                              dataType="bool"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Flag_XAB]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flag_XAB]"
-                              name="Flag_XAB"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[OperazioneCoefficienteUBS]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OperazioneCoefficienteUBS]"
-                              length="1"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[OperazioneCoefficienteUBS]"
-                              name="OperazioneCoefficienteUBS"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flg_UnioneLotti]"
-                              dataType="bool"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Flg_UnioneLotti]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flg_UnioneLotti]"
-                              name="Flg_UnioneLotti"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[CoperturaWeek]"
-                              dataType="i2"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CoperturaWeek]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[CoperturaWeek]"
-                              name="CoperturaWeek"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TipoCalConsumoMedio]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TipoCalConsumoMedio]"
-                              length="6"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TipoCalConsumoMedio]"
-                              name="TipoCalConsumoMedio"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TempoMedioArrivoMerce]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TempoMedioArrivoMerce]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TempoMedioArrivoMerce]"
-                              name="TempoMedioArrivoMerce"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UMTempoMedioArrivoMerce]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UMTempoMedioArrivoMerce]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UMTempoMedioArrivoMerce]"
-                              name="UMTempoMedioArrivoMerce"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TempoMedioAnalisiMerce]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TempoMedioAnalisiMerce]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TempoMedioAnalisiMerce]"
-                              name="TempoMedioAnalisiMerce"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UMTempoMedioAnalisiMerce]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UMTempoMedioAnalisiMerce]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UMTempoMedioAnalisiMerce]"
-                              name="UMTempoMedioAnalisiMerce"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TempoMedioInvioMerce]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TempoMedioInvioMerce]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TempoMedioInvioMerce]"
-                              name="TempoMedioInvioMerce"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UMTempoMedioInvioMerce]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UMTempoMedioInvioMerce]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UMTempoMedioInvioMerce]"
-                              name="UMTempoMedioInvioMerce"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TempoMedioProduzione]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TempoMedioProduzione]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TempoMedioProduzione]"
-                              name="TempoMedioProduzione"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UMTempoMedioProduzione]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UMTempoMedioProduzione]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UMTempoMedioProduzione]"
-                              name="UMTempoMedioProduzione"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TempoMedioLavorazione]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TempoMedioLavorazione]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[TempoMedioLavorazione]"
-                              name="TempoMedioLavorazione"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UMTempoMedioLavorazione]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UMTempoMedioLavorazione]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UMTempoMedioLavorazione]"
-                              name="UMTempoMedioLavorazione"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[PercMerceNonConf]"
-                              dataType="numeric"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PercMerceNonConf]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[PercMerceNonConf]"
-                              name="PercMerceNonConf"
-                              precision="19"
-                              scale="5"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UtilizzaScorteMensili]"
-                              dataType="bool"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UtilizzaScorteMensili]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UtilizzaScorteMensili]"
-                              name="UtilizzaScorteMensili"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UtilizzaCopertureMensili]"
-                              dataType="bool"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UtilizzaCopertureMensili]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[UtilizzaCopertureMensili]"
-                              name="UtilizzaCopertureMensili"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[PercentualeSogliaChiusuraAutomaticaSaldo]"
-                              dataType="numeric"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PercentualeSogliaChiusuraAutomaticaSaldo]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[PercentualeSogliaChiusuraAutomaticaSaldo]"
-                              name="PercentualeSogliaChiusuraAutomaticaSaldo"
-                              precision="6"
-                              scale="3"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_InfoConfezione]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_InfoConfezione]"
-                              length="1"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_InfoConfezione]"
-                              name="C_InfoConfezione"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[NomenclaturaAccise]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NomenclaturaAccise]"
-                              length="18"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[NomenclaturaAccise]"
-                              name="NomenclaturaAccise"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegistroAccise]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RegistroAccise]"
-                              length="10"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegistroAccise]"
-                              name="RegistroAccise"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flg_EreditaStatoLotto]"
-                              dataType="bool"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Flg_EreditaStatoLotto]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flg_EreditaStatoLotto]"
-                              name="Flg_EreditaStatoLotto"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_Gestionale_Esterno]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codice_Gestionale_Esterno]"
-                              length="20"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_Gestionale_Esterno]"
-                              name="Codice_Gestionale_Esterno"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Anagrafica_Cat_Cespite]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_Anagrafica_Cat_Cespite]"
-                              length="15"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Anagrafica_Cat_Cespite]"
-                              name="C_Anagrafica_Cat_Cespite"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[SDS_Ver]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SDS_Ver]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].Columns[SDS_Ver]"
-                              name="SDS_Ver"
-                              truncationRowDisposition="FailComponent" />
                           </outputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -10531,9 +10268,33 @@
                               length="15"
                               name="C_Anagrafica_Cat_Cespite" />
                             <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SDS_Ver]"
-                              dataType="i4"
-                              name="SDS_Ver" />
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_UNI_PCKGRP]"
+                              codePage="1252"
+                              dataType="str"
+                              length="15"
+                              name="C_UNI_PCKGRP" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codice_Riferimento]"
+                              codePage="1252"
+                              dataType="str"
+                              length="20"
+                              name="Codice_Riferimento" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Famiglia_IMDG]"
+                              codePage="1252"
+                              dataType="str"
+                              length="10"
+                              name="Famiglia_IMDG" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Flg_Sospeso]"
+                              dataType="bool"
+                              name="Flg_Sospeso" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TARIC]"
+                              codePage="1252"
+                              dataType="str"
+                              length="2"
+                              name="TARIC" />
                           </externalMetadataColumns>
                         </output>
                         <output
@@ -11436,161 +11197,6 @@
                               length="20"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_Anagrafica_BU]"
                               name="C_Anagrafica_BU" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CoefficienteUBS]"
-                              dataType="numeric"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CoefficienteUBS]"
-                              name="CoefficienteUBS"
-                              precision="19"
-                              scale="5" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Flag_XAB]"
-                              dataType="bool"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Flag_XAB]"
-                              name="Flag_XAB" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OperazioneCoefficienteUBS]"
-                              codePage="1252"
-                              dataType="str"
-                              length="1"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OperazioneCoefficienteUBS]"
-                              name="OperazioneCoefficienteUBS" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Flg_UnioneLotti]"
-                              dataType="bool"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Flg_UnioneLotti]"
-                              name="Flg_UnioneLotti" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CoperturaWeek]"
-                              dataType="i2"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CoperturaWeek]"
-                              name="CoperturaWeek" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TipoCalConsumoMedio]"
-                              codePage="1252"
-                              dataType="str"
-                              length="6"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TipoCalConsumoMedio]"
-                              name="TipoCalConsumoMedio" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TempoMedioArrivoMerce]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TempoMedioArrivoMerce]"
-                              name="TempoMedioArrivoMerce" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UMTempoMedioArrivoMerce]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UMTempoMedioArrivoMerce]"
-                              name="UMTempoMedioArrivoMerce" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TempoMedioAnalisiMerce]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TempoMedioAnalisiMerce]"
-                              name="TempoMedioAnalisiMerce" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UMTempoMedioAnalisiMerce]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UMTempoMedioAnalisiMerce]"
-                              name="UMTempoMedioAnalisiMerce" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TempoMedioInvioMerce]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TempoMedioInvioMerce]"
-                              name="TempoMedioInvioMerce" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UMTempoMedioInvioMerce]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UMTempoMedioInvioMerce]"
-                              name="UMTempoMedioInvioMerce" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TempoMedioProduzione]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TempoMedioProduzione]"
-                              name="TempoMedioProduzione" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UMTempoMedioProduzione]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UMTempoMedioProduzione]"
-                              name="UMTempoMedioProduzione" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TempoMedioLavorazione]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TempoMedioLavorazione]"
-                              name="TempoMedioLavorazione" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UMTempoMedioLavorazione]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UMTempoMedioLavorazione]"
-                              name="UMTempoMedioLavorazione" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PercMerceNonConf]"
-                              dataType="numeric"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PercMerceNonConf]"
-                              name="PercMerceNonConf"
-                              precision="19"
-                              scale="5" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UtilizzaScorteMensili]"
-                              dataType="bool"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UtilizzaScorteMensili]"
-                              name="UtilizzaScorteMensili" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UtilizzaCopertureMensili]"
-                              dataType="bool"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UtilizzaCopertureMensili]"
-                              name="UtilizzaCopertureMensili" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PercentualeSogliaChiusuraAutomaticaSaldo]"
-                              dataType="numeric"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PercentualeSogliaChiusuraAutomaticaSaldo]"
-                              name="PercentualeSogliaChiusuraAutomaticaSaldo"
-                              precision="6"
-                              scale="3" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_InfoConfezione]"
-                              codePage="1252"
-                              dataType="str"
-                              length="1"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_InfoConfezione]"
-                              name="C_InfoConfezione" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NomenclaturaAccise]"
-                              codePage="1252"
-                              dataType="str"
-                              length="18"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NomenclaturaAccise]"
-                              name="NomenclaturaAccise" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RegistroAccise]"
-                              codePage="1252"
-                              dataType="str"
-                              length="10"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RegistroAccise]"
-                              name="RegistroAccise" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Flg_EreditaStatoLotto]"
-                              dataType="bool"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Flg_EreditaStatoLotto]"
-                              name="Flg_EreditaStatoLotto" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codice_Gestionale_Esterno]"
-                              codePage="1252"
-                              dataType="str"
-                              length="20"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codice_Gestionale_Esterno]"
-                              name="Codice_Gestionale_Esterno" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_Anagrafica_Cat_Cespite]"
-                              codePage="1252"
-                              dataType="str"
-                              length="15"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_Anagrafica_Cat_Cespite]"
-                              name="C_Anagrafica_Cat_Cespite" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SDS_Ver]"
-                              dataType="i4"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SDS_Ver]"
-                              name="SDS_Ver" />
                             <outputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                               dataType="i4"
@@ -13135,6 +12741,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="157,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source"
+          TopLeft="288,56" />
+        <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\Data Conversion"
           TopLeft="284,156" />
@@ -13146,10 +12756,6 @@
           Size="181,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\Add Technical Fields"
           TopLeft="282,271" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source"
-          TopLeft="288,56" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO.Paths[OLE DB Source Output]"
           TopLeft="365.5,98">
