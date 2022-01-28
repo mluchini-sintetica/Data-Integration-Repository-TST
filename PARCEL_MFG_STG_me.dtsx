@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_STG_me"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="323"
-  DTS:VersionGUID="{EB21DDF7-26DE-4593-95C4-6E068EAF72DD}">
+  DTS:VersionBuild="324"
+  DTS:VersionGUID="{EDD97E23-F51B-43AB-978E-C9FC1C55BB13}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -476,7 +476,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -615,7 +615,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1162,7 +1162,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -2702,7 +2702,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -6036,7 +6036,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -12417,7 +12417,7 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source"
@@ -12465,9 +12465,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12501,9 +12499,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12537,9 +12533,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12587,7 +12581,7 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI\OLE DB Source"
@@ -12623,9 +12617,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12659,9 +12651,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12683,9 +12673,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12735,6 +12723,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="157,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source"
+          TopLeft="288,56" />
+        <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\Data Conversion"
           TopLeft="284,156" />
@@ -12746,10 +12738,6 @@
           Size="181,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\Add Technical Fields"
           TopLeft="282,271" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source"
-          TopLeft="288,56" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO.Paths[OLE DB Source Output]"
           TopLeft="365.5,98">
@@ -12844,7 +12832,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Destination">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12857,7 +12845,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

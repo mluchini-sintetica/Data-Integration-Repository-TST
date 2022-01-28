@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_DWAN"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="439"
-  DTS:VersionGUID="{60687F39-E604-4D69-8531-FF994B5C5355}">
+  DTS:VersionBuild="440"
+  DTS:VersionGUID="{CEA3BEDD-A0C9-4F67-89AB-40B807895028}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="oFRtYRUP1RM="
-            IV="voOjpGKmu7WCCC6We0ORHQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="CVVcCNWIa7U="
+            IV="U9CB3oC3rg79xEooc79dTg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>voOjpGKmu7WCCC6We0ORHYVcGvD3KEBjk7rAJDhDYnY5PE36PgUCnU/KPAKC2G8l2E9+oPco09QeDAEzT39t4bNtCR93AEUltUn1yFw6P9ktGQamqqCbR0NGxVi1Plh82oB3CHxwhAlsO4ticgtxCDMt24J4osr633MEjL/vQAaugArLG5a0S2BjMw5t1Uoh</CipherValue>
+              <CipherValue>U9CB3oC3rg79xEooc79dTn4qmX/GDlkXtzP/c0JDWZyxhPRa/31vq4A5741QrFSQ1JGW1gyuinWPjQzf/pjVYFRdbnpXL3atKRi//hoyvlKBiUYTCMZ/vyaZC/v6Bg9qCUypxjx1zUTzSFWyAckkaVIj96EEuS+5LCL60jrq1XkRnRbZpShq8QaSb1gyx/6h</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -1294,7 +1294,7 @@ ID=?</property>
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -2202,7 +2202,7 @@ from
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -3765,7 +3765,7 @@ ID = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -4122,7 +4122,7 @@ ID = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -5169,7 +5169,7 @@ FROM
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -6880,7 +6880,7 @@ FROM
         <NodeLayout
           Size="150,42"
           Id="Package\DWH LOAD\TBDWAN_BATCH\TBDWAN_BATCH ins\INS TRG table"
-          TopLeft="99,524" />
+          TopLeft="98,525" />
         <NodeLayout
           Size="178,42"
           Id="Package\DWH LOAD\TBDWAN_BATCH\TBDWAN_BATCH ins\TBDWTMP_BATCH"
@@ -7075,37 +7075,37 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWAN_BATCH\TBDWAN_BATCH ins.Paths[INS]"
-          TopLeft="278.25,308">
+          TopLeft="268.6,308">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-104.25,216"
+              EndConnector="-95.6,217"
               Start="0,0"
-              End="-104.25,208.5">
+              End="-95.6,209.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.885433715221" />
+                    End="0,60.5995807127883" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,69.885433715221"
-                    Point2="0,73.885433715221"
-                    Point3="-4,73.885433715221" />
+                    Point1="0,60.5995807127883"
+                    Point2="0,64.5995807127883"
+                    Point3="-4,64.5995807127883" />
                   <mssgle:LineSegment
-                    End="-100.25,73.885433715221" />
+                    End="-91.6,64.5995807127883" />
                   <mssgle:CubicBezierSegment
-                    Point1="-100.25,73.885433715221"
-                    Point2="-104.25,73.885433715221"
-                    Point3="-104.25,77.885433715221" />
+                    Point1="-91.6,64.5995807127883"
+                    Point2="-95.6,64.5995807127883"
+                    Point3="-95.6,68.5995807127883" />
                   <mssgle:LineSegment
-                    End="-104.25,208.5" />
+                    End="-95.6,209.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-60.75908203125,78.885433715221,17.2681640625,9.5341796875"
+              BoundingBox="-56.43408203125,69.5995807127883,17.2681640625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

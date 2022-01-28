@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_STG_me_Amp_Pkg_A"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="558"
-  DTS:VersionGUID="{E48A9EB5-E422-47FE-87D2-D6A14D352EBC}">
+  DTS:VersionBuild="559"
+  DTS:VersionGUID="{9417088D-60AB-49DE-95AA-D01960FBB4A7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -208,7 +208,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign PRODUCTION_LINE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -260,7 +260,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -288,7 +288,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -353,7 +353,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Ins TBLOG_PACKAGE + Max ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1630,7 +1630,7 @@ FROM
                                 <property
                                   dataType="System.String"
                                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                                  name="FastLoadOptions">TABLOCK</property>
+                                  name="FastLoadOptions"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -2434,7 +2434,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="11">
+                      DTS:ThreadHint="9">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -2468,7 +2468,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="10">
+                      DTS:ThreadHint="8">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -2489,7 +2489,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="10">
+                      DTS:ThreadHint="8">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -2529,7 +2529,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="10">
+                      DTS:ThreadHint="8">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -2569,7 +2569,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="10">
+                      DTS:ThreadHint="8">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -2771,7 +2771,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="12">
+                      DTS:ThreadHint="3">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -3834,7 +3834,7 @@ FROM
                                 <property
                                   dataType="System.String"
                                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                                  name="FastLoadOptions">TABLOCK</property>
+                                  name="FastLoadOptions"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -4638,7 +4638,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="12">
+                      DTS:ThreadHint="2">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -4659,7 +4659,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="13">
+                      DTS:ThreadHint="2">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -4699,7 +4699,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="12">
+                      DTS:ThreadHint="2">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -4739,7 +4739,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="12">
+                      DTS:ThreadHint="2">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -4941,7 +4941,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="9">
+                      DTS:ThreadHint="4">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -6078,7 +6078,7 @@ FROM
                                 <property
                                   dataType="System.String"
                                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                                  name="FastLoadOptions">TABLOCK</property>
+                                  name="FastLoadOptions"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -6884,7 +6884,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="8">
+                      DTS:ThreadHint="4">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -6905,7 +6905,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="8">
+                      DTS:ThreadHint="5">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -6945,7 +6945,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="8">
+                      DTS:ThreadHint="4">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -6985,7 +6985,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="8">
+                      DTS:ThreadHint="4">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -7187,7 +7187,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="3">
+                      DTS:ThreadHint="6">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -8324,7 +8324,7 @@ FROM
                                 <property
                                   dataType="System.String"
                                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                                  name="FastLoadOptions">TABLOCK</property>
+                                  name="FastLoadOptions"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -9130,7 +9130,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="2">
+                      DTS:ThreadHint="6">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -9151,7 +9151,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="2">
+                      DTS:ThreadHint="7">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -9191,7 +9191,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="2">
+                      DTS:ThreadHint="6">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -9231,7 +9231,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="2">
+                      DTS:ThreadHint="6">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -9433,7 +9433,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="4">
+                      DTS:ThreadHint="0">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -10570,7 +10570,7 @@ FROM
                                 <property
                                   dataType="System.String"
                                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                                  name="FastLoadOptions">TABLOCK</property>
+                                  name="FastLoadOptions"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -11376,7 +11376,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="4">
+                      DTS:ThreadHint="0">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -11397,7 +11397,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="5">
+                      DTS:ThreadHint="1">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -11437,7 +11437,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="4">
+                      DTS:ThreadHint="0">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -11477,7 +11477,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="4">
+                      DTS:ThreadHint="0">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -11679,7 +11679,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="0">
+                      DTS:ThreadHint="10">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -12816,7 +12816,7 @@ FROM
                                 <property
                                   dataType="System.String"
                                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                                  name="FastLoadOptions">TABLOCK</property>
+                                  name="FastLoadOptions"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -13622,7 +13622,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="0">
+                      DTS:ThreadHint="10">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -13643,7 +13643,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="1">
+                      DTS:ThreadHint="11">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -13683,7 +13683,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="0">
+                      DTS:ThreadHint="10">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -13723,7 +13723,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="0">
+                      DTS:ThreadHint="10">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -13926,7 +13926,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="6">
+                      DTS:ThreadHint="12">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -15063,7 +15063,7 @@ FROM
                                 <property
                                   dataType="System.String"
                                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                                  name="FastLoadOptions">TABLOCK</property>
+                                  name="FastLoadOptions"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -15869,7 +15869,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="6">
+                      DTS:ThreadHint="12">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -15890,7 +15890,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="7">
+                      DTS:ThreadHint="13">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -15930,7 +15930,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="6">
+                      DTS:ThreadHint="12">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -15970,7 +15970,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="6">
+                      DTS:ThreadHint="12">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -16172,7 +16172,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="14">
+                      DTS:ThreadHint="16">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -16206,7 +16206,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="14">
+                      DTS:ThreadHint="16">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -17256,7 +17256,7 @@ FROM
                                 <property
                                   dataType="System.String"
                                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                                  name="FastLoadOptions">TABLOCK</property>
+                                  name="FastLoadOptions"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -18060,7 +18060,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="15">
+                      DTS:ThreadHint="17">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -18100,7 +18100,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="14">
+                      DTS:ThreadHint="16">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -18140,7 +18140,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="14">
+                      DTS:ThreadHint="16">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -19426,7 +19426,7 @@ FROM
                                 <property
                                   dataType="System.String"
                                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                                  name="FastLoadOptions">TABLOCK</property>
+                                  name="FastLoadOptions"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -20512,7 +20512,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="17">
+                      DTS:ThreadHint="14">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -20546,7 +20546,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="16">
+                      DTS:ThreadHint="14">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -20567,7 +20567,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="16">
+                      DTS:ThreadHint="15">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -21636,7 +21636,7 @@ FROM
                                 <property
                                   dataType="System.String"
                                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                                  name="FastLoadOptions">TABLOCK</property>
+                                  name="FastLoadOptions"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -22440,7 +22440,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="16">
+                      DTS:ThreadHint="14">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -22480,7 +22480,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="16">
+                      DTS:ThreadHint="14">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -22646,7 +22646,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"IF	(select isnull(avg(one_shot_full_load_flg + always_full_load_flg),1) as calc
@@ -22799,7 +22799,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -24163,7 +24163,7 @@ FROM
                             <property
                               dataType="System.String"
                               description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                              name="FastLoadOptions">TABLOCK</property>
+                              name="FastLoadOptions"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -26371,7 +26371,7 @@ FROM
                             <property
                               dataType="System.String"
                               description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                              name="FastLoadOptions">TABLOCK</property>
+                              name="FastLoadOptions"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -28487,7 +28487,7 @@ FROM
                             <property
                               dataType="System.String"
                               description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                              name="FastLoadOptions">TABLOCK</property>
+                              name="FastLoadOptions"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -30527,7 +30527,7 @@ FROM
                             <property
                               dataType="System.String"
                               description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                              name="FastLoadOptions">TABLOCK</property>
+                              name="FastLoadOptions"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -32567,7 +32567,7 @@ FROM
                             <property
                               dataType="System.String"
                               description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                              name="FastLoadOptions">TABLOCK</property>
+                              name="FastLoadOptions"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -34607,7 +34607,7 @@ FROM
                             <property
                               dataType="System.String"
                               description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                              name="FastLoadOptions">TABLOCK</property>
+                              name="FastLoadOptions"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -36601,7 +36601,7 @@ FROM
                             <property
                               dataType="System.String"
                               description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                              name="FastLoadOptions">TABLOCK</property>
+                              name="FastLoadOptions"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -38737,7 +38737,7 @@ FROM
                             <property
                               dataType="System.String"
                               description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                              name="FastLoadOptions">TABLOCK</property>
+                              name="FastLoadOptions"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -41022,7 +41022,7 @@ FROM
                             <property
                               dataType="System.String"
                               description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                              name="FastLoadOptions">TABLOCK</property>
+                              name="FastLoadOptions"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -43307,7 +43307,7 @@ FROM
                             <property
                               dataType="System.String"
                               description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                              name="FastLoadOptions">TABLOCK</property>
+                              name="FastLoadOptions"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -44635,7 +44635,7 @@ FROM
       DTS:LocaleID="-1"
       DTS:ObjectName="Upd TBLOG_PACKAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -47795,6 +47795,19 @@ FROM
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Load TBMN data">
     <Properties>
       <Property>
@@ -48082,6 +48095,19 @@ FROM
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BM398 group\BM398\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BM398 group\BM398\Load TBMN data">
     <Properties>
@@ -48404,6 +48430,19 @@ FROM
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group\BVOCV1TVC55200218\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\BVOCV1TVC55200318">
     <LayoutInfo>
@@ -48715,6 +48754,19 @@ FROM
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\BVOCV1TVC55200318\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -49359,6 +49411,19 @@ FROM
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group\BVOCV2TVC55200418\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group\BVSVCC55200518">
     <LayoutInfo>
@@ -49967,6 +50032,19 @@ FROM
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Load TBMN data">
     <Properties>
       <Property>
@@ -50254,6 +50332,19 @@ FROM
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\M8180031\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\M8180031\Load TBMN data">
     <Properties>
@@ -50543,6 +50634,19 @@ FROM
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\N6180027\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\N6180027\Load TBMN data">
     <Properties>
       <Property>
@@ -50827,7 +50931,7 @@ FROM
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="114,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398"
@@ -50887,9 +50991,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-50.9378059895834,35.2362555720654,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50923,9 +51025,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="61.7382161458335,35.2362555720654,50.190234375,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50959,9 +51059,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-0.60447265625,78,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50995,9 +51093,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-19.0951171875,40,50.190234375,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -51019,9 +51115,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.0951171875,38.1357421875,50.190234375,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -51055,9 +51149,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-52.8451171875,34.5,50.190234375,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52120,7 +52212,7 @@ FROM
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVSVCC55200518 Par">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="173,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVSVCC55200518 Par\BVSVCC55200518"
@@ -52180,9 +52272,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-54.4378059895834,44.1292719167905,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52216,9 +52306,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="10.9988606770833,46.5007429420505,35.6689453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52252,9 +52340,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.10447265625,78,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52288,9 +52374,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.33447265625,40,35.6689453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52324,9 +52408,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-6.33447265625,63,35.6689453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52360,9 +52442,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="11.91552734375,25,35.6689453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52393,7 +52473,7 @@ FROM
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="162,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Load TBMN data"
@@ -52453,9 +52533,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-51.4378059895834,35.2362555720654,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52489,9 +52567,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="78.6546223958335,32.8647845468053,36.357421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52525,9 +52601,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-0.60447265625,78,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52561,9 +52635,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.6787109375,40,36.357421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52597,9 +52669,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-9.1787109375,30,36.357421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52633,9 +52703,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-56.4287109375,36.5,36.357421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52666,7 +52734,7 @@ FROM
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="162,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Load TBMN data"
@@ -52726,9 +52794,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-51.4378059895834,35.2362555720654,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52762,9 +52828,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="69.7132161458335,34.6433878157504,36.240234375,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52798,9 +52862,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-0.60447265625,78,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52834,9 +52896,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.6201171875,40,36.240234375,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52870,9 +52930,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-9.1201171875,30,36.240234375,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52906,9 +52964,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-47.3701171875,35,36.240234375,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52939,7 +52995,7 @@ FROM
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="162,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Load TBMN data"
@@ -52999,9 +53055,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-51.4378059895834,35.2362555720654,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53035,9 +53089,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="10.6546223958333,46.5007429420505,36.357421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53071,9 +53123,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-0.60447265625,78,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53107,9 +53157,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.6787109375,40,36.357421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53143,9 +53191,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8.9287109375,30,36.357421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53179,9 +53225,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="11.5712890625,25,36.357421875,9.55859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

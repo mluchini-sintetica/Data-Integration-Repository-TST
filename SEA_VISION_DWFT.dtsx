@@ -13,8 +13,8 @@
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="479"
-  DTS:VersionGUID="{1B9401B4-E977-4E8D-B948-C26DE49601DA}">
+  DTS:VersionBuild="480"
+  DTS:VersionGUID="{132B2088-074F-4032-8681-ED21DB308742}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="D/C4SNoBLz8="
-            IV="0lWLmlc+z5UX0dY9wZ9+1A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="zTgBYZLyq8Y="
+            IV="rAI/3Ikkjwgim6Hc4NEaJg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>0lWLmlc+z5UX0dY9wZ9+1NeuA/hzql2bSW/pM6SllEO8m+6+estdWoam5TjeqVBh0EdCPRG0/epB+SIwdPQH90H+pEmi6mlWfArFM7EcbdCUdX9og3IZXrb9/rLgcH2Qq4pRl3Pf+PF/ec+FX2p2ZgNLfft8MEPkXZjob9iAohfD1GQu+GnYzWjVCGjHZjIh</CipherValue>
+              <CipherValue>rAI/3Ikkjwgim6Hc4NEaJrx0FkNrX3Uo+ZLGzjcm89b1sSm6dNhpfVH7bq+Pu5eM6NS7BWqqwqHbsqgHdf+iKS9qyRdMS71s/Eu1Ig3qLvSTgRqb4zfTYzjM7JuiHEDqHZVIWK2J0kUE1E/WWY6vagwCTwmpRhlEq7PRJaPASADf4j85bXZFERh+CqIN6kiJ</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -185,7 +185,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -213,7 +213,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1482,7 +1482,7 @@ ID = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -2661,7 +2661,7 @@ FROM
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."

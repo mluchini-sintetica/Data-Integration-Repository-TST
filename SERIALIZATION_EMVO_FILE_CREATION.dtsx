@@ -12,8 +12,8 @@
   DTS:ObjectName="SERIALIZATION_EMVO_FILE_CREATION"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{D973E9E7-4DC2-46D0-BFAE-4B7F776EF89F}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{708E0FEF-E8A7-480F-845C-A1F191ED0395}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -346,7 +346,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK</property>
+                  name="FastLoadOptions"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -944,67 +944,29 @@
           Id="Package\From_CSV_to_DB"
           TopLeft="630,76" />
         <NodeLayout
-          Size="336,42"
-          Id="Package\Trunc TBDWTMP_SERIALIZATION_EMVO_BATCH"
-          TopLeft="487,6" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="655,48">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="60,28"
-              Start="0,0"
-              End="60,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="4,14" />
-                  <mssgle:LineSegment
-                    End="56,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="56,14"
-                    Point2="60,14"
-                    Point3="60,18" />
-                  <mssgle:LineSegment
-                    End="60,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="229,42"
+          Id="Package\Loop on all batches\Assign out_FILENAME_FINAL"
+          TopLeft="450,82" />
         <NodeLayout
           Size="230,42"
           Id="Package\Loop on all batches\Assign TOP 1 out_BATCH_CD"
           TopLeft="449,17" />
         <NodeLayout
-          Size="358,42"
-          Id="Package\Loop on all batches\Trunc + TBDWTMP_SERIALIZATION_EMVO_DATA_ins"
-          TopLeft="25,30" />
-        <NodeLayout
-          Size="229,42"
-          Id="Package\Loop on all batches\Assign out_FILENAME_FINAL"
-          TopLeft="450,82" />
-        <NodeLayout
-          Size="395,42"
-          Id="Package\Loop on all batches\Trunc + TBDWTMP_SERIALIZATION_EMVO_DATA_FINAL_ins"
-          TopLeft="26,98" />
+          Size="371,42"
+          Id="Package\Loop on all batches\Delete Batch TBDWTMP_SERIALIZATION_EMVO_BATCH"
+          TopLeft="125,245" />
         <NodeLayout
           Size="197,42"
           Id="Package\Loop on all batches\From_DB_to_JSON_file"
           TopLeft="187,180" />
         <NodeLayout
-          Size="371,42"
-          Id="Package\Loop on all batches\Delete Batch TBDWTMP_SERIALIZATION_EMVO_BATCH"
-          TopLeft="125,245" />
+          Size="395,42"
+          Id="Package\Loop on all batches\Trunc + TBDWTMP_SERIALIZATION_EMVO_DATA_FINAL_ins"
+          TopLeft="26,98" />
+        <NodeLayout
+          Size="358,42"
+          Id="Package\Loop on all batches\Trunc + TBDWTMP_SERIALIZATION_EMVO_DATA_ins"
+          TopLeft="25,30" />
         <EdgeLayout
           Id="Package\Loop on all batches.PrecedenceConstraints[Constraint]"
           TopLeft="204,72">
@@ -1220,6 +1182,44 @@
           Size="191,42"
           Id="Package\out_LOOP_COUNTER"
           TopLeft="601,145" />
+        <NodeLayout
+          Size="336,42"
+          Id="Package\Trunc TBDWTMP_SERIALIZATION_EMVO_BATCH"
+          TopLeft="487,6" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="655,48">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60,28"
+              Start="0,0"
+              End="60,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="56,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56,14"
+                    Point2="60,14"
+                    Point3="60,18" />
+                  <mssgle:LineSegment
+                    End="60,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="715,118">
@@ -1291,19 +1291,31 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\From_CSV_to_DB">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="130,42"
-          Id="Package\From_CSV_to_DB\Batch_List"
-          TopLeft="172,56" />
-        <NodeLayout
           Size="305,42"
           Id="Package\From_CSV_to_DB\TBDWTMP_SERIALIZATION_EMVO_BATCH"
           TopLeft="364,240" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\From_CSV_to_DB\Batch_List"
+          TopLeft="172,56" />
         <NodeLayout
           Size="161,42"
           Id="Package\From_CSV_to_DB\Data Conversion"
@@ -1392,18 +1404,6 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package.EventHandlers[OnError]\Email ERROR"
-          TopLeft="60,60" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Loop on all batches\From_DB_to_JSON_file">
     <LayoutInfo>
