@@ -12,8 +12,8 @@
   DTS:ObjectName="BATCH_RECORD_TRACKING_CARD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="169"
-  DTS:VersionGUID="{77F0E933-E74F-4456-A267-6956DEA4D513}">
+  DTS:VersionBuild="177"
+  DTS:VersionGUID="{B0F612C6-9877-4370-BB14-0BC4193D6C86}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -124,7 +124,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="in_TARGET_SYSTEM_DESC">
       <DTS:VariableValue
-        DTS:DataType="8">DIR_DWH</DTS:VariableValue>
+        DTS:DataType="8">DIR DWH</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -961,14 +961,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Convalidated  Y N ]"
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Validation  Y N ]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Convalidated  Y N ]"
+                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Validation  Y N ]"
                           length="100"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Convalidated  Y N ]"
-                          name="Convalidated  Y N "
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Validation  Y N ]"
+                          name="Validation  Y N "
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -1002,26 +1002,6 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing BRF Review]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing BRF Review]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing BRF Review]"
-                          name="Timing BRF Review"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Samples Shipment Date (To Couvet)]"
                           dataType="dbDate"
                           errorOrTruncationOperation="Conversion"
@@ -1029,26 +1009,6 @@
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Samples Shipment Date (To Couvet)]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Samples Shipment Date (To Couvet)]"
                           name="Samples Shipment Date (To Couvet)"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing Samples Shipment]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing Samples Shipment]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing Samples Shipment]"
-                          name="Timing Samples Shipment"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -1102,26 +1062,6 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing Sterility Test Start]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing Sterility Test Start]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing Sterility Test Start]"
-                          name="Timing Sterility Test Start"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Sterility Test End Date]"
                           dataType="dbDate"
                           errorOrTruncationOperation="Conversion"
@@ -1149,26 +1089,6 @@
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Analytical Test End Date]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Analytical Test End Date]"
                           name="Analytical Test End Date"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing Analytical Test End]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing Analytical Test End]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing Analytical Test End]"
-                          name="Timing Analytical Test End"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -1347,26 +1267,6 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing BRSC Review]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing BRSC Review]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing BRSC Review]"
-                          name="Timing BRSC Review"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[CoA Issue Date]"
                           dataType="dbDate"
                           errorOrTruncationOperation="Conversion"
@@ -1374,26 +1274,6 @@
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[CoA Issue Date]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[CoA Issue Date]"
                           name="CoA Issue Date"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing CoA Issue]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing CoA Issue]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing CoA Issue]"
-                          name="Timing CoA Issue"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -1474,46 +1354,6 @@
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[QP Release Date]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[QP Release Date]"
                           name="QP Release Date"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing SF Release]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing SF Release]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing SF Release]"
-                          name="Timing SF Release"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing FP Release]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing FP Release]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing FP Release]"
-                          name="Timing FP Release"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -1621,26 +1461,18 @@
                           dataType="dbDate"
                           name="Quarantine Date" />
                         <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Convalidated  Y N ]"
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Validation  Y N ]"
                           dataType="wstr"
                           length="100"
-                          name="Convalidated  Y N " />
+                          name="Validation  Y N " />
                         <externalMetadataColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[BRF Review Date (Sent to QA)]"
                           dataType="dbDate"
                           name="BRF Review Date (Sent to QA)" />
                         <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing BRF Review]"
-                          dataType="i4"
-                          name="Timing BRF Review" />
-                        <externalMetadataColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Samples Shipment Date (To Couvet)]"
                           dataType="dbDate"
                           name="Samples Shipment Date (To Couvet)" />
-                        <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing Samples Shipment]"
-                          dataType="i4"
-                          name="Timing Samples Shipment" />
                         <externalMetadataColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Samples  Reception Date (In Couvet)]"
                           dataType="dbDate"
@@ -1650,10 +1482,6 @@
                           dataType="dbDate"
                           name="Sterility Test Start Date" />
                         <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing Sterility Test Start]"
-                          dataType="i4"
-                          name="Timing Sterility Test Start" />
-                        <externalMetadataColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Sterility Test End Date]"
                           dataType="dbDate"
                           name="Sterility Test End Date" />
@@ -1661,10 +1489,6 @@
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Analytical Test End Date]"
                           dataType="dbDate"
                           name="Analytical Test End Date" />
-                        <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing Analytical Test End]"
-                          dataType="i4"
-                          name="Timing Analytical Test End" />
                         <externalMetadataColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[BRF Review End Date ]"
                           dataType="dbDate"
@@ -1703,17 +1527,9 @@
                           dataType="dbDate"
                           name="BRSC Review End Date (Sento to QA)" />
                         <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing BRSC Review]"
-                          dataType="i4"
-                          name="Timing BRSC Review" />
-                        <externalMetadataColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[CoA Issue Date]"
                           dataType="dbDate"
                           name="CoA Issue Date" />
-                        <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing CoA Issue]"
-                          dataType="i4"
-                          name="Timing CoA Issue" />
                         <externalMetadataColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[BRSC Review End Date]"
                           dataType="dbDate"
@@ -1730,14 +1546,6 @@
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[QP Release Date]"
                           dataType="dbTime"
                           name="QP Release Date" />
-                        <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing SF Release]"
-                          dataType="i4"
-                          name="Timing SF Release" />
-                        <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Timing FP Release]"
-                          dataType="i4"
-                          name="Timing FP Release" />
                         <externalMetadataColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Product Type]"
                           dataType="wstr"
@@ -1897,12 +1705,12 @@
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_QUARANTINE_DT]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Quarantine Date]" />
                         <inputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Convalidated  Y N ]"
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Validation  Y N ]"
                           cachedDataType="wstr"
                           cachedLength="100"
-                          cachedName="Convalidated  Y N "
+                          cachedName="Validation  Y N "
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_CONVALIDATED_FLG]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Convalidated  Y N ]" />
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Validation  Y N ]" />
                         <inputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[BRF Review Date (Sent to QA)]"
                           cachedDataType="dbDate"
@@ -1910,23 +1718,11 @@
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_BRF_REVIEW_DT]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[BRF Review Date (Sent to QA)]" />
                         <inputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Timing BRF Review]"
-                          cachedDataType="i4"
-                          cachedName="Timing BRF Review"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_BRF_REVIEW_TIMING_NBR]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing BRF Review]" />
-                        <inputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Samples Shipment Date (To Couvet)]"
                           cachedDataType="dbDate"
                           cachedName="Samples Shipment Date (To Couvet)"
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_SAMPLES_SHIP_DT]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Samples Shipment Date (To Couvet)]" />
-                        <inputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Timing Samples Shipment]"
-                          cachedDataType="i4"
-                          cachedName="Timing Samples Shipment"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_SAMPLES_SHIP_TIMING_NBR]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing Samples Shipment]" />
                         <inputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Samples  Reception Date (In Couvet)]"
                           cachedDataType="dbDate"
@@ -1940,12 +1736,6 @@
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_STERILITY_TEST_START_DT]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Sterility Test Start Date]" />
                         <inputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Timing Sterility Test Start]"
-                          cachedDataType="i4"
-                          cachedName="Timing Sterility Test Start"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_STERILITY_TEST_START_TIMING_NBR]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing Sterility Test Start]" />
-                        <inputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Sterility Test End Date]"
                           cachedDataType="dbDate"
                           cachedName="Sterility Test End Date"
@@ -1957,12 +1747,6 @@
                           cachedName="Analytical Test End Date"
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_ANALYTICAL_TEST_END_DT]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Analytical Test End Date]" />
-                        <inputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Timing Analytical Test End]"
-                          cachedDataType="i4"
-                          cachedName="Timing Analytical Test End"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_ANALYTICAL_TEST_END_TIMING_NBR]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing Analytical Test End]" />
                         <inputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[BRF Review End Date ]"
                           cachedDataType="dbDate"
@@ -2017,23 +1801,11 @@
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_BRSC_REVIEW_DT]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[BRSC Review End Date (Sento to QA)]" />
                         <inputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Timing BRSC Review]"
-                          cachedDataType="i4"
-                          cachedName="Timing BRSC Review"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_BRSC_REVIEW_END_TIMING_NBR]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing BRSC Review]" />
-                        <inputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[CoA Issue Date]"
                           cachedDataType="dbDate"
                           cachedName="CoA Issue Date"
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_COA_ISSUE_DT]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[CoA Issue Date]" />
-                        <inputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Timing CoA Issue]"
-                          cachedDataType="i4"
-                          cachedName="Timing CoA Issue"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_COA_ISSUE_TIMING_NBR]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing CoA Issue]" />
                         <inputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[BRSC Review End Date]"
                           cachedDataType="dbDate"
@@ -2058,18 +1830,6 @@
                           cachedName="QP Release Date"
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_QP_RELEASE_DT]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[QP Release Date]" />
-                        <inputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Timing SF Release]"
-                          cachedDataType="i4"
-                          cachedName="Timing SF Release"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[SF_RELEASE_TIMING_NBR]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing SF Release]" />
-                        <inputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Timing FP Release]"
-                          cachedDataType="i4"
-                          cachedName="Timing FP Release"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_RELEASE_TIMING_NBR]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Timing FP Release]" />
                         <inputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Product Type]"
                           cachedDataType="wstr"
@@ -2569,7 +2329,6 @@
           DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{2B1D8ECC-8116-47C8-9C25-61DCE845B447}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -2916,9 +2675,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -3008,6 +2765,40 @@
           Id="Package\TBLOG_PACKAGE"
           TopLeft="97,73" />
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="228.333333333333,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="229,205"
+              Start="0,0"
+              End="229,197.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,98.7903836960179" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,98.7903836960179"
+                    Point2="0,102.790383696018"
+                    Point3="4,102.790383696018" />
+                  <mssgle:LineSegment
+                    End="225,102.790383696018" />
+                  <mssgle:CubicBezierSegment
+                    Point1="225,102.790383696018"
+                    Point2="229,102.790383696018"
+                    Point3="229,106.790383696018" />
+                  <mssgle:LineSegment
+                    End="229,197.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="969.666666666667,104">
           <EdgeLayout.Curve>
@@ -3043,30 +2834,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="502.5,321">
+          TopLeft="547.666666666667,321">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="354.833333333333,-217"
+              EndConnector="309.666666666667,-217"
               Start="0,0"
-              End="354.833333333333,-209.5">
+              End="309.666666666667,-209.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-125.598961338719" />
+                    End="0,-104.646887788068" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-125.598961338719"
-                    Point2="0,-129.598961338719"
-                    Point3="4,-129.598961338719" />
+                    Point1="0,-104.646887788068"
+                    Point2="0,-108.646887788068"
+                    Point3="4,-108.646887788068" />
                   <mssgle:LineSegment
-                    End="350.833333333333,-129.598961338719" />
+                    End="305.666666666667,-108.646887788068" />
                   <mssgle:CubicBezierSegment
-                    Point1="350.833333333333,-129.598961338719"
-                    Point2="354.833333333333,-129.598961338719"
-                    Point3="354.833333333333,-133.598961338719" />
+                    Point1="305.666666666667,-108.646887788068"
+                    Point2="309.666666666667,-108.646887788068"
+                    Point3="309.666666666667,-112.646887788068" />
                   <mssgle:LineSegment
-                    End="354.833333333333,-209.5" />
+                    End="309.666666666667,-209.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3177,40 +2968,13 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="228.333333333333,116">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="229,205"
-              Start="0,0"
-              End="229,197.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,98.7903836960179" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,98.7903836960179"
-                    Point2="0,102.790383696018"
-                    Point3="4,102.790383696018" />
-                  <mssgle:LineSegment
-                    End="225,102.790383696018" />
-                  <mssgle:CubicBezierSegment
-                    Point1="225,102.790383696018"
-                    Point2="229,102.790383696018"
-                    Point3="229,106.790383696018" />
-                  <mssgle:LineSegment
-                    End="229,197.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <AnnotationLayout
+          Text=""
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="39,40"
+          Id="7d9f2925-1bbf-4385-b1bf-81f73c576db8"
+          TopLeft="891,231" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3256,39 +3020,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="238,42"
-          Id="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD"
-          TopLeft="383,298" />
-        <NodeLayout
           Size="198,42"
           Id="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV"
-          TopLeft="179,89" />
+          TopLeft="107,47" />
+        <NodeLayout
+          Size="238,42"
+          Id="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD"
+          TopLeft="255,277" />
         <EdgeLayout
           Id="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD.Paths[Flat File Source Output]"
-          TopLeft="278,131">
+          TopLeft="206,89">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="224,167"
+              EndConnector="168,188"
               Start="0,0"
-              End="224,159.5">
+              End="168,180.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,79.5" />
+                    End="0,90" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,79.5"
-                    Point2="0,83.5"
-                    Point3="4,83.5" />
+                    Point1="0,90"
+                    Point2="0,94"
+                    Point3="4,94" />
                   <mssgle:LineSegment
-                    End="220,83.5" />
+                    End="164,94" />
                   <mssgle:CubicBezierSegment
-                    Point1="220,83.5"
-                    Point2="224,83.5"
-                    Point3="224,87.5" />
+                    Point1="164,94"
+                    Point2="168,94"
+                    Point3="168,98" />
                   <mssgle:LineSegment
-                    End="224,159.5" />
+                    End="168,180.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SAP_HANA_DEV_32b.SAP_QLIK_R"
+  DTS:DTSID="{5C247F53-133A-4585-B3D1-0EE44D363255}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=SAP_QLIK_R;Dsn=SAP_HANA_DEV_32b;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1"
+        p4:Salt="h6IbDb/KqLg="
+        p4:IV="3tFA7H5Q0hluKH/JtJBZ/Q=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">g1Z80Manemj8PX4/K5pDU7DFJ+sCaF/B85d3G9EHbkEMyZDkBTQAnrFir9SMg7F4uclurikditMTCHl9n8HnVbBkZhiHTi+kvkTmYIsIBjbzhgZLuxekR2AqcqrMAbEWemHwM7cG13RznjWLgEOhR4/bpDOGip1qFc7SQslNg1s=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
