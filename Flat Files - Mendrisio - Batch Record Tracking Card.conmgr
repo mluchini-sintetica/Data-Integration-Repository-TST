@@ -21,7 +21,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Row id"
-          DTS:DTSID="{C9765872-7A3B-4982-924C-562C9B94171A}"
+          DTS:DTSID="{F88AC302-AEBF-4881-9AD4-CF80B837CED3}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="SF_Batch"
-          DTS:DTSID="{590D6AF3-D634-406C-93C9-FA56D25BB7BF}"
+          DTS:DTSID="{440BE65B-63BE-4206-8793-842F2B273F58}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="SF_Code"
-          DTS:DTSID="{7CF16BB1-A465-4BC3-9863-5C614C7FCA5F}"
+          DTS:DTSID="{8BE96F39-BF82-422C-91CA-7124B4A385CC}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="SF_Description"
-          DTS:DTSID="{EFF86F3C-F712-493C-8E33-7F8A302A06EC}"
+          DTS:DTSID="{98102629-B9D3-4A0B-9022-4E808D384FE6}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="SF_Batch Status"
-          DTS:DTSID="{86403300-3D7B-43BB-83EF-275AE26F7430}"
+          DTS:DTSID="{22E2A602-6448-4AC8-A194-2B5BAC315683}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="Quarantine Date"
-          DTS:DTSID="{0AFC0D6F-DDBE-4880-9DCA-B92349CB8F3E}"
+          DTS:DTSID="{178D06B2-EB99-41C6-9CB9-4250090C172A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Validation  Y N "
-          DTS:DTSID="{F729E290-FC23-49E7-83F3-D31E0BCAB84E}"
+          DTS:DTSID="{A2F94C34-1A0D-45A6-9332-53FB315D8906}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -82,7 +82,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="BRF Review Date (Sent to QA)"
-          DTS:DTSID="{C5F60073-332F-4CE9-AB50-F5B981E5F609}"
+          DTS:DTSID="{EA54CCD4-D5E7-4659-9D53-C00260AFFE73}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -90,7 +90,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="Samples Shipment Date (To Couvet)"
-          DTS:DTSID="{C98640C5-29A1-4117-B36D-ABEFC9AA2C09}"
+          DTS:DTSID="{818C22AA-75DB-4135-BF55-ED1F258DDEF0}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -98,7 +98,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="Samples  Reception Date (In Couvet)"
-          DTS:DTSID="{BEB848FB-2E00-4D85-B2FC-D24C95EC7C8A}"
+          DTS:DTSID="{FE438FD9-2801-4778-AEE1-7804D533CF1F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -106,7 +106,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="Sterility Test Start Date"
-          DTS:DTSID="{9C911B05-B05C-486B-99F2-4DEFEA05254E}"
+          DTS:DTSID="{BA57A91B-09A9-4BA2-9DC5-8368757D5388}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -114,7 +114,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="Sterility Test End Date"
-          DTS:DTSID="{8E9AB103-07BA-4471-8F03-5643056E81CD}"
+          DTS:DTSID="{5C7F09BA-BD44-4C3D-B68F-1E696E2B828A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -122,7 +122,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="Analytical Test End Date"
-          DTS:DTSID="{A87C28E8-051B-45D2-BDB3-4F554ABA04B4}"
+          DTS:DTSID="{BECE5BC0-6474-452A-91E2-EAA8BBDC8205}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -130,7 +130,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="BRF Review End Date "
-          DTS:DTSID="{897F2963-0FDF-42D3-A393-D1DA04C07329}"
+          DTS:DTSID="{E13D8B9F-D1C0-4F35-97BF-49E7895523A7}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -139,7 +139,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="FP_Batch"
-          DTS:DTSID="{89AE4344-73B1-467E-AE98-46C62BCD368E}"
+          DTS:DTSID="{A7C9A316-ECF0-4C66-B1ED-C322F2104F47}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -148,7 +148,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="FP_Code"
-          DTS:DTSID="{35DF93FC-32AE-499F-AE2D-60BD851CCC81}"
+          DTS:DTSID="{ADEB46C6-1CD9-4214-B792-89C6B35BD64F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -157,7 +157,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="FP_Description"
-          DTS:DTSID="{F98CC7DF-8D07-4744-BEF6-63A24714B433}"
+          DTS:DTSID="{4412E03C-04EF-4757-B4B1-CCB4A7B8FF30}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -166,7 +166,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="FP_Country"
-          DTS:DTSID="{0BB5D7BD-18F3-47F9-A53D-C8C53F74FAFD}"
+          DTS:DTSID="{9CFC508E-AEB4-456E-A43E-E174A5946C42}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="FP_Batch Status"
-          DTS:DTSID="{56B3BFEA-991F-4ACB-88D7-2FB296E44EDB}"
+          DTS:DTSID="{8DB4D795-9FCC-4BCF-ACAA-CB100C7F1381}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -183,7 +183,23 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="FP_Quarantine Date"
-          DTS:DTSID="{BEBB5D67-067C-42C3-BEC4-7AD5733514D3}"
+          DTS:DTSID="{FBBDBF9F-59F6-4E75-AA0D-91F1D89AE549}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:DataType="134"
+          DTS:TextQualified="True"
+          DTS:ObjectName="F_ID_Test_sample_Ship_Date"
+          DTS:DTSID="{D0B552B8-E1D7-4602-8D19-EAF0DB90B0F5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:DataType="134"
+          DTS:TextQualified="True"
+          DTS:ObjectName="F_ID_Test_End_Date"
+          DTS:DTSID="{A89BFA76-C94A-4DAE-A00B-2EB20B37575E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -191,7 +207,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="BRSC Review End Date (Sento to QA)"
-          DTS:DTSID="{91C65FBC-D4C2-46F3-8A13-8F7F9420A9C2}"
+          DTS:DTSID="{089D0C45-8698-4C65-9E88-08D781AE306E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -199,7 +215,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="CoA Issue Date"
-          DTS:DTSID="{B6F7B0B0-F611-4048-85BE-0BF317F87242}"
+          DTS:DTSID="{180334B9-1D9F-44C8-B0DB-72AFD003121C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -207,7 +223,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="BRSC Review End Date"
-          DTS:DTSID="{D34E0EB7-2960-4C5E-B1E5-9293C6876C3F}"
+          DTS:DTSID="{EEFA12A0-F63F-4B33-8B67-42D9057AC5D8}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -215,7 +231,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="CoA BRA Review End Date"
-          DTS:DTSID="{F5E4C17B-0436-4635-837F-2837324E7B95}"
+          DTS:DTSID="{B3AE00F8-4F37-4626-866B-E83F522C110F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -223,7 +239,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="BRRC Closure Date"
-          DTS:DTSID="{11A0B625-146F-450A-A024-86000637D375}"
+          DTS:DTSID="{669513E7-BC66-4D59-BD09-85451946082C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -231,7 +247,7 @@
           DTS:DataType="134"
           DTS:TextQualified="True"
           DTS:ObjectName="QP Release Date"
-          DTS:DTSID="{B27BCCEC-83FD-44DC-9086-275AC966C3A8}"
+          DTS:DTSID="{F3FD1C47-DBAC-4EAA-913C-D083AE5ECA16}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -240,7 +256,15 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Product Type"
-          DTS:DTSID="{CA6ACD76-DB74-4674-9317-B4857F122117}"
+          DTS:DTSID="{A1292150-112E-458A-9A43-14FAF46B415A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:DataType="134"
+          DTS:TextQualified="True"
+          DTS:ObjectName="F_Required_Release_Date"
+          DTS:DTSID="{3461DFE0-FCB8-4A2E-8BC6-FA84AC3551A9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -249,7 +273,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Deviations   Issues"
-          DTS:DTSID="{D03E850F-E932-437C-8EE5-2E1BE1E8F68D}"
+          DTS:DTSID="{1733AB93-19D9-4605-899F-70F2023F7E57}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -258,7 +282,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Process Validation   R&amp;D"
-          DTS:DTSID="{D5FB558B-0188-4551-AF04-4372614DE278}"
+          DTS:DTSID="{51B5600F-54F3-4F24-85C2-E80B8FAE21F0}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

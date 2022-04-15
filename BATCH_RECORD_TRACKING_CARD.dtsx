@@ -12,8 +12,8 @@
   DTS:ObjectName="BATCH_RECORD_TRACKING_CARD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="177"
-  DTS:VersionGUID="{B0F612C6-9877-4370-BB14-0BC4193D6C86}">
+  DTS:VersionBuild="182"
+  DTS:VersionGUID="{91EB22F6-364A-4738-BBD7-1634020318E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -695,7 +695,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-              SQLTask:SqlStatementSource="INSERT INTO TBDWFT_BR_TRACKING_CARD&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, INSERT_DT,UPDATE_DT,USER_CD, SITE_ID, SOURCE_SYSTEM_ID, ROW_ID, SF_BATCH_CD, SF_ARTICLE_CD, SF_ARTICLE_DESC, SF_BATCH_STATUS_DESC, SF_LAUNCH_DT, SF_QUARANTINE_DT,&#xA;SF_CONVALIDATED_FLG, SF_BRF_REVIEW_DT, SF_BRF_REVIEW_TIMING_NBR, SF_SAMPLES_SHIP_DT, SF_SAMPLES_SHIP_TIMING_NBR, SF_SAMPLES_RECEIPT_DT, SF_STERILITY_TEST_START_DT,&#xA;SF_STERILITY_TEST_START_TIMING_NBR, SF_STERILITY_TEST_END_DT, SF_ANALYTICAL_TEST_END_DT, SF_ANALYTICAL_TEST_END_TIMING_NBR, SF_BRF_REVIEW_END_DT, F_BATCH_CD, F_ARTICLE_CD,&#xA;F_ARTICLE_DESC, F_COUNTRY_DESC, F_BATCH_STATUS_DESC, F_LAUNCH_DT, F_QUARANTINE_DT, F_BRSC_REVIEW_DT, F_BRSC_REVIEW_END_TIMING_NBR, F_COA_ISSUE_DT, F_COA_ISSUE_TIMING_NBR, F_BRSC_REVIEW_END_DT, &#xA;F_COA_BRA_REVIEW_END_DT, F_BRRC_CLOSURE_DT, F_QP_RELEASE_DT, SF_RELEASE_TIMING_NBR, F_RELEASE_TIMING_NBR, F_PRODUCT_TYPE_CD, DEVIATIONS_ISSUE_DESC, PV_RD_DESC)&#xA; &#xA;SELECT  ?, ?, getdate(), getdate(), ?, ?, ?,&#xA;sf.Row_id, sf.SF_BATCH_CD, sf.SF_ARTICLE_CD, sf.SF_ARTICLE_DESC,SF_BATCH_STATUS_DESC, sf.SF_LAUNCH_DT, sf.SF_QUARANTINE_DT, &#xA;sf.SF_CONVALIDATED_FLG, sf.SF_BRF_REVIEW_DT, datediff(day, sf.SF_QUARANTINE_DT, sf.SF_BRF_REVIEW_DT) as SF_BRF_REVIEW_TIMING_NBR, sf.SF_SAMPLES_SHIP_DT,&#xA;datediff(day, sf.SF_QUARANTINE_DT, sf.SF_SAMPLES_SHIP_DT) as SF_SAMPLES_SHIP_TIMING_NBR, sf.SF_SAMPLES_RECEIPT_DT,  sf.SF_STERILITY_TEST_START_DT,&#xA;datediff(day, sf.SF_QUARANTINE_DT, sf.SF_STERILITY_TEST_START_DT) as SF_STERILITY_TEST_START_TIMING_NBR, sf.SF_STERILITY_TEST_END_DT,&#xA;sf.SF_ANALYTICAL_TEST_END_DT, datediff(day, sf.SF_SAMPLES_RECEIPT_DT, sf.SF_ANALYTICAL_TEST_END_DT) as SF_ANALYTICAL_TEST_END_TIMING_NBR, sf.SF_BRF_REVIEW_END_DT,&#xA; &#xA;isnull(f.F_BATCH_CD,'N/A') as F_BATCH_CD, f.F_ARTICLE_CD, f.F_ARTICLE_DESC, f.F_COUNTRY_DESC, f.F_BATCH_STATUS_DESC, f.F_LAUNCH_DT, f.F_QUARANTINE_DT, f.F_BRSC_REVIEW_DT,&#xA;datediff(day, f.F_QUARANTINE_DT, f.F_BRSC_REVIEW_DT) as F_BRSC_REVIEW_END_TIMING_NBR, f.F_COA_ISSUE_DT,&#xA;datediff(day, sf.SF_QUARANTINE_DT, f.F_COA_ISSUE_DT) as F_COA_ISSUE_TIMING_NBR, f.F_BRSC_REVIEW_END_DT, f.F_COA_BRA_REVIEW_END_DT, f.F_BRRC_CLOSURE_DT, f.F_QP_RELEASE_DT,&#xA;datediff(day, sf.SF_QUARANTINE_DT, f.F_QP_RELEASE_DT) as SF_RELEASE_TIMING_NBR, datediff(day, f.F_QUARANTINE_DT, f.F_QP_RELEASE_DT) as F_RELEASE_TIMING_NBR, &#xA;f.F_PRODUCT_TYPE_CD, f.DEVIATIONS_ISSUE_DESC, f.PV_RD_DESC&#xA;&#xA;from   ( &#xA;             select &#xA;                    distinct&#xA;                     ROW_NUMBER() OVER(ORDER BY c.lotto_principale, b.data_lancio) AS 'Row_id',&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; c.lotto_principale as SF_BATCH_CD, &#xA;                     a.codice_Articolo as SF_ARTICLE_CD, &#xA;                     a.Descrizione_Articolo as SF_ARTICLE_DESC,&#xA;                     SUBSTRING ( e.D_Documento_Stato ,5 , 30) as SF_BATCH_STATUS_DESC,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (d.Data_Carico as date) as SF_QUARANTINE_DT,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (b.Data_Lancio as date) as SF_LAUNCH_DT,         &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; tmp.*&#xA;                     from&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[Articolo] where tipo_articolo =2) a join&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Testata] where YEAR (data_lancio) = YEAR(getdate()) and cast(C_PROD_Stato_Documento as int) &gt;= 60) b  on a.codice_Articolo = b.c_anagrafica_articolo join&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[Anagrafica_Lotti]) c on c.id_lotto = b.id_lotto left join                                &#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Carico] ) d on d.ID_Lotto=b.ID_Lotto left join &#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Stato] ) e on e.c_documento_stato = b.C_PROD_Stato_Documento left join&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(select distinct SF_BATCH_CD as SF_BATCH_CD_tmp, SF_ARTICLE_CD as SF_ARTICLE_CD_tmp, SF_CONVALIDATED_FLG , SF_BRF_REVIEW_DT, SF_SAMPLES_SHIP_DT, SF_SAMPLES_RECEIPT_DT, SF_STERILITY_TEST_START_DT, SF_STERILITY_TEST_END_DT, SF_ANALYTICAL_TEST_END_DT, SF_BRF_REVIEW_END_DT&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; from [db_owner].[TBDWTMP_BR_TRACKING_CARD]) tmp on  c.lotto_principale COLLATE SQL_Latin1_General_CP1_CI_AS =  tmp.sf_batch_cd_tmp and a.codice_Articolo COLLATE SQL_Latin1_General_CP1_CI_AS = tmp.SF_ARTICLE_CD_tmp&#xA;             ) SF left join&#xA;             (&#xA;             select distinct&#xA;                     c.lotto_principale as F_BATCH_CD, &#xA;                     a.codice_Articolo as F_ARTICLE_CD, &#xA;                     a.Descrizione_Articolo as F_ARTICLE_DESC, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; a_cod.D_Anagrafica_Gruppi_Merceologici as F_PRODUCT_TYPE_CD, &#xA;                     a.Codice_Nazione + ' - ' + a2.D_Anagrafica_Nazione_Articolo as F_COUNTRY_DESC,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (b.Data_Lancio as date) as F_LAUNCH_DT,&#xA;                     SUBSTRING (e.D_Documento_Stato ,5 , 30) as F_BATCH_STATUS_DESC,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (d.Data_Carico as date) as F_QUARANTINE_DT,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (f.Data as date) as F_QP_RELEASE_DT, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (coa.Data_Registrazione as date) as F_COA_ISSUE_DT,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; tmp.*&#x9;&#x9; &#xA;             from&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[articolo] where tipo_articolo =3) a left join&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[Anagrafica_Gruppi_Merceologici]) a_cod on a.codice_gruppo_merc =  a_cod.C_Anagrafica_Gruppi_Merceologici join&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Testata] where YEAR (data_lancio) = YEAR(getdate()) and cast(C_PROD_Stato_Documento as int) &gt;= 60) b  on a.codice_Articolo = b.c_anagrafica_articolo join&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[Anagrafica_Nazione_Articolo]) a2 on a2.C_Anagrafica_Nazione_Articolo = a.Codice_Nazione join&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[Anagrafica_Lotti]) c on c.id_lotto = b.id_lotto left join &#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Carico] ) d on d.ID_Lotto=b.ID_Lotto left join &#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Stato] ) e on e.c_documento_stato = b.C_PROD_Stato_Documento left join &#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[LIMS_Specifica_Lotti_Operazioni] where Operazione ='tab_SbloccoQuarantena') as f on f.ID_Lotto=b.ID_Lotto left join&#xA;                    (select id_lotto, max(Data_Registrazione) as Data_Registrazione from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[LIMS_Documento_Testata] where C_Famiglia ='CE' group by (id_lotto)) as coa on coa.id_lotto=b.ID_Lotto left join&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(select distinct F_BATCH_CD as F_BATCH_CD_tmp, F_BRSC_REVIEW_DT, F_BRSC_REVIEW_END_DT, F_COA_BRA_REVIEW_END_DT, F_BRRC_CLOSURE_DT, DEVIATIONS_ISSUE_DESC, PV_RD_DESC&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; from [db_owner].[TBDWTMP_BR_TRACKING_CARD]) tmp on  c.lotto_principale COLLATE SQL_Latin1_General_CP1_CI_AS =  tmp.f_batch_cd_tmp&#xA;             ) F on substring(SF.SF_BATCH_CD,1,5) = substring(F.F_BATCH_CD,1,5)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="INSERT INTO TBDWFT_BR_TRACKING_CARD&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, INSERT_DT,UPDATE_DT,USER_CD, SITE_ID, SOURCE_SYSTEM_ID, ROW_ID, SF_BATCH_CD, SF_ARTICLE_CD, SF_ARTICLE_DESC, SF_BATCH_STATUS_DESC, SF_LAUNCH_DT, SF_QUARANTINE_DT,&#xA;SF_CONVALIDATED_FLG, SF_BRF_REVIEW_DT, SF_BRF_REVIEW_TIMING_NBR, SF_SAMPLES_SHIP_DT, SF_SAMPLES_SHIP_TIMING_NBR, SF_SAMPLES_RECEIPT_DT, SF_STERILITY_TEST_START_DT,&#xA;SF_STERILITY_TEST_START_TIMING_NBR, SF_STERILITY_TEST_END_DT, SF_ANALYTICAL_TEST_END_DT, SF_ANALYTICAL_TEST_END_TIMING_NBR, SF_BRF_REVIEW_END_DT, F_BATCH_CD, F_ARTICLE_CD,&#xA;F_ARTICLE_DESC, F_COUNTRY_DESC, F_BATCH_STATUS_DESC, F_LAUNCH_DT, F_QUARANTINE_DT, F_ID_TEST_SAMPLE_SHIP_DT, F_ID_TEST_END_DT, F_BRSC_REVIEW_DT, F_BRSC_REVIEW_END_TIMING_NBR, F_COA_ISSUE_DT, F_COA_ISSUE_TIMING_NBR, F_BRSC_REVIEW_END_DT, &#xA;F_COA_BRA_REVIEW_END_DT, F_BRRC_CLOSURE_DT, F_QP_RELEASE_DT, SF_RELEASE_TIMING_NBR, F_RELEASE_TIMING_NBR, F_PRODUCT_TYPE_CD, F_REQUIRED_RELEASE_DT, DEVIATIONS_ISSUE_DESC, PV_RD_DESC)&#xA; &#xA;SELECT  ?, ?, getdate(), getdate(), ?, ?, ?,&#xA;sf.Row_id, sf.SF_BATCH_CD, sf.SF_ARTICLE_CD, sf.SF_ARTICLE_DESC,SF_BATCH_STATUS_DESC, sf.SF_LAUNCH_DT, sf.SF_QUARANTINE_DT, &#xA;sf.SF_CONVALIDATED_FLG, sf.SF_BRF_REVIEW_DT, datediff(day, sf.SF_QUARANTINE_DT, sf.SF_BRF_REVIEW_DT) as SF_BRF_REVIEW_TIMING_NBR, sf.SF_SAMPLES_SHIP_DT,&#xA;datediff(day, sf.SF_QUARANTINE_DT, sf.SF_SAMPLES_SHIP_DT) as SF_SAMPLES_SHIP_TIMING_NBR, sf.SF_SAMPLES_RECEIPT_DT,  sf.SF_STERILITY_TEST_START_DT,&#xA;datediff(day, sf.SF_QUARANTINE_DT, sf.SF_STERILITY_TEST_START_DT) as SF_STERILITY_TEST_START_TIMING_NBR, sf.SF_STERILITY_TEST_END_DT,&#xA;sf.SF_ANALYTICAL_TEST_END_DT, datediff(day, sf.SF_SAMPLES_RECEIPT_DT, sf.SF_ANALYTICAL_TEST_END_DT) as SF_ANALYTICAL_TEST_END_TIMING_NBR, sf.SF_BRF_REVIEW_END_DT,&#xA; &#xA;isnull(f.F_BATCH_CD,'N/A') as F_BATCH_CD, f.F_ARTICLE_CD, f.F_ARTICLE_DESC, f.F_COUNTRY_DESC, f.F_BATCH_STATUS_DESC, f.F_LAUNCH_DT, f.F_QUARANTINE_DT, &#xA;f.F_ID_TEST_SAMPLE_SHIP_DT, f.F_ID_TEST_END_DT, f.F_BRSC_REVIEW_DT,&#xA;datediff(day, f.F_QUARANTINE_DT, f.F_BRSC_REVIEW_DT) as F_BRSC_REVIEW_END_TIMING_NBR, f.F_COA_ISSUE_DT,&#xA;datediff(day, sf.SF_QUARANTINE_DT, f.F_COA_ISSUE_DT) as F_COA_ISSUE_TIMING_NBR, f.F_BRSC_REVIEW_END_DT, f.F_COA_BRA_REVIEW_END_DT, f.F_BRRC_CLOSURE_DT, f.F_QP_RELEASE_DT,&#xA;datediff(day, sf.SF_QUARANTINE_DT, f.F_QP_RELEASE_DT) as SF_RELEASE_TIMING_NBR, datediff(day, f.F_QUARANTINE_DT, f.F_QP_RELEASE_DT) as F_RELEASE_TIMING_NBR, &#xA;f.F_PRODUCT_TYPE_CD, &#xA;&#xA;case &#xA;&#x9;when SF_QUARANTINE_DT is null and F_QUARANTINE_DT is null then null&#xA;&#x9;when dateadd(DAY,16,SF_QUARANTINE_DT) &gt;= dateadd(DAY,5,isnull(F_QUARANTINE_DT, dateadd(YEAR,-10,getdate()))) then dateadd(DAY,16,SF_QUARANTINE_DT)&#xA;&#x9;when dateadd(DAY,16,isnull(SF_QUARANTINE_DT, dateadd(YEAR,-10,getdate()))) &lt; dateadd(DAY,5,F_QUARANTINE_DT) then dateadd(DAY,5,F_QUARANTINE_DT)&#xA;&#x9;else null end as F_REQUIRED_RELEASE_DT,&#xA;&#xA;f.DEVIATIONS_ISSUE_DESC, f.PV_RD_DESC&#xA;&#xA;from   ( &#xA;             select &#xA;                    distinct&#xA;                     ROW_NUMBER() OVER(ORDER BY c.lotto_principale, b.data_lancio) AS 'Row_id',&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; c.lotto_principale as SF_BATCH_CD, &#xA;                     a.codice_Articolo as SF_ARTICLE_CD, &#xA;                     a.Descrizione_Articolo as SF_ARTICLE_DESC,&#xA;                     SUBSTRING ( e.D_Documento_Stato ,5 , 30) as SF_BATCH_STATUS_DESC,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (d.Data_Carico as date) as SF_QUARANTINE_DT,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (b.Data_Lancio as date) as SF_LAUNCH_DT,         &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; tmp.*&#xA;                     from&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[Articolo] where tipo_articolo =2) a join&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Testata] where YEAR (data_lancio) = YEAR(getdate()) and cast(C_PROD_Stato_Documento as int) &gt;= 60) b  on a.codice_Articolo = b.c_anagrafica_articolo join&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[Anagrafica_Lotti]) c on c.id_lotto = b.id_lotto left join                                &#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Carico] ) d on d.ID_Lotto=b.ID_Lotto left join &#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Stato] ) e on e.c_documento_stato = b.C_PROD_Stato_Documento left join&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(select distinct SF_BATCH_CD as SF_BATCH_CD_tmp, SF_ARTICLE_CD as SF_ARTICLE_CD_tmp, SF_CONVALIDATED_FLG , SF_BRF_REVIEW_DT, SF_SAMPLES_SHIP_DT, SF_SAMPLES_RECEIPT_DT, SF_STERILITY_TEST_START_DT, SF_STERILITY_TEST_END_DT, SF_ANALYTICAL_TEST_END_DT, SF_BRF_REVIEW_END_DT&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; from [db_owner].[TBDWTMP_BR_TRACKING_CARD]) tmp on  c.lotto_principale COLLATE SQL_Latin1_General_CP1_CI_AS =  tmp.sf_batch_cd_tmp and a.codice_Articolo COLLATE SQL_Latin1_General_CP1_CI_AS = tmp.SF_ARTICLE_CD_tmp&#xA;             ) SF left join&#xA;             (&#xA;             select distinct&#xA;                     c.lotto_principale as F_BATCH_CD, &#xA;                     a.codice_Articolo as F_ARTICLE_CD, &#xA;                     a.Descrizione_Articolo as F_ARTICLE_DESC, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; a_cod.D_Anagrafica_Gruppi_Merceologici as F_PRODUCT_TYPE_CD, &#xA;                     a.Codice_Nazione + ' - ' + a2.D_Anagrafica_Nazione_Articolo as F_COUNTRY_DESC,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (b.Data_Lancio as date) as F_LAUNCH_DT,&#xA;                     SUBSTRING (e.D_Documento_Stato ,5 , 30) as F_BATCH_STATUS_DESC,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (d.Data_Carico as date) as F_QUARANTINE_DT,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (f.Data as date) as F_QP_RELEASE_DT, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; cast (coa.Data_Registrazione as date) as F_COA_ISSUE_DT,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; tmp.*&#x9;&#x9; &#xA;             from&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[articolo] where tipo_articolo =3) a left join&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[Anagrafica_Gruppi_Merceologici]) a_cod on a.codice_gruppo_merc =  a_cod.C_Anagrafica_Gruppi_Merceologici join&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Testata] where YEAR (data_lancio) = YEAR(getdate()) and cast(C_PROD_Stato_Documento as int) &gt;= 60) b  on a.codice_Articolo = b.c_anagrafica_articolo join&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[Anagrafica_Nazione_Articolo]) a2 on a2.C_Anagrafica_Nazione_Articolo = a.Codice_Nazione join&#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[Anagrafica_Lotti]) c on c.id_lotto = b.id_lotto left join &#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Carico] ) d on d.ID_Lotto=b.ID_Lotto left join &#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[PROD_Documento_Stato] ) e on e.c_documento_stato = b.C_PROD_Stato_Documento left join &#xA;                    (select * from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[LIMS_Specifica_Lotti_Operazioni] where Operazione ='tab_SbloccoQuarantena') as f on f.ID_Lotto=b.ID_Lotto left join&#xA;                    (select id_lotto, max(Data_Registrazione) as Data_Registrazione from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].[LIMS_Documento_Testata] where C_Famiglia ='CE' group by (id_lotto)) as coa on coa.id_lotto=b.ID_Lotto left join&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(select distinct F_BATCH_CD as F_BATCH_CD_tmp, F_ID_TEST_SAMPLE_SHIP_DT, F_ID_TEST_END_DT, F_BRSC_REVIEW_DT, F_BRSC_REVIEW_END_DT, F_COA_BRA_REVIEW_END_DT, F_BRRC_CLOSURE_DT, DEVIATIONS_ISSUE_DESC, PV_RD_DESC&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; from [db_owner].[TBDWTMP_BR_TRACKING_CARD]) tmp on  c.lotto_principale COLLATE SQL_Latin1_General_CP1_CI_AS =  tmp.f_batch_cd_tmp&#xA;             ) F on substring(SF.SF_BATCH_CD,1,5) = substring(F.F_BATCH_CD,1,5)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -1429,6 +1429,66 @@
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[F_ID_Test_sample_Ship_Date]"
+                          dataType="dbTime"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[F_ID_Test_sample_Ship_Date]"
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[F_ID_Test_sample_Ship_Date]"
+                          name="F_ID_Test_sample_Ship_Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[F_ID_Test_End_Date]"
+                          dataType="dbTime"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[F_ID_Test_End_Date]"
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[F_ID_Test_End_Date]"
+                          name="F_ID_Test_End_Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[F_Required_Release_Date]"
+                          dataType="dbTime"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[F_Required_Release_Date]"
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[F_Required_Release_Date]"
+                          name="F_Required_Release_Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1561,6 +1621,18 @@
                           dataType="wstr"
                           length="4000"
                           name="Process Validation   R&amp;D" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[F_ID_Test_sample_Ship_Date]"
+                          dataType="dbTime"
+                          name="F_ID_Test_sample_Ship_Date" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[F_ID_Test_End_Date]"
+                          dataType="dbTime"
+                          name="F_ID_Test_End_Date" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[F_Required_Release_Date]"
+                          dataType="dbTime"
+                          name="F_Required_Release_Date" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1851,6 +1923,24 @@
                           cachedName="Process Validation   R&amp;D"
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[PV_RD_DESC]"
                           lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Process Validation   R&amp;D]" />
+                        <inputColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[F_ID_Test_sample_Ship_Date]"
+                          cachedDataType="dbTime"
+                          cachedName="F_ID_Test_sample_Ship_Date"
+                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_ID_TEST_SAMPLE_SHIP_DT]"
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[F_ID_Test_sample_Ship_Date]" />
+                        <inputColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[F_ID_Test_End_Date]"
+                          cachedDataType="dbTime"
+                          cachedName="F_ID_Test_End_Date"
+                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_ID_TEST_END_DT]"
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[F_ID_Test_End_Date]" />
+                        <inputColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[F_Required_Release_Date]"
+                          cachedDataType="dbTime"
+                          cachedName="F_Required_Release_Date"
+                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_REQUIRED_RELEASE_DT]"
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[F_Required_Release_Date]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2015,6 +2105,18 @@
                           dataType="wstr"
                           length="4000"
                           name="PV_RD_DESC" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_ID_TEST_SAMPLE_SHIP_DT]"
+                          dataType="dbDate"
+                          name="F_ID_TEST_SAMPLE_SHIP_DT" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_ID_TEST_END_DT]"
+                          dataType="dbDate"
+                          name="F_ID_TEST_END_DT" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_REQUIRED_RELEASE_DT]"
+                          dataType="dbDate"
+                          name="F_REQUIRED_RELEASE_DT" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2444,9 +2546,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2480,9 +2580,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2516,9 +2614,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2552,45 +2648,29 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD.PrecedenceConstraints[Constraint 4]"
-          TopLeft="217.5,261">
+          TopLeft="214.25,261">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.1666666666666,216"
+              EndConnector="0,216"
               Start="0,0"
-              End="49.1666666666666,208.5">
+              End="0,208.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,124.996507566938" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,124.996507566938"
-                    Point2="0,128.996507566938"
-                    Point3="4,128.996507566938" />
-                  <mssgle:LineSegment
-                    End="45.1666666666666,128.996507566938" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45.1666666666666,128.996507566938"
-                    Point2="49.1666666666666,128.996507566938"
-                    Point3="49.1666666666666,132.996507566938" />
-                  <mssgle:LineSegment
-                    End="49.1666666666666,208.5" />
+                    End="0,208.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2624,16 +2704,14 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="399,676"
-          Size="345,43"
+          Size="399,43"
           Id="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD"
           TopLeft="741,61" />
         <NodeLayout
@@ -2680,9 +2758,9 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="351,231"
-          Size="279,43"
+          Size="351,274"
           Id="Package\TBDWTMP_BR_TRACKING_CARD"
           TopLeft="363,321" />
         <NodeLayout
@@ -2770,26 +2848,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="229,205"
+              EndConnector="253,205"
               Start="0,0"
-              End="229,197.5">
+              End="253,197.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,98.7903836960179" />
+                    End="0,98.9391887130192" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,98.7903836960179"
-                    Point2="0,102.790383696018"
-                    Point3="4,102.790383696018" />
+                    Point1="0,98.9391887130192"
+                    Point2="0,102.939188713019"
+                    Point3="4,102.939188713019" />
                   <mssgle:LineSegment
-                    End="225,102.790383696018" />
+                    End="249,102.939188713019" />
                   <mssgle:CubicBezierSegment
-                    Point1="225,102.790383696018"
-                    Point2="229,102.790383696018"
-                    Point3="229,106.790383696018" />
+                    Point1="249,102.939188713019"
+                    Point2="253,102.939188713019"
+                    Point3="253,106.939188713019" />
                   <mssgle:LineSegment
-                    End="229,197.5" />
+                    End="253,197.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2800,30 +2878,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="969.666666666667,104">
+          TopLeft="1005.66666666667,104">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="79.3333333333334,121"
+              EndConnector="43.3333333333334,121"
               Start="0,0"
-              End="79.3333333333334,113.5">
+              End="43.3333333333334,113.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.735141373341" />
+                    End="0,44.6899650524214" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44.735141373341"
-                    Point2="0,48.735141373341"
-                    Point3="4,48.735141373341" />
+                    Point1="0,44.6899650524214"
+                    Point2="0,48.6899650524214"
+                    Point3="4,48.6899650524214" />
                   <mssgle:LineSegment
-                    End="75.3333333333334,48.735141373341" />
+                    End="39.3333333333334,48.6899650524214" />
                   <mssgle:CubicBezierSegment
-                    Point1="75.3333333333334,48.735141373341"
-                    Point2="79.3333333333334,48.735141373341"
-                    Point3="79.3333333333334,52.735141373341" />
+                    Point1="39.3333333333334,48.6899650524214"
+                    Point2="43.3333333333334,48.6899650524214"
+                    Point3="43.3333333333334,52.6899650524214" />
                   <mssgle:LineSegment
-                    End="79.3333333333334,113.5" />
+                    End="43.3333333333334,113.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2834,30 +2912,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="547.666666666667,321">
+          TopLeft="595.666666666667,321">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="309.666666666667,-217"
+              EndConnector="279.666666666667,-217"
               Start="0,0"
-              End="309.666666666667,-209.5">
+              End="279.666666666667,-209.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-104.646887788068" />
+                    End="0,-104.573585825403" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-104.646887788068"
-                    Point2="0,-108.646887788068"
-                    Point3="4,-108.646887788068" />
+                    Point1="0,-104.573585825403"
+                    Point2="0,-108.573585825403"
+                    Point3="4,-108.573585825403" />
                   <mssgle:LineSegment
-                    End="305.666666666667,-108.646887788068" />
+                    End="275.666666666667,-108.573585825403" />
                   <mssgle:CubicBezierSegment
-                    Point1="305.666666666667,-108.646887788068"
-                    Point2="309.666666666667,-108.646887788068"
-                    Point3="309.666666666667,-112.646887788068" />
+                    Point1="275.666666666667,-108.573585825403"
+                    Point2="279.666666666667,-108.573585825403"
+                    Point3="279.666666666667,-112.573585825403" />
                   <mssgle:LineSegment
-                    End="309.666666666667,-209.5" />
+                    End="279.666666666667,-209.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -25,7 +25,7 @@
           <SSIS:Property SSIS:Name="CreatorName">SINTE00\mluchini</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorComputerName">SRV-DIR-TST</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">Data Integration Repository</SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="J2BF+whQpYc=" SSIS:IV="b+UX4OfR9nJB33qGUxgH5w==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">H3vGxRG1KD1a02Fhq8nBa8uhFBg2l1YlOR+YlvRGnBUnYwDAsnoAjrAG/LK0zC+p2yoDpWawwUyz7IScpUKkmBMl+lJeipsS6oducWN8P5I2Hvx6BTKSNgjgy7pLtWT0R1EYkyYLUcLGF8U7CKDm1K4GCTvPBNboqsJrm9d6sQskoxHZ8/tz3XrpytSbzWHh</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="Ev1mbJdNexM=" SSIS:IV="gWICRLofXTYcPmY5cVuKIw==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">pi/Hs/biOdPWW08KyY7MnXU7w+fzLvqVXD4xhtyVfunlB9dkjYbgQ8f0ZC5ieqyji9Lye8/nqB4E6NGaBLXAaEEvumXtw1dGNqqc2rzCxWjf68tAWX8pZap94rMe+Dd/bVEvH44jKJ9PeGQZtWUdcPhDXLTiUleB9uTPlw1SUaxJNG99qm6AE+kqj5FnrAa5</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -44,6 +44,7 @@
           <SSIS:Package SSIS:Name="SERIALIZATION_EMVO_FILE_CREATION.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="SERIALIZATION_EMVO_FILE_CREATION_20211229_1939.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="BATCH_RECORD_TRACKING_CARD.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Package1.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R.conmgr" />
@@ -11059,10 +11060,10 @@
                 <SSIS:Property SSIS:Name="Name">BATCH_RECORD_TRACKING_CARD</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">173</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">182</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{871B8BBA-1B51-4B5F-B56A-1FE1481E0B7F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{91EB22F6-364A-4738-BBD7-1634020318E7}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -11084,6 +11085,23 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Package1.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{2D8322C7-6D33-4F99-B2F1-70C47C6F7EF1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EDA22B82-E531-4EAD-8251-3B041AD974EE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
