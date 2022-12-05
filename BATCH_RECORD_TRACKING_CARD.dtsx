@@ -12,8 +12,8 @@
   DTS:ObjectName="BATCH_RECORD_TRACKING_CARD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="189"
-  DTS:VersionGUID="{BB3045CB-DE52-4CEF-968D-D66D024791CD}">
+  DTS:VersionBuild="191"
+  DTS:VersionGUID="{19BB57EA-7B14-4D39-B973-1B05BEFE63EA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -3098,13 +3098,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="198,42"
-          Id="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV"
-          TopLeft="107,47" />
-        <NodeLayout
           Size="238,42"
           Id="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD"
           TopLeft="255,277" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV"
+          TopLeft="107,47" />
         <EdgeLayout
           Id="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD.Paths[Flat File Source Output]"
           TopLeft="206,89">
