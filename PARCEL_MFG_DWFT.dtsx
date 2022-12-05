@@ -1,0 +1,1702 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/27/2020 2:32:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRV-DIR-DEV"
+  DTS:CreatorName="SINTE00\mluchini"
+  DTS:DTSID="{EEDC15AC-055E-4523-AAAF-3E277D3EEC73}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="2064"
+  DTS:ObjectName="PARCEL_MFG_DWFT_run"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="510"
+  DTS:VersionGUID="{628486BE-4F58-40E9-9E38-3F0E96FDFD3A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{249903F9-BCEE-4069-85C3-55135A15771F}"
+      DTS:ObjectName="192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="Gg691ADsmWU="
+            IV="Z6AWV/qTi9up5alt5Fg46Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>Z6AWV/qTi9up5alt5Fg46dBHQk3ND5lxAYJbCnVA6HhT2THOmvuwI6ic59cJqEfakX18t4/J+82NJGuKlyrl1Muk9qPM1P17l9d9L3LAruNC4XA/W59Zhw+Xe3wLoBITASXKTnYhkSefhR6c/KN2fmrvAchwvRTZLwn56G3HiHVUz81gM+1254v5RRNFl6UB</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="out_MAX_ID"
+      DTS:ConfigurationVariable="\Package.Variables[User::in_PARENT_ID].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{3DD1ACCF-CC85-44CD-98D8-CF888A06EBD3}"
+      DTS:ObjectName="in_PARENT_ID" />
+  </DTS:Configurations>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{8B59B179-1150-4225-B120-3C38812AD731}"
+      DTS:ObjectName="in_SITE_CD">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{C1F5553C-CFBD-404F-A7D5-E8C407412004}"
+      DTS:ObjectName="in_SOURCE_SYSTEM_CD">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{303F9DD8-B78E-412D-8D34-F728D5673C8D}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_OBJECT_ERROR">
+      <DTS:VariableValue
+        DTS:DataType="8">SRV-DIR-TST - SSIS package: PARCEL_MFG_DWFT_run ERROR</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C506FE08-F200-46D4-8F77-087187D9F484}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
+      <DTS:VariableValue
+        DTS:DataType="8">SRV-DIR-TST - SSIS package: PARCEL_MFG_DWFT_run completed SUCCESSFULLY</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="The package name"
+      DTS:DTSID="{D452D853-EAC2-4192-A056-C3FD4C527CCA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::PackageName] "
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_PACKAGE_NAME_CD">
+      <DTS:VariableValue
+        DTS:DataType="8">PARCEL_MFG_DWFT_run</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="The package scope"
+      DTS:DTSID="{A129C7E4-6095-4699-9296-9EB723012E59}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
+      <DTS:VariableValue
+        DTS:DataType="8">This package loads tables from DIR staging layer to DIR datawarehouse</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{54224155-F125-490B-8BBB-ED48FBBABD02}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_PARENT_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="The source system of this package"
+      DTS:DTSID="{62DDA3BE-CEB5-4010-98DD-4A84339E4788}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_SOURCE_SYSTEM_DESC">
+      <DTS:VariableValue
+        DTS:DataType="8">DIR STAGING</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="The target system of this package"
+      DTS:DTSID="{9CA69BF4-5C01-43D1-A35B-E97F6728D3ED}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_TARGET_SYSTEM_DESC">
+      <DTS:VariableValue
+        DTS:DataType="8">DIR DWH</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="Output related to the last ID run for the package"
+      DTS:DTSID="{60A6E7F9-424D-4E82-9955-A71EBC2DA84A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_MAX_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="Mendrisio ID, refer to TBDWMN_SITE"
+      DTS:DTSID="{B07758EE-E317-418E-A2CD-226B8D2EBE02}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_SITE_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="Source System ID, calculated by the flow from table TBDWMN_SOURCE_SYSTEM"
+      DTS:DTSID="{B48EA0DE-0EC1-4E04-A14D-05D0B7C1E7EC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_SOURCE_SYSTEM_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Assign SITE_ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AFC3AF32-A2F9-434B-BA4B-81CCD7D42603}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Assign SITE_ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="SELECT ID &#xA;FROM TBDWMN_SITE &#xA;WHERE SITE_CD = ? and getdate() between VALIDITY_START_DT and VALIDITY_END_DT"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="ID"
+            SQLTask:DtsVariableName="User::out_SITE_ID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::in_SITE_CD"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Assign SOURCE_SYSTEM_ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DBD9E281-8662-4330-BAE0-BFA2D239D587}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="SELECT ID&#xA;FROM TBDWMN_SOURCE_SYSTEM&#xA;WHERE SOURCE_SYSTEM_CD = ? and getdate() between VALIDITY_START_DT and VALIDITY_END_DT"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="ID"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::in_SOURCE_SYSTEM_CD"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DWH LOAD"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F743836E-FEC0-48CD-A110-091CDF943285}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DWH LOAD">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{B99FA8C6-8C2A-45B2-8C2B-39DBFF4DDC36}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TBDWFT_ADDED_VALUE">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="Output related to the last ID run for the table"
+              DTS:DTSID="{4CC5412B-AC2D-478A-AF6B-7C15D9978B33}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="User"
+              DTS:ObjectName="out_MAX_TABLE_ID">
+              <DTS:VariableValue
+                DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="Table target name to be loaded by the flow"
+              DTS:DTSID="{A969BA76-BCF4-4551-9A22-9240CBA30FF7}"
+              DTS:IncludeInDebugDump="2345"
+              DTS:Namespace="User"
+              DTS:ObjectName="out_TABLE_TARGET_CD">
+              <DTS:VariableValue
+                DTS:DataType="8"
+                xml:space="preserve"></DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE\Assign TABLE_TARGET_CD"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{CF409F47-14D3-4072-B8D9-D852ADB835BF}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Assign TABLE_TARGET_CD"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="select 'TBDWAN_ARTICLE' as TABLE_TARGET_CD"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="TABLE_TARGET_CD"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE\Ins_Upd TBLOG_PACKAGE_TABLE"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{E6E4517A-148D-4C1F-B0F5-C744929CC29F}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="System::PackageName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="8"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="7"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE\Last Upd TBLOG_PACKAGE_TABLE"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{BFF8987E-8AA4-4CCE-BE53-B03DA54636D1}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE\MAX TABLE ID"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{34865CD7-4A95-4794-8015-3623B9B678F7}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="MAX TABLE ID"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? &#xA;and SITE_ID = ?"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="MAX_TABLE_ID"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_del"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{9eddcdcc-b573-4169-a212-f49bf97a9129}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TBDWFT_ADDED_VALUE_del"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--insert in a temporary table the record to delete&#xA;INSERT INTO tbdwtmp_added_value&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, DELETE_DT,USER_CD, ID)&#xA; &#xA;select ?, ?, getdate(), ?,trg.trg_ID&#xA;from&#xA;(&#xA;&#x9; select &#xA;&#x9;  a.pkey1 as ENTITY_CD,&#xA;&#x9;  a.c_contesto as ENTITY_CATEGORY_CD,&#xA;&#x9;  a.descrizione as ADDED_VALUE_CD,&#xA;&#x9;  case &#xA;&#x9;&#x9;when a.tipodato = 0 then 'NUMBER'&#xA;&#x9;&#x9;when a.tipodato = 1 then 'TEXT'&#xA;&#x9;&#x9;when a.tipodato = 2 then 'DATE'&#xA;&#x9;&#x9;when a.tipodato = 3 then 'TABLE'&#xA;&#x9;&#x9;when a.tipodato = 4 then 'BOOL'&#xA;&#x9;  end as ADDED_VALUE_TYPE_DESC,&#xA;&#xA;&#x9;  case &#xA;  &#x9;&#x9;when a.tipodato = 0 then cast(a.numero as nvarchar(4000))&#xA;&#x9;&#x9;when a.tipodato = 1 then cast(a.text as nvarchar(4000))&#xA;&#x9;&#x9;when a.tipodato = 2 then convert(nvarchar, a.data, 120)&#xA;&#x9;&#x9;when a.tipodato = 3 then cast(a.tabella_text as nvarchar(4000))&#xA;&#x9;&#x9;when a.tipodato = 4 then cast(a.boolean as nvarchar(4000))&#xA;&#x9;  end as ADDED_VALUE_DESC&#xA;&#x9; from&#xA;&#x9; (&#xA;&#x9;&#x9; select b.c_contesto, c.pkey1, a.tipodato, a.descrizione, a.c_tabella, a.numero, a.data, a.text, a.boolean, d.descrizione as tabella_text&#xA;&#x9;&#x9; from&#xA;&#x9;&#x9;&#x9;(select id_config, id_valore, tipodato, descrizione, c_tabella, numero, data, text, boolean from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL] where site_id = ? and row_sts_flg=1) a join&#xA;&#x9;&#x9;&#x9;(select id, c_contesto from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG] where site_id = ? and row_sts_flg=1) b on a.id_config = b.id join&#xA;&#x9;&#x9;&#x9;(select id, pkey1 from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI] where site_id = ? and row_sts_flg=1) c on a.id_valore = c.id left join&#xA;&#x9;&#x9;&#x9;(select C_tabella, codice, descrizione from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE] where site_id = ? and row_sts_flg=1) d on a.C_Tabella = d.C_tabella and a.text = d.codice&#xA;&#x9; ) a&#xA; ) a left join&#xA;&#xA; (select ID as lkp_ID, article_cd from [db_owner].TBDWAN_ARTICLE where site_id = ? and row_sts_flg=1) b on a.ENTITY_CD = B.article_cd full join&#xA; &#xA; (select id as trg_ID, ENTITY_CD, ENTITY_CATEGORY_CD, ADDED_VALUE_CD, ADDED_VALUE_TYPE_DESC, row_sts_flg as trg_row_sts_flg FROM [db_owner].TBDWFT_ADDED_VALUE WHERE site_id = ?) trg &#xA;&#x9;on a.ENTITY_CD = trg.ENTITY_CD and a.ENTITY_CATEGORY_CD = trg.ENTITY_CATEGORY_CD and a.ADDED_VALUE_CD = trg.ADDED_VALUE_CD and a.ADDED_VALUE_TYPE_DESC = trg.ADDED_VALUE_TYPE_DESC&#xA;&#xA;where a.ENTITY_CD is null and trg.trg_ID is not null and trg.trg_row_sts_flg=1;&#xA;&#xA;--update for delete record on the target DWH table&#xA;UPDATE tbdwft_added_value&#xA;SET &#xA;   TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;   ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;   ,DELETE_DT = b.DELETE_DT&#xA;   ,USER_CD = b.USER_CD&#xA;   ,ROW_STS_FLG = 0&#xA;FROM tbdwft_added_value a join tbdwtmp_added_value b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE tbdwtmp_added_value;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="7"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="8"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_ins"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{97a8f782-cb0b-4552-a188-5b342b6981e7}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TBDWFT_ADDED_VALUE_ins"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="INSERT INTO [db_owner].TBDWFT_ADDED_VALUE&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, INSERT_DT,UPDATE_DT,USER_CD, SITE_ID, SOURCE_SYSTEM_ID, ENTITY_CD, ENTITY_CATEGORY_CD, ADDED_VALUE_CD, ADDED_VALUE_TYPE_DESC, ADDED_VALUE_DESC, ENTITY_ID)&#xA; &#xA;select ?, ?, getdate(), getdate(), ?, ?, ?, a.ENTITY_CD, a.ENTITY_CATEGORY_CD, a.ADDED_VALUE_CD, cast(a.ADDED_VALUE_TYPE_DESC as nvarchar(50)) as ADDED_VALUE_TYPE_DESC, a.ADDED_VALUE_DESC, b.lkp_ID&#xA;from&#xA;(&#xA;&#x9; select &#xA;&#x9;  a.pkey1 as ENTITY_CD,&#xA;&#x9;  a.c_contesto as ENTITY_CATEGORY_CD,&#xA;&#x9;  a.descrizione as ADDED_VALUE_CD,&#xA;&#x9;  case &#xA;&#x9;&#x9;when a.tipodato = 0 then 'NUMBER'&#xA;&#x9;&#x9;when a.tipodato = 1 then 'TEXT'&#xA;&#x9;&#x9;when a.tipodato = 2 then 'DATE'&#xA;&#x9;&#x9;when a.tipodato = 3 then 'TABLE'&#xA;&#x9;&#x9;when a.tipodato = 4 then 'BOOL'&#xA;&#x9;  end as ADDED_VALUE_TYPE_DESC,&#xA;&#xA;&#x9;  case &#xA;  &#x9;&#x9;when a.tipodato = 0 then cast(a.numero as nvarchar(4000))&#xA;&#x9;&#x9;when a.tipodato = 1 then cast(a.text as nvarchar(4000))&#xA;&#x9;&#x9;when a.tipodato = 2 then convert(nvarchar, a.data, 120)&#xA;&#x9;&#x9;when a.tipodato = 3 then cast(a.tabella_text as nvarchar(4000))&#xA;&#x9;&#x9;when a.tipodato = 4 then cast(a.boolean as nvarchar(4000))&#xA;&#x9;  end as ADDED_VALUE_DESC&#xA;&#x9; from&#xA;&#x9; (&#xA;&#x9;&#x9; select b.c_contesto, c.pkey1, a.tipodato, a.descrizione, a.c_tabella, a.numero, a.data, a.text, a.boolean, d.descrizione as tabella_text&#xA;&#x9;&#x9; from&#xA;&#x9;&#x9;&#x9;(select id_config, id_valore, tipodato, descrizione, c_tabella, numero, data, text, boolean from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL] where site_id = ? and row_sts_flg=1) a join&#xA;&#x9;&#x9;&#x9;(select id, c_contesto from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG] where site_id = ? and row_sts_flg=1) b on a.id_config = b.id join&#xA;&#x9;&#x9;&#x9;(select id, pkey1 from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI] where site_id = ? and row_sts_flg=1) c on a.id_valore = c.id left join&#xA;&#x9;&#x9;&#x9;(select C_tabella, codice, descrizione from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE] where site_id = ? and row_sts_flg=1) d on a.C_Tabella = d.C_tabella and a.text = d.codice&#xA;&#x9; ) a&#xA; ) a left join&#xA;&#xA; (select ID as lkp_ID, article_cd from [db_owner].TBDWAN_ARTICLE where site_id = ? and row_sts_flg=1) b on a.ENTITY_CD = B.article_cd full join&#xA; &#xA; (select id as trg_ID, ENTITY_CD, ENTITY_CATEGORY_CD, ADDED_VALUE_CD, ADDED_VALUE_TYPE_DESC, row_sts_flg as trg_row_sts_flg FROM [db_owner].TBDWFT_ADDED_VALUE WHERE site_id = ?) trg &#xA;&#x9;on a.ENTITY_CD = trg.ENTITY_CD and a.ENTITY_CATEGORY_CD = trg.ENTITY_CATEGORY_CD and a.ADDED_VALUE_CD = trg.ADDED_VALUE_CD and a.ADDED_VALUE_TYPE_DESC = trg.ADDED_VALUE_TYPE_DESC&#xA;&#xA;where trg.trg_ID is null and a.ENTITY_CD is not null and a.ENTITY_CATEGORY_CD is not null and a.ADDED_VALUE_CD is not null and a.ADDED_VALUE_TYPE_DESC is not null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="7"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="8"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="10"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_upd"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{A92B84C6-1E53-4436-A321-F9376771A375}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TBDWFT_ADDED_VALUE_upd"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--insert in a temporary table the records to be updated&#xA;INSERT INTO [db_owner].tbdwtmp_added_value&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, INSERT_DT,UPDATE_DT,USER_CD, SITE_ID, SOURCE_SYSTEM_ID, ID, ENTITY_CD, ENTITY_CATEGORY_CD, ADDED_VALUE_CD, ADDED_VALUE_TYPE_DESC, ADDED_VALUE_DESC, ENTITY_ID)&#xA; &#xA;select ?, ?, getdate(), getdate(), ?, ?, ?, trg.trg_ID, a.ENTITY_CD, a.ENTITY_CATEGORY_CD, a.ADDED_VALUE_CD, cast(a.ADDED_VALUE_TYPE_DESC as nvarchar(50)) as ADDED_VALUE_TYPE_DESC, a.ADDED_VALUE_DESC, b.lkp_ID&#xA;from&#xA;(&#xA;&#x9; select &#xA;&#x9;  a.pkey1 as ENTITY_CD,&#xA;&#x9;  a.c_contesto as ENTITY_CATEGORY_CD,&#xA;&#x9;  a.descrizione as ADDED_VALUE_CD,&#xA;&#x9;  case &#xA;&#x9;&#x9;when a.tipodato = 0 then 'NUMBER'&#xA;&#x9;&#x9;when a.tipodato = 1 then 'TEXT'&#xA;&#x9;&#x9;when a.tipodato = 2 then 'DATE'&#xA;&#x9;&#x9;when a.tipodato = 3 then 'TABLE'&#xA;&#x9;&#x9;when a.tipodato = 4 then 'BOOL'&#xA;&#x9;  end as ADDED_VALUE_TYPE_DESC,&#xA;&#xA;&#x9;  case &#xA;  &#x9;&#x9;when a.tipodato = 0 then cast(a.numero as nvarchar(4000))&#xA;&#x9;&#x9;when a.tipodato = 1 then cast(a.text as nvarchar(4000))&#xA;&#x9;&#x9;when a.tipodato = 2 then convert(nvarchar, a.data, 120)&#xA;&#x9;&#x9;when a.tipodato = 3 then cast(a.tabella_text as nvarchar(4000))&#xA;&#x9;&#x9;when a.tipodato = 4 then cast(a.boolean as nvarchar(4000))&#xA;&#x9;  end as ADDED_VALUE_DESC&#xA;&#x9; from&#xA;&#x9; (&#xA;&#x9;&#x9; select b.c_contesto, c.pkey1, a.tipodato, a.descrizione, a.c_tabella, a.numero, a.data, a.text, a.boolean, d.descrizione as tabella_text&#xA;&#x9;&#x9; from&#xA;&#x9;&#x9;&#x9;(select id_config, id_valore, tipodato, descrizione, c_tabella, numero, data, text, boolean from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL] where site_id = ? and row_sts_flg=1) a join&#xA;&#x9;&#x9;&#x9;(select id, c_contesto from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG] where site_id = ? and row_sts_flg=1) b on a.id_config = b.id join&#xA;&#x9;&#x9;&#x9;(select id, pkey1 from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI] where site_id = ? and row_sts_flg=1) c on a.id_valore = c.id left join&#xA;&#x9;&#x9;&#x9;(select C_tabella, codice, descrizione from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE] where site_id = ? and row_sts_flg=1) d on a.C_Tabella = d.C_tabella and a.text = d.codice&#xA;&#x9; ) a&#xA; ) a left join&#xA;&#xA; (select ID as lkp_ID, article_cd from [db_owner].TBDWAN_ARTICLE where site_id = ? and row_sts_flg=1) b on a.ENTITY_CD = B.article_cd full join&#xA; &#xA; (select id as trg_ID, ENTITY_CD, ENTITY_CATEGORY_CD, ADDED_VALUE_CD, ADDED_VALUE_TYPE_DESC, row_sts_flg as trg_row_sts_flg FROM [db_owner].TBDWFT_ADDED_VALUE WHERE site_id = ?) trg &#xA;&#x9;on a.ENTITY_CD = trg.ENTITY_CD and a.ENTITY_CATEGORY_CD = trg.ENTITY_CATEGORY_CD and a.ADDED_VALUE_CD = trg.ADDED_VALUE_CD and a.ADDED_VALUE_TYPE_DESC = trg.ADDED_VALUE_TYPE_DESC&#xA;&#xA;where trg.trg_ID is not null and a.ENTITY_CD is not null;&#xA;&#xA;--update the target DWH table&#xA;UPDATE tbdwft_added_value &#xA;SET &#xA;TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;      ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,SITE_ID = b.SITE_ID&#xA;      ,SOURCE_SYSTEM_ID = b.SOURCE_SYSTEM_ID&#xA;      ,ROW_STS_FLG = 1&#xA;      ,ENTITY_CD = b.ENTITY_CD&#xA;      ,ENTITY_CATEGORY_CD = b.ENTITY_CATEGORY_CD&#xA;      ,ADDED_VALUE_CD = b.ADDED_VALUE_CD&#xA;      ,ADDED_VALUE_TYPE_DESC = b.ADDED_VALUE_TYPE_DESC&#xA;      ,ADDED_VALUE_DESC = b.ADDED_VALUE_DESC&#xA;      ,ENTITY_ID = b.ENTITY_ID&#xA;FROM tbdwft_added_value a join tbdwtmp_added_value b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE tbdwtmp_added_value;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="7"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="8"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="10"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDW_ERR_ADDED_VALUE_ins"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{74401ff4-5d7d-4cc4-9028-7ef8282c643e}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TBDW_ERR_ADDED_VALUE_ins"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="INSERT INTO [db_owner].[TBDW_ERR_ADDED_VALUE]&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, INSERT_DT,USER_CD, SITE_ID, SOURCE_SYSTEM_ID, ENTITY_CD, ENTITY_CATEGORY_CD, ADDED_VALUE_CD, ADDED_VALUE_TYPE_DESC, ADDED_VALUE_DESC, ENTITY_ID)&#xA; &#xA;select ?, ?, getdate(), ?, ?, ?, a.ENTITY_CD, a.ENTITY_CATEGORY_CD, a.ADDED_VALUE_CD, cast(a.ADDED_VALUE_TYPE_DESC as nvarchar(50)) as ADDED_VALUE_TYPE_DESC, a.ADDED_VALUE_DESC, b.lkp_ID&#xA;from&#xA;(&#xA;  select &#xA;   a.pkey1 as ENTITY_CD,&#xA;   a.c_contesto as ENTITY_CATEGORY_CD,&#xA;   a.descrizione as ADDED_VALUE_CD,&#xA;   case &#xA;  when a.tipodato = 0 then 'NUMBER'&#xA;  when a.tipodato = 1 then 'TEXT'&#xA;  when a.tipodato = 2 then 'DATE'&#xA;  when a.tipodato = 3 then 'TABLE'&#xA;  when a.tipodato = 4 then 'BOOL'&#xA;   end as ADDED_VALUE_TYPE_DESC,&#xA;&#xA;   case &#xA;    when a.tipodato = 0 then cast(a.numero as nvarchar(4000))&#xA;  when a.tipodato = 1 then cast(a.text as nvarchar(4000))&#xA;  when a.tipodato = 2 then convert(nvarchar, a.data, 120)&#xA;  when a.tipodato = 3 then cast(a.tabella_text as nvarchar(4000))&#xA;  when a.tipodato = 4 then cast(a.boolean as nvarchar(4000))&#xA;   end as ADDED_VALUE_DESC&#xA;  from&#xA;  (&#xA;   select b.c_contesto, c.pkey1, a.tipodato, a.descrizione, a.c_tabella, a.numero, a.data, a.text, a.boolean, d.descrizione as tabella_text&#xA;   from&#xA;   (select id_config, id_valore, tipodato, descrizione, c_tabella, numero, data, text, boolean from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL] where site_id = ? and row_sts_flg=1) a join&#xA;   (select id, c_contesto from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG] where site_id = ? and row_sts_flg=1) b on a.id_config = b.id join&#xA;   (select id, pkey1 from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI] where site_id = ? and row_sts_flg=1) c on a.id_valore = c.id left join&#xA;   (select C_tabella, codice, descrizione from [db_owner].[TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE] where site_id = ? and row_sts_flg=1) d on a.C_Tabella = d.C_tabella and a.text = d.codice&#xA;  ) a&#xA; ) a left join&#xA;&#xA; (select ID as lkp_ID, article_cd from [db_owner].TBDWAN_ARTICLE where site_id = ? and row_sts_flg=1) b on a.ENTITY_CD = B.article_cd full join&#xA; &#xA; (select id as trg_ID, ENTITY_CD, ENTITY_CATEGORY_CD, ADDED_VALUE_CD, ADDED_VALUE_TYPE_DESC, row_sts_flg as trg_row_sts_flg FROM [db_owner].TBDWFT_ADDED_VALUE WHERE site_id = ?) trg &#xA; on a.ENTITY_CD = trg.ENTITY_CD and a.ENTITY_CATEGORY_CD = trg.ENTITY_CATEGORY_CD and a.ADDED_VALUE_CD = trg.ADDED_VALUE_CD and a.ADDED_VALUE_TYPE_DESC = trg.ADDED_VALUE_TYPE_DESC&#xA;&#xA;where trg.trg_ID is null and (a.ENTITY_CD is null or a.ENTITY_CATEGORY_CD is null or a.ADDED_VALUE_CD is null or a.ADDED_VALUE_TYPE_DESC is null)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="7"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="8"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="10"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{10B61EAC-412D-4535-9ADA-B3560BCB4007}"
+              DTS:From="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_upd"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_del" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{70348205-D6B7-4F06-A6A2-99D11CAA3041}"
+              DTS:From="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDW_ERR_ADDED_VALUE_ins"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\DWH LOAD\TBDWFT_ADDED_VALUE\Last Upd TBLOG_PACKAGE_TABLE" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{2D3486E9-5364-4819-BE40-47C26D9DEB10}"
+              DTS:From="Package\DWH LOAD\TBDWFT_ADDED_VALUE\Assign TABLE_TARGET_CD"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package\DWH LOAD\TBDWFT_ADDED_VALUE\Ins_Upd TBLOG_PACKAGE_TABLE" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 3]"
+              DTS:CreationName=""
+              DTS:DTSID="{5064C647-85F8-4A48-8621-4083AFA02254}"
+              DTS:From="Package\DWH LOAD\TBDWFT_ADDED_VALUE\Ins_Upd TBLOG_PACKAGE_TABLE"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 3"
+              DTS:To="Package\DWH LOAD\TBDWFT_ADDED_VALUE\MAX TABLE ID" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 4]"
+              DTS:CreationName=""
+              DTS:DTSID="{1EE7F608-6F3E-4390-8106-5026B5155E81}"
+              DTS:From="Package\DWH LOAD\TBDWFT_ADDED_VALUE\MAX TABLE ID"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 4"
+              DTS:To="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_ins" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 5]"
+              DTS:CreationName=""
+              DTS:DTSID="{6326B2C4-A1A8-4212-B71A-06D35F0C6D0B}"
+              DTS:From="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_del"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 5"
+              DTS:To="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDW_ERR_ADDED_VALUE_ins" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 6]"
+              DTS:CreationName=""
+              DTS:DTSID="{72780A76-E725-4C60-B2E9-503C7331DE70}"
+              DTS:From="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_ins"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 6"
+              DTS:To="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_upd" />
+          </DTS:PrecedenceConstraints>
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\DWH LOAD\TBDWFT_ADDED_VALUE.EventHandlers[OnPreExecute]"
+              DTS:CreationName="OnPreExecute"
+              DTS:DTSID="{6368EF0E-048B-476C-884E-6E8A63D7FB9B}"
+              DTS:EventID="0"
+              DTS:EventName="OnPreExecute"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{681793DA-B939-4303-81B4-A3C5F06B8EEF}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables />
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Email SUCCESS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{9E8690C5-31E1-4742-B31F-EB5ADF06414A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Email SUCCESS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_SUCCESS"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::in_MAIL_OBJECT_SUCCESS"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Ins TBLOG_PACKAGE + Max ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D6AD3021-AED0-4809-AAF8-8CC82C0E4A99}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ins TBLOG_PACKAGE + Max ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?&#xA;and site_id = ?;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="MAX_ID"
+            SQLTask:DtsVariableName="User::out_MAX_ID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::in_PACKAGE_SCOPE_DESC"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_DESC"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::in_TARGET_SYSTEM_DESC"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="7"
+            SQLTask:DtsVariableName="$Project::in_USER_CD"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="8"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="9"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::in_PARENT_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="10"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Last Upd TBLOG_PACKAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{34BBE941-A46C-498F-BE95-18BC2EE93FF2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Last Upd TBLOG_PACKAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_SUCCESS_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_PACKAGE_RUN_FLG = 1&#xA;and SITE_ID =?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE&#xA;SET END_DT = getdate(), LAST_SUCCESS_PACKAGE_RUN_FLG=1&#xA;WHERE ID=?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::out_MAX_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::out_MAX_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Upd TBLOG_PACKAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{76F7A824-8B21-4CFC-8B1A-2041F1322BFC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Upd TBLOG_PACKAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="--update previous last package run to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and  LAST_PACKAGE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::out_MAX_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B8287EC-8CB8-42E2-B002-639436A6A32B}"
+      DTS:From="Package\Ins TBLOG_PACKAGE + Max ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Upd TBLOG_PACKAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{263A7D6D-FAB2-4E40-848B-56C58A27A90D}"
+      DTS:From="Package\DWH LOAD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Last Upd TBLOG_PACKAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{E4CB48B3-4630-4071-BE82-0C48CB2183DA}"
+      DTS:From="Package\Upd TBLOG_PACKAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\DWH LOAD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{2EE3D6F5-1BAA-4A71-B1D7-C34977AC16AE}"
+      DTS:From="Package\Assign SOURCE_SYSTEM_ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Ins TBLOG_PACKAGE + Max ID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{858F6FCE-CA4C-4A3D-A7F8-30BE5FAC00C9}"
+      DTS:From="Package\Assign SITE_ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Ins TBLOG_PACKAGE + Max ID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{87103922-AEAC-455D-876A-6BFE73EA6DA4}"
+      DTS:From="Package\Last Upd TBLOG_PACKAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Email SUCCESS" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{0778F865-7CAE-46EE-A52C-E86C504A5775}"
+      DTS:EventID="9110279"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{92CE52E9-A026-40AD-AD5E-39CAA251F84F}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{97ED7341-1CD8-413E-B372-6CDB781CD99D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Email ERROR"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Assign SITE_ID"
+          TopLeft="199.714285714286,168.809523809525" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Assign SOURCE_SYSTEM_ID"
+          TopLeft="180.714285714286,100.809523809525" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE\Assign TABLE_TARGET_CD"
+          TopLeft="244.5,5.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE\Ins_Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="225.5,107.5" />
+        <NodeLayout
+          Size="263,42"
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE\Last Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="232.5,583.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE\MAX TABLE ID"
+          TopLeft="278,209.5" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDW_ERR_ADDED_VALUE_ins"
+          TopLeft="239.5,505.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_del"
+          TopLeft="241,428" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_ins"
+          TopLeft="239,289" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE\TBDWFT_ADDED_VALUE_upd"
+          TopLeft="244,359" />
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint]"
+          TopLeft="359.5,401">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 1]"
+          TopLeft="363.75,547.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 2]"
+          TopLeft="355.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 3]"
+          TopLeft="397.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,60"
+              Start="0,0"
+              End="-42,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-38,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,24.2201834862385"
+                    Point2="-42,24.2201834862385"
+                    Point3="-42,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-42,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 4]"
+          TopLeft="355.25,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.5"
+              Start="0,0"
+              End="0,30">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 5]"
+          TopLeft="360.25,470">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.5"
+              Start="0,0"
+              End="0,28">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE.PrecedenceConstraints[Constraint 6]"
+          TopLeft="358.5,331">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\DWH LOAD\TBDWFT_ADDED_VALUE"
+          FontInfo="{assembly:Null}"
+          Size="194,40"
+          Id="3a32ec32-6ec9-4287-8f3a-b58ed7f11262"
+          TopLeft="34.5,295.5" />
+        <AnnotationLayout
+          Text="To be specify target table name"
+          ParentId="Package\DWH LOAD\TBDWFT_ADDED_VALUE"
+          FontInfo="{assembly:Null}"
+          Size="195,40"
+          Id="c6f553ec-c823-4c2c-9643-8a8ddd9f60c6"
+          TopLeft="29.5,10.5" />
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\DWH LOAD\TBDWFT_ADDED_VALUE"
+          FontInfo="{assembly:Null}"
+          Size="194,40"
+          Id="9dbd84db-82c5-4c5e-a967-e4181bf58d72"
+          TopLeft="44.5,362.5" />
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\DWH LOAD\TBDWFT_ADDED_VALUE"
+          FontInfo="{assembly:Null}"
+          Size="194,40"
+          Id="26876ffe-1234-47d1-82cf-98da2ef61343"
+          TopLeft="35.5,421.5" />
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\DWH LOAD\TBDWFT_ADDED_VALUE"
+          FontInfo="{assembly:Null}"
+          Size="194,40"
+          Id="bca41150-424a-4f4e-aa97-5f081d22e2b9"
+          TopLeft="35.5,507.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="696,781"
+          Size="696,43"
+          Id="Package\DWH LOAD\TBDWFT_ADDED_VALUE"
+          TopLeft="28,5.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="827,907"
+          Size="827,43"
+          Id="Package\DWH LOAD"
+          TopLeft="60.714285714286,359.428571428571" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Email SUCCESS"
+          TopLeft="710.904761904764,804.809523809525" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Ins TBLOG_PACKAGE + Max ID"
+          TopLeft="700.571428571435,133.587301587301" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Last Upd TBLOG_PACKAGE"
+          TopLeft="702.238095238094,696.920634920634" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Upd TBLOG_PACKAGE"
+          TopLeft="721.349206349204,210.142857142857" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="820.710317460315,175.587301587301">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.5555555555552"
+              Start="0,0"
+              End="0,27.0555555555552">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.0555555555552" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="474.214285714286,402.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="339.023809523808,294.492063492063"
+              Start="0,0"
+              End="339.023809523808,286.992063492063">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,143.246031746032" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,143.246031746032"
+                    Point2="0,147.246031746032"
+                    Point3="4,147.246031746032" />
+                  <mssgle:LineSegment
+                    End="335.023809523808,147.246031746032" />
+                  <mssgle:CubicBezierSegment
+                    Point1="335.023809523808,147.246031746032"
+                    Point2="339.023809523808,147.246031746032"
+                    Point3="339.023809523808,151.246031746032" />
+                  <mssgle:LineSegment
+                    End="339.023809523808,286.992063492063" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="820.849206349204,252.142857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-346.634920634918,107.285714285714"
+              Start="0,0"
+              End="-346.634920634918,99.785714285714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.642857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.642857142857"
+                    Point2="0,53.642857142857"
+                    Point3="-4,53.642857142857" />
+                  <mssgle:LineSegment
+                    End="-342.634920634918,53.642857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-342.634920634918,53.642857142857"
+                    Point2="-346.634920634918,53.642857142857"
+                    Point3="-346.634920634918,57.642857142857" />
+                  <mssgle:LineSegment
+                    End="-346.634920634918,99.785714285714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="410.714285714286,121.809523809525">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="289.857142857149,32.777777777776"
+              Start="0,0"
+              End="282.357142857149,32.777777777776">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="140.928571428575,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="140.928571428575,0"
+                    Point2="144.928571428575,0"
+                    Point3="144.928571428575,4" />
+                  <mssgle:LineSegment
+                    End="144.928571428575,28.777777777776" />
+                  <mssgle:CubicBezierSegment
+                    Point1="144.928571428575,28.777777777776"
+                    Point2="144.928571428575,32.777777777776"
+                    Point3="148.928571428575,32.777777777776" />
+                  <mssgle:LineSegment
+                    End="282.357142857149,32.777777777776" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="356.714285714286,189.809523809525">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="343.857142857149,-29.5555555555573"
+              Start="0,0"
+              End="336.357142857149,-29.5555555555573">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="194.743119266059,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="194.743119266059,0"
+                    Point2="198.743119266059,0"
+                    Point3="198.743119266059,-4" />
+                  <mssgle:LineSegment
+                    End="198.743119266059,-25.5555555555573" />
+                  <mssgle:CubicBezierSegment
+                    Point1="198.743119266059,-25.5555555555573"
+                    Point2="198.743119266059,-29.5555555555573"
+                    Point3="202.743119266059,-29.5555555555573" />
+                  <mssgle:LineSegment
+                    End="336.357142857149,-29.5555555555573" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="813.238095238094,738.920634920634">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.833333333333,65.888888888889"
+              Start="0,0"
+              End="-20.833333333333,58.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.9444444444445"
+                    Point2="0,32.9444444444445"
+                    Point3="-4,32.9444444444445" />
+                  <mssgle:LineSegment
+                    End="-16.833333333333,32.9444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.833333333333,32.9444444444445"
+                    Point2="-20.833333333333,32.9444444444445"
+                    Point3="-20.833333333333,36.9444444444445" />
+                  <mssgle:LineSegment
+                    End="-20.833333333333,58.388888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package.EventHandlers[OnError]\Email ERROR"
+          TopLeft="65,63" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\DWH LOAD\TBDWFT_ADDED_VALUE.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
+          TopLeft="265,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

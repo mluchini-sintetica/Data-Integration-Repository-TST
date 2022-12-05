@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Data Integration Repository", "Data Integration Repository.dtproj", "{D7416E82-8E23-4FF9-8C10-C95486300594}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Data Integration Repository", "Data Integration Repository.dtproj", "{C14E512A-0AED-48CA-89A8-212B1FE09603}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Test|Default = Test|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D7416E82-8E23-4FF9-8C10-C95486300594}.Development|Default.ActiveCfg = Development
-		{D7416E82-8E23-4FF9-8C10-C95486300594}.Development|Default.Build.0 = Development
-		{D7416E82-8E23-4FF9-8C10-C95486300594}.Test|Default.ActiveCfg = Test
-		{D7416E82-8E23-4FF9-8C10-C95486300594}.Test|Default.Build.0 = Test
+		{C14E512A-0AED-48CA-89A8-212B1FE09603}.Development|Default.ActiveCfg = Development
+		{C14E512A-0AED-48CA-89A8-212B1FE09603}.Development|Default.Build.0 = Development
+		{C14E512A-0AED-48CA-89A8-212B1FE09603}.Test|Default.ActiveCfg = Test
+		{C14E512A-0AED-48CA-89A8-212B1FE09603}.Test|Default.Build.0 = Test
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7F8CB511-8D86-494B-B44E-03691DE4E3CF}
+		SolutionGuid = {F105BA37-EC1E-441E-A8DD-3DBC51CCA1DE}
 	EndGlobalSection
 EndGlobal

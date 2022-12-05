@@ -3,7 +3,7 @@
   DTS:refId="Package"
   DTS:CreationDate="5/27/2020 2:32:19 PM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="SRV-DIR-TST"
+  DTS:CreatorComputerName="SRV-DIR-DEV"
   DTS:CreatorName="SINTE00\mluchini"
   DTS:DTSID="{25D979A8-DE3C-41FD-B5F3-F66A84D855E1}"
   DTS:EnableConfig="True"
@@ -13,8 +13,8 @@
   DTS:ObjectName="SEA_VISION_STG_cv"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="324"
-  DTS:VersionGUID="{F9FD6A23-7290-4C8C-9D3E-02D27618BBDB}">
+  DTS:VersionBuild="326"
+  DTS:VersionGUID="{CA048787-8F52-48CD-99C9-447B9C2C90EF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -434,7 +434,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -456,7 +456,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -475,7 +475,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -553,7 +553,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -595,7 +595,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2029,7 +2029,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2051,7 +2051,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -2070,7 +2070,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2148,7 +2148,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2190,7 +2190,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3075,6 +3075,1144 @@
             </DTS:EventHandler>
           </DTS:EventHandlers>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{98fc96e1-d919-4f59-ada6-5520e1157e29}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TBST_SEA_REG_RECIPEDETAILS">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="Output related to the last ID run for the table"
+              DTS:DTSID="{44df519a-a13b-4d86-827a-b270e07ecb0d}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="User"
+              DTS:ObjectName="out_MAX_TABLE_ID">
+              <DTS:VariableValue
+                DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="Table target name to be loaded by the flow"
+              DTS:DTSID="{55cc1ed6-b4fa-46f9-a325-48014b6d944c}"
+              DTS:IncludeInDebugDump="2345"
+              DTS:Namespace="User"
+              DTS:ObjectName="out_TABLE_TARGET_CD">
+              <DTS:VariableValue
+                DTS:DataType="8"
+                xml:space="preserve"></DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Assign TABLE_TARGET_CD"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{1f303c6b-dba6-4cb3-b99a-7db8a3a870fd}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Assign TABLE_TARGET_CD"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="select 'TBST_SEA_REG_RECIPEDETAILS' as TABLE_TARGET_CD"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="TABLE_TARGET_CD"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Delete STG TRG TABLE"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{e5ab360f-8b96-4a69-a9b0-19b5b8ee0587}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Delete STG TRG TABLE"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="delete from  where site_id = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Ins_Upd TBLOG_PACKAGE_TABLE"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{c36e1934-7cbc-4f72-b409-211fa274e6d4}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="System::PackageName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="8"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="7"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Last Upd TBLOG_PACKAGE_TABLE"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{1e489539-cf9d-464c-88df-0c376a408739}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\MAX TABLE ID"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{c62baaab-2978-4a0b-a4e1-5077c060238e}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="MAX TABLE ID"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="3">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? and&#xA;SITE_ID = ?"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="MAX_TABLE_ID"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS"
+              DTS:CreationName="Microsoft.Pipeline"
+              DTS:Description="Data Flow Task"
+              DTS:DTSID="{58be700a-bf38-4c3b-9ad7-c22974da9fdc}"
+              DTS:ExecutableType="Microsoft.Pipeline"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TBST_SEA_REG_RECIPEDETAILS"
+              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <pipeline
+                  version="1">
+                  <components>
+                    <component
+                      refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields"
+                      componentClassID="Microsoft.DerivedColumn"
+                      contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                      description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                      name="Add Technical Fields"
+                      usesDispositions="true">
+                      <inputs>
+                        <input
+                          refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Inputs[Derived Column Input]"
+                          description="Input to the Derived Column Transformation"
+                          name="Derived Column Input">
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output]"
+                          description="Default Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          name="Derived Column Output"
+                          synchronousInputId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]"
+                              name="TBLOG_PACKAGE_ID"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[User::out_MAX_ID]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[User::out_MAX_ID]</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[INSERT_DT]"
+                              dataType="dbTimeStamp"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[INSERT_DT]"
+                              name="INSERT_DT"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">[GETDATE]()</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">GETDATE()</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[UPDATE_DT]"
+                              dataType="dbTimeStamp"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[UPDATE_DT]"
+                              name="UPDATE_DT"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">[GETDATE]()</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">GETDATE()</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              length="11"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]"
+                              name="USER_CD"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[$Project::in_USER_CD]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[$Project::in_USER_CD]</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[SITE_ID]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[SITE_ID]"
+                              name="SITE_ID"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[User::out_SITE_ID]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[User::out_SITE_ID]</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]"
+                              name="SOURCE_SYSTEM_ID"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[User::out_SOURCE_SYSTEM_ID]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[User::out_SOURCE_SYSTEM_ID]</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                              name="TBLOG_PACKAGE_TABLE_ID"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[User::out_MAX_TABLE_ID]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[User::out_MAX_TABLE_ID]</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Error Output]"
+                          description="Error Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Derived Column Error Output"
+                          synchronousInputId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination"
+                      componentClassID="Microsoft.OLEDBDestination"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="OLE DB Destination"
+                      usesDispositions="true"
+                      version="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[db_owner].[TBST_SEA_REG_RECIPEDETAILS]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">3</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Connections[OleDbConnection]"
+                          connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                          errorOrTruncationOperation="Insert"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="OLE DB Destination Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RecipeID]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="RecipeID"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecipeID]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[RecipeID]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LineID]"
+                              cachedDataType="i4"
+                              cachedName="LineID"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineID]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineID]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Description]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="Description"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[Description]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ActiveFlag]"
+                              cachedDataType="bool"
+                              cachedName="ActiveFlag"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveFlag]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TBLOG_PACKAGE_ID]"
+                              cachedDataType="i4"
+                              cachedName="TBLOG_PACKAGE_ID"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_ID]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INSERT_DT]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="INSERT_DT"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_DT]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[INSERT_DT]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UPDATE_DT]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="UPDATE_DT"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATE_DT]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[UPDATE_DT]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[USER_CD]"
+                              cachedDataType="wstr"
+                              cachedLength="11"
+                              cachedName="USER_CD"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[USER_CD]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SITE_ID]"
+                              cachedDataType="i4"
+                              cachedName="SITE_ID"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SITE_ID]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[SITE_ID]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_SYSTEM_ID]"
+                              cachedDataType="i4"
+                              cachedName="SOURCE_SYSTEM_ID"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_ID]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                              cachedDataType="i4"
+                              cachedName="TBLOG_PACKAGE_TABLE_ID"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_TABLE_ID]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SerializationFlag]"
+                              cachedDataType="i4"
+                              cachedName="SerializationFlag"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SerializationFlag]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[SerializationFlag]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Lock]"
+                              cachedDataType="bool"
+                              cachedName="Lock"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lock]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lock]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Version]"
+                              cachedDataType="i4"
+                              cachedName="Version"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VersionDate]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="VersionDate"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VersionDate]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[VersionDate]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VersionUserID]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="VersionUserID"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VersionUserID]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[VersionUserID]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VersionInfo]"
+                              cachedDataType="nText"
+                              cachedName="VersionInfo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VersionInfo]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[VersionInfo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ExportServer]"
+                              cachedDataType="i4"
+                              cachedName="ExportServer"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExportServer]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExportServer]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_ID]"
+                              dataType="i8"
+                              name="TBLOG_PACKAGE_ID" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_TABLE_ID]"
+                              dataType="i8"
+                              name="TBLOG_PACKAGE_TABLE_ID" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_DT]"
+                              dataType="dbTimeStamp"
+                              name="INSERT_DT" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATE_DT]"
+                              dataType="dbTimeStamp"
+                              name="UPDATE_DT" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DELETE_DT]"
+                              dataType="dbTimeStamp"
+                              name="DELETE_DT" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[USER_CD]"
+                              dataType="wstr"
+                              length="100"
+                              name="USER_CD" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SITE_ID]"
+                              dataType="i8"
+                              name="SITE_ID" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_ID]"
+                              dataType="i8"
+                              name="SOURCE_SYSTEM_ID" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ROW_STS_FLG]"
+                              dataType="bool"
+                              name="ROW_STS_FLG" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecipeID]"
+                              dataType="wstr"
+                              length="50"
+                              name="RecipeID" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineID]"
+                              dataType="i4"
+                              name="LineID" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                              dataType="wstr"
+                              length="50"
+                              name="Description" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
+                              dataType="bool"
+                              name="ActiveFlag" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SerializationFlag]"
+                              dataType="i4"
+                              name="SerializationFlag" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lock]"
+                              dataType="bool"
+                              name="Lock" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
+                              dataType="i4"
+                              name="Version" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VersionDate]"
+                              dataType="dbTimeStamp"
+                              name="VersionDate" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VersionUserID]"
+                              dataType="wstr"
+                              length="50"
+                              name="VersionUserID" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VersionInfo]"
+                              dataType="nText"
+                              name="VersionInfo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExportServer]"
+                              dataType="i4"
+                              name="ExportServer" />
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source"
+                      componentClassID="Microsoft.OLEDBSource"
+                      contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                      description="OLE DB Source"
+                      name="OLE DB Source"
+                      usesDispositions="true"
+                      version="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[dbo].[REG_RecipeDetails]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                        <property
+                          dataType="System.String"
+                          description="The variable that contains the SQL command to be executed."
+                          name="SqlCommandVariable"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">0</property>
+                        <property
+                          dataType="System.String"
+                          description="The mappings between the parameters in the SQL command and variables."
+                          name="ParameterMapping"></property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Connections[OleDbConnection]"
+                          connectionManagerID="{B9242D40-B41F-4749-81FB-39FE8BFB232A}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[192 168 162 15 SeaVisionPROD_CV SEAVISION_DIR_R]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <outputs>
+                        <output
+                          refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output]"
+                          name="OLE DB Source Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[RecipeID]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RecipeID]"
+                              length="50"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[RecipeID]"
+                              name="RecipeID"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineID]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineID]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineID]"
+                              name="LineID"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[Description]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                              length="50"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[Description]"
+                              name="Description"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveFlag]"
+                              dataType="bool"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveFlag]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveFlag]"
+                              name="ActiveFlag"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[SerializationFlag]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SerializationFlag]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[SerializationFlag]"
+                              name="SerializationFlag"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lock]"
+                              dataType="bool"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lock]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lock]"
+                              name="Lock"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Version]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]"
+                              name="Version"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[VersionDate]"
+                              dataType="dbTimeStamp"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VersionDate]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[VersionDate]"
+                              name="VersionDate"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[VersionUserID]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VersionUserID]"
+                              length="50"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[VersionUserID]"
+                              name="VersionUserID"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[VersionInfo]"
+                              dataType="nText"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VersionInfo]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[VersionInfo]"
+                              name="VersionInfo"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExportServer]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ExportServer]"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExportServer]"
+                              name="ExportServer"
+                              truncationRowDisposition="FailComponent" />
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RecipeID]"
+                              dataType="wstr"
+                              length="50"
+                              name="RecipeID" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineID]"
+                              dataType="i4"
+                              name="LineID" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                              dataType="wstr"
+                              length="50"
+                              name="Description" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveFlag]"
+                              dataType="bool"
+                              name="ActiveFlag" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SerializationFlag]"
+                              dataType="i4"
+                              name="SerializationFlag" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lock]"
+                              dataType="bool"
+                              name="Lock" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Version]"
+                              dataType="i4"
+                              name="Version" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VersionDate]"
+                              dataType="dbTimeStamp"
+                              name="VersionDate" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VersionUserID]"
+                              dataType="wstr"
+                              length="50"
+                              name="VersionUserID" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VersionInfo]"
+                              dataType="nText"
+                              name="VersionInfo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ExportServer]"
+                              dataType="i4"
+                              name="ExportServer" />
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                          isErrorOut="true"
+                          name="OLE DB Source Error Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RecipeID]"
+                              dataType="wstr"
+                              length="50"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RecipeID]"
+                              name="RecipeID" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LineID]"
+                              dataType="i4"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LineID]"
+                              name="LineID" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Description]"
+                              dataType="wstr"
+                              length="50"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Description]"
+                              name="Description" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveFlag]"
+                              dataType="bool"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveFlag]"
+                              name="ActiveFlag" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SerializationFlag]"
+                              dataType="i4"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SerializationFlag]"
+                              name="SerializationFlag" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lock]"
+                              dataType="bool"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lock]"
+                              name="Lock" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Version]"
+                              dataType="i4"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Version]"
+                              name="Version" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VersionDate]"
+                              dataType="dbTimeStamp"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VersionDate]"
+                              name="VersionDate" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VersionUserID]"
+                              dataType="wstr"
+                              length="50"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VersionUserID]"
+                              name="VersionUserID" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VersionInfo]"
+                              dataType="nText"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VersionInfo]"
+                              name="VersionInfo" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ExportServer]"
+                              dataType="i4"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ExportServer]"
+                              name="ExportServer" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                  </components>
+                  <paths>
+                    <path
+                      refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS.Paths[Derived Column Output]"
+                      endId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      name="Derived Column Output"
+                      startId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS.Paths[OLE DB Source Output]"
+                      endId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields.Inputs[Derived Column Input]"
+                      name="OLE DB Source Output"
+                      startId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source.Outputs[OLE DB Source Output]" />
+                  </paths>
+                </pipeline>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{8f7654cb-1e52-4a13-ba3d-a2336999fe61}"
+              DTS:From="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Last Upd TBLOG_PACKAGE_TABLE" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{74acdd69-6d53-4ea1-be05-8c8bbe26f404}"
+              DTS:From="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Ins_Upd TBLOG_PACKAGE_TABLE"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Delete STG TRG TABLE" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{e734ae08-de74-4e9d-8369-c5637174b7dd}"
+              DTS:From="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Assign TABLE_TARGET_CD"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Ins_Upd TBLOG_PACKAGE_TABLE" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint 3]"
+              DTS:CreationName=""
+              DTS:DTSID="{245d3b27-64a6-43f1-9e9e-275191af59c2}"
+              DTS:From="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Ins_Upd TBLOG_PACKAGE_TABLE"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 3"
+              DTS:To="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\MAX TABLE ID" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint 4]"
+              DTS:CreationName=""
+              DTS:DTSID="{e5a8f33a-b46f-4983-8476-7decabefd3e9}"
+              DTS:From="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Delete STG TRG TABLE"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 4"
+              DTS:To="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint 5]"
+              DTS:CreationName=""
+              DTS:DTSID="{841532f5-098d-4b7a-b9f1-cdd7d1666d15}"
+              DTS:From="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\MAX TABLE ID"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 5"
+              DTS:To="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS" />
+          </DTS:PrecedenceConstraints>
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.EventHandlers[OnPreExecute]"
+              DTS:CreationName="OnPreExecute"
+              DTS:DTSID="{de8b163f-0bde-4a80-a400-e90d0303794c}"
+              DTS:EventID="0"
+              DTS:EventName="OnPreExecute"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{e17ee0d3-2310-4cd8-8f3e-1e7b606b6c31}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables />
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+        </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
     <DTS:Executable
@@ -3499,9 +4637,9 @@
           TopLeft="37.5,314.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="515,612"
-          Size="515,655"
+          Size="515,43"
           Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES"
           TopLeft="5.5,6.50000000000011" />
         <NodeLayout
@@ -3741,11 +4879,248 @@
           Size="529,651"
           Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER"
           TopLeft="559.5,5.5" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Assign TABLE_TARGET_CD"
+          TopLeft="244.5,5.5" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Delete STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Ins_Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="225.5,107.5" />
+        <NodeLayout
+          Size="263,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\Last Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="224,413.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\MAX TABLE ID"
+          TopLeft="278,209.5" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS"
+          TopLeft="242,323.5" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint]"
+          TopLeft="371,365.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.5,48"
+              Start="0,0"
+              End="-15.5,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="-4,24" />
+                  <mssgle:LineSegment
+                    End="-11.5,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.5,24"
+                    Point2="-15.5,24"
+                    Point3="-15.5,28" />
+                  <mssgle:LineSegment
+                    End="-15.5,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint 1]"
+          TopLeft="313.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202,60"
+              Start="0,0"
+              End="-202,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-198,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-198,24.2201834862385"
+                    Point2="-202,24.2201834862385"
+                    Point3="-202,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-202,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint 2]"
+          TopLeft="355.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint 3]"
+          TopLeft="397.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,60"
+              Start="0,0"
+              End="-42,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-38,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,24.2201834862385"
+                    Point2="-42,24.2201834862385"
+                    Point3="-42,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-42,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint 4]"
+          TopLeft="111.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="217.833333333333,72"
+              Start="0,0"
+              End="217.833333333333,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.9337442218798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.9337442218798"
+                    Point2="0,42.9337442218798"
+                    Point3="4,42.9337442218798" />
+                  <mssgle:LineSegment
+                    End="213.833333333333,42.9337442218798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="213.833333333333,42.9337442218798"
+                    Point2="217.833333333333,42.9337442218798"
+                    Point3="217.833333333333,46.9337442218798" />
+                  <mssgle:LineSegment
+                    End="217.833333333333,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.PrecedenceConstraints[Constraint 5]"
+          TopLeft="355.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.1666666666666,72"
+              Start="0,0"
+              End="57.1666666666666,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.9337442218798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.9337442218798"
+                    Point2="0,42.9337442218798"
+                    Point3="4,42.9337442218798" />
+                  <mssgle:LineSegment
+                    End="53.1666666666666,42.9337442218798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.1666666666666,42.9337442218798"
+                    Point2="57.1666666666666,42.9337442218798"
+                    Point3="57.1666666666666,46.9337442218798" />
+                  <mssgle:LineSegment
+                    End="57.1666666666666,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS"
+          FontInfo="{assembly:Null}"
+          Size="194,40"
+          Id="ec5c9837-a17f-4eeb-b967-f9a37174b1df"
+          TopLeft="35.5,310.5" />
+        <AnnotationLayout
+          Text="To be specify target table name"
+          ParentId="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS"
+          FontInfo="{assembly:Null}"
+          Size="195,40"
+          Id="13799d22-fd60-48f0-aa86-71f9af7cca5d"
+          TopLeft="29.5,10.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1455,996"
-          Size="1455,1039"
+          PanelSize="529,608"
+          Size="529,651"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS"
+          TopLeft="1200,22" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="1784,996"
+          Size="1784,1039"
           Id="Package\STAGING LOAD"
           TopLeft="208,255" />
         <NodeLayout
@@ -3776,13 +5151,13 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="935.5,1294">
+          TopLeft="1100,1294">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-194.166666666667,-680.888888888889"
+              EndConnector="-358.666666666667,-680.888888888889"
               Start="0,0"
-              End="-194.166666666667,-673.388888888889">
+              End="-358.666666666667,-673.388888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3793,13 +5168,13 @@
                     Point2="0,-340.444444444445"
                     Point3="-4,-340.444444444445" />
                   <mssgle:LineSegment
-                    End="-190.166666666667,-340.444444444445" />
+                    End="-354.666666666667,-340.444444444445" />
                   <mssgle:CubicBezierSegment
-                    Point1="-190.166666666667,-340.444444444445"
-                    Point2="-194.166666666667,-340.444444444445"
-                    Point3="-194.166666666667,-344.444444444445" />
+                    Point1="-354.666666666667,-340.444444444445"
+                    Point2="-358.666666666667,-340.444444444445"
+                    Point3="-358.666666666667,-344.444444444445" />
                   <mssgle:LineSegment
-                    End="-194.166666666667,-673.388888888889" />
+                    End="-358.666666666667,-673.388888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3814,9 +5189,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="186.555555555556,86.666666666667"
+              EndConnector="351.055555555556,86.666666666667"
               Start="0,0"
-              End="186.555555555556,79.166666666667">
+              End="351.055555555556,79.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3827,13 +5202,13 @@
                     Point2="0,43.3333333333335"
                     Point3="4,43.3333333333335" />
                   <mssgle:LineSegment
-                    End="182.555555555556,43.3333333333335" />
+                    End="347.055555555556,43.3333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="182.555555555556,43.3333333333335"
-                    Point2="186.555555555556,43.3333333333335"
-                    Point3="186.555555555556,47.3333333333335" />
+                    Point1="347.055555555556,43.3333333333335"
+                    Point2="351.055555555556,43.3333333333335"
+                    Point3="351.055555555556,47.3333333333335" />
                   <mssgle:LineSegment
-                    End="186.555555555556,79.166666666667" />
+                    End="351.055555555556,79.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4214,6 +5589,132 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
+          TopLeft="265,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source"
+          TopLeft="266,68" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\Add Technical Fields"
+          TopLeft="282,271" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination"
+          TopLeft="329,417" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS.Paths[Derived Column Output]"
+          TopLeft="372.5,313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45,104"
+              Start="0,0"
+              End="45,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48"
+                    Point2="0,52"
+                    Point3="4,52" />
+                  <mssgle:LineSegment
+                    End="41,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41,52"
+                    Point2="45,52"
+                    Point3="45,56" />
+                  <mssgle:LineSegment
+                    End="45,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS.Paths[OLE DB Source Output]"
+          TopLeft="344.5,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28,161"
+              Start="0,0"
+              End="28,153.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,76.5"
+                    Point2="0,80.5"
+                    Point3="4,80.5" />
+                  <mssgle:LineSegment
+                    End="24,80.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24,80.5"
+                    Point2="28,80.5"
+                    Point3="28,84.5" />
+                  <mssgle:LineSegment
+                    End="28,153.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_SEA_REG_RECIPEDETAILS\TBST_SEA_REG_RECIPEDETAILS\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -3,7 +3,7 @@
   DTS:refId="Package"
   DTS:CreationDate="5/27/2020 2:32:19 PM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="SRV-DIR-TST"
+  DTS:CreatorComputerName="SRV-DIR-DEV"
   DTS:CreatorName="SINTE00\mluchini"
   DTS:DTSID="{88207945-4F4B-4675-9D67-C7E6CAB4440C}"
   DTS:EnableConfig="True"
@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="653"
-  DTS:VersionGUID="{88FC3882-C893-48BC-8F10-828103630455}">
+  DTS:VersionBuild="656"
+  DTS:VersionGUID="{39740AB2-C2B6-457B-8053-5A77F3A620AD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="fHCPjgewG0A="
-            IV="sxvj+nrtcU5wz66oXgbYgQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="bK1QRqgf68c="
+            IV="qAYn28lvMfOX/aMPoE4Scw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>sxvj+nrtcU5wz66oXgbYgapJeRYit99nvy7aA5BfGvxMiTscEs1H3kzvaoThVjcc+DYs8fETnM38yzGF5ddF7j6i4gMaUO+rLqV/bm9x73QQ30Mvg7lP7AX/rM2cyijAh3QvbtFSwvJ7TsSPhVnWFbYXhsf2ysdpArIii5sdCnEBMJgsja3D52X/c5i7cjQL</CipherValue>
+              <CipherValue>qAYn28lvMfOX/aMPoE4Scxn/SeLTINDt5TKomga0SjzrrJ1TBG585xFyvQmpCzk4iRchLjWIKSlgCXVHgyk/hSjTM0oKrpq3XJFv4iRXouz4vtHFxxjEi2w2CW39LU3v+eW9R8ekgwA1vEjNY0ihB2csWCCt8t2rEAUDC7Jy2XmJv7qMF0vh+JgnZLl+D/DF</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -3709,7 +3709,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Max DATE Loaded and DWH_DELTA_DT"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3834,7 +3834,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="New Max DATE Loaded"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData

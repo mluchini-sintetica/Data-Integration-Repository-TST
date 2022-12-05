@@ -1,0 +1,3255 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/6/2021 1:17:23 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRV-DIR-DEV"
+  DTS:CreatorName="SINTE00\mluchini"
+  DTS:DTSID="{9905C29D-FB60-4F8E-B126-98045243A3D0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="NEMOSPED_ARTICLE"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="193"
+  DTS:VersionGUID="{A2FAB9BE-7B57-410D-B65A-E2A0D687DC2D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat Files - Mendrisio - Nemosped Invoices]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{909FCD17-7025-4FD2-9150-6039641001BB}"
+      DTS:ObjectName="Flat Files - Mendrisio - Nemosped Invoices">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::out_FILENAME]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2064"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codice_Articolo"
+              DTS:DTSID="{EECAB0CA-B95A-4E5E-8A87-7727B49B32E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Con_Lotto"
+              DTS:DTSID="{B97E85B0-E77D-4D91-9DC3-10971A826203}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Descrizione_Gruppo_Stock"
+              DTS:DTSID="{6AA83035-93E0-43E9-9A94-1BE1F9F8490B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Descrizione_Articolo"
+              DTS:DTSID="{9255E40D-2C7D-4DEF-A0B5-DF4E9179B458}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codice_UM"
+              DTS:DTSID="{272A1B7E-73FC-4992-9511-E667A68841BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Scadenza_GG"
+              DTS:DTSID="{586D6740-3694-4F5F-A9AF-D7101A0FDC08}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="N_SKU_per_conf"
+              DTS:DTSID="{0E1B9EB0-57B7-442E-BDE5-59D0863D0557}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="N_SKU_per_pallet"
+              DTS:DTSID="{39EC749B-7871-4249-8527-1563CB1C3FBE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EAN13"
+              DTS:DTSID="{0AFCE45C-309B-460C-965C-78257E5CC7C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GTIN"
+              DTS:DTSID="{7D5D0ED7-8E3F-41AA-9030-4F707D23043C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat Files - Mendrisio - Nemosped Items]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{18fdbeb7-b546-4171-8a53-a4e8b663e4b7}"
+      DTS:ObjectName="Flat Files - Mendrisio - Nemosped Items">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::out_FILENAME]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2064"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codice_Articolo"
+              DTS:DTSID="{CA5E332D-27C6-49BF-AAC7-EE6B7A1EC1F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Con_Lotto"
+              DTS:DTSID="{E98F2720-23D1-42CB-A3C6-DF0962DAFC5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Descrizione_Gruppo_Stock"
+              DTS:DTSID="{57A02871-0397-4F90-A630-EE0F8C78014D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="150"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Descrizione_Articolo"
+              DTS:DTSID="{6F42447C-D30E-44DD-8E34-38DB88524ACF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codice_UM"
+              DTS:DTSID="{EE686D96-95C0-49BF-BD5C-EC47B4E802C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Scadenza_GG"
+              DTS:DTSID="{AFA6FD3B-F716-4D1E-8745-2C7CC808F8CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="N_SKU_per_conf"
+              DTS:DTSID="{FFBFB184-00AC-4086-AD4D-24FB95FCA12B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="N_SKU_per_pallet"
+              DTS:DTSID="{28F18AF1-241E-46E2-992B-5CAD117F2539}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GTIN"
+              DTS:DTSID="{BFA15684-4768-4884-924D-B5C6D7BF611D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Filename"
+              DTS:DTSID="{55D65356-B5B4-4409-A9A1-2E64FEE03BBD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[testMarco_via_FTSSIS.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{269910A5-2079-4933-A238-66DA1D48537A}"
+      DTS:ObjectName="testMarco_via_FTSSIS.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\mluchini\Desktop\testMarco_via_FTSSIS.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{B50ADBEE-638A-44C1-876D-9F539934AFC9}"
+      DTS:ObjectName="in_SITE_CD">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Mendrisio</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8C4FDDA9-29CA-45D1-99E8-3BF9728B5422}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_OBJECT_ERROR">
+      <DTS:VariableValue
+        DTS:DataType="8">SRV-DIR-TST - SSIS package: NEMOSPED_ARTICLE ERROR</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AA3207A9-61B6-4F44-8190-3430E55CDC09}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; STARTED&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_OBJECT_START">
+      <DTS:VariableValue
+        DTS:DataType="8">SRV-DIR-TST - SSIS package: NEMOSPED_ARTICLE STARTED</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{14B7E1D9-35DC-4EDC-8176-7187B6353FDE}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
+      <DTS:VariableValue
+        DTS:DataType="8">SRV-DIR-TST - SSIS package: NEMOSPED_ARTICLE completed SUCCESSFULLY</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0C9FEBB1-32FF-49A4-A4BA-2F7CDD773481}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_RECIPIENTS_ERROR_pkg_override">
+      <DTS:VariableValue
+        DTS:DataType="8">mluchini@sintetica.com; egrassi@sintetica.com; jmilesi@sintetica.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0AD8C0A7-794B-4EE8-A554-B681298BE718}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::PackageName] "
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_PACKAGE_NAME_CD">
+      <DTS:VariableValue
+        DTS:DataType="8">NEMOSPED_ARTICLE</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4188BF11-E1AE-4478-82C2-7C5F09CD4E95}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
+      <DTS:VariableValue
+        DTS:DataType="8">This package loads Mendrisio articles to be sent to Nemosped</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5544DAE8-1D19-42FE-B101-D2EF18C21198}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_SOURCE_SYSTEM_DESC">
+      <DTS:VariableValue
+        DTS:DataType="8">PARCEL SALES</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7810DEA9-AA58-44A0-B343-C71AC17599DC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_SOURCE_SYSTEM_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{25F46037-4A1E-4F7C-BB68-069B70BBF3C4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_TARGET_SYSTEM_DESC">
+      <DTS:VariableValue
+        DTS:DataType="8">DIR_DWH</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2DF3B4F5-45CA-48A2-B9AA-B07F1665007E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_COUNT_ROWS">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8C3B3E96-9B63-4391-AB72-77EB1DFCEC31}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_DWH_DELTA_DT">
+      <DTS:VariableValue
+        DTS:DataType="7">7/26/2021 1:31:35 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AB851167-4C2B-4C4B-9CA1-508284D2128D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_FILENAME">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3495A81E-3833-4FE3-8A17-689384A1F8DB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_MAX_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{67185719-7940-4717-8482-6B177C0808AC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_SITE_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{41244176-0043-4E43-8136-24D1211E8644}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::in_SOURCE_SYSTEM_ID]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_SOURCE_SYSTEM_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FTP Task"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="FTP Task"
+      DTS:DTSID="{135002F7-52CB-43A6-93BE-1466433AEBB5}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="2"
+      DTS:ObjectName="FTP Task"
+      DTS:TaskContact="FTP Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FtpData
+          ConnectionName="{EA5751E9-0428-490D-A6F8-71655A7F5186}"
+          TaskIsLocalPathVar="True"
+          TaskLocalPath="User::out_FILENAME"
+          TaskRemotePath="/"
+          TaskTransferAscii="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Last Upd TBLOG_PACKAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{43D6CD9C-1053-419F-ADD0-ED6078DEAADC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Last Upd TBLOG_PACKAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{CF60433B-EFAB-4193-9F37-142B8EB2FCB5}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{44482B34-57AD-4D6C-93FD-99A9743E808B}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{EAC32845-C9DB-4809-B1A2-4F85D0C7B7A2}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Email ERROR"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_SUCCESS_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_PACKAGE_RUN_FLG = 1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE&#xA;SET END_DT = getdate(), LAST_SUCCESS_PACKAGE_RUN_FLG=1&#xA;WHERE ID=?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::out_MAX_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::out_MAX_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{4AC18219-E957-4623-98BB-4F6F1BD6EE4B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TBDWFT_ARTICLE_TO_NEMOSPED">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="It represents the date of the last successfull load, used to select only new row in delta mode"
+          DTS:DTSID="{D74A89D5-D90D-455D-94E8-39745D7240D4}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="out_LAST_SUCCESS_LOAD_DT">
+          <DTS:VariableValue
+            DTS:DataType="7">7/23/2020 3:45:00 PM</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="Output related to the last ID run for the table"
+          DTS:DTSID="{FB809DDE-6EC7-452D-B5A7-7293B2E334DF}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="out_MAX_TABLE_ID">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="It will represent the date of the current load, to be used to update the last success load date information into TBLOG_DELTA_LOAD table"
+          DTS:DTSID="{73633F53-175C-4005-A679-40A54D3B54EA}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="out_NEW_LAST_SUCCESS_LOAD_DT">
+          <DTS:VariableValue
+            DTS:DataType="7">7/23/2020 3:53:51 PM</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="Table target name to be loaded by the flow"
+          DTS:DTSID="{05A8E7E5-D0C3-4D41-9773-F3F10F11B999}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="out_TABLE_TARGET_CD">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Assign out_FILENAME"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FD98B66E-8DDD-46AC-9BEE-B60F34161016}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Assign out_FILENAME"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="select 'D:\Nemosped_Invoices\Nemosped_Items_' + cast (format(getdate(), 'yyyyMMdd') as varchar(10)) + '_' + cast (format(getdate(), 'HHmmss') as varchar(10)) + '.csv' as out_FILENAME"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="out_FILENAME"
+                SQLTask:DtsVariableName="User::out_FILENAME" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Assign TABLE_TARGET_CD"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F1E467E8-71F3-468C-8ABB-07942F4B7408}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Assign TABLE_TARGET_CD"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="select 'TBDWFT_ARTICLE_TO_NEMOSPED' as TABLE_TARGET_CD"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="TABLE_TARGET_CD"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Ins_Upd TBLOG_PACKAGE_TABLE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1A05C048-02F4-426D-9540-FD17A43DF540}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::out_MAX_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::out_SITE_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="$Project::in_USER_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::out_MAX_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="8"
+                SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="9"
+                SQLTask:DtsVariableName="User::out_SITE_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Last Upd TBLOG_PACKAGE_TABLE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B0A2B40B-3484-4569-92DC-6BC9F0FC00D4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::out_SITE_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\MAX TABLE ID"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{39C8B6BE-4A85-4EFE-AC82-7C179F34C8A3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="MAX TABLE ID"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? &#xA;and SITE_ID = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="MAX_TABLE_ID"
+                SQLTask:DtsVariableName="User::out_MAX_TABLE_ID" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::out_MAX_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::out_SITE_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C98BEE48-9583-46A6-A73E-839ADE0B28EE}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TBDWFT_ARTICLE_TO_NEMOSPED"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Add Technical Fields"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]"
+                          name="TBLOG_PACKAGE_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::out_MAX_ID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::out_MAX_ID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[INSERT_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[INSERT_DT]"
+                          name="INSERT_DT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[UPDATE_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[UPDATE_DT]"
+                          name="UPDATE_DT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="11"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]"
+                          name="USER_CD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[$Project::in_USER_CD]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[$Project::in_USER_CD]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[SITE_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[SITE_ID]"
+                          name="SITE_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::out_SITE_ID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::out_SITE_ID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]"
+                          name="SOURCE_SYSTEM_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::out_SOURCE_SYSTEM_ID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::out_SOURCE_SYSTEM_ID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                          name="TBLOG_PACKAGE_TABLE_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::out_MAX_TABLE_ID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::out_MAX_TABLE_ID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[FILENAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[FILENAME]"
+                          name="FILENAME"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_WSTR,250)@[User::out_FILENAME]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,250)@[User::out_FILENAME]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Inputs[Data Conversion Input].Columns[Con_Lotto]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="Con_Lotto"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Con_Lotto]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Inputs[Data Conversion Input].Columns[Descrizione_Gruppo_Stock]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="23"
+                          cachedName="Descrizione_Gruppo_Stock"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Descrizione_Gruppo_Stock]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Con_Lotto]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Con_Lotto]"
+                          name="Copy of Con_Lotto"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Con_Lotto]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_Gruppo_Stock]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_Gruppo_Stock]"
+                          name="Copy of Descrizione_Gruppo_Stock"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Descrizione_Gruppo_Stock]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2064"
+                  name="Flat File Destination"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat Files - Mendrisio - Nemosped Invoices]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat Files - Mendrisio - Nemosped Invoices]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].Columns[Codice_Articolo]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Codice_Articolo"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Codice_Articolo]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_Articolo]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].Columns[Descrizione_Articolo]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="Descrizione_Articolo"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Descrizione_Articolo]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Descrizione_Articolo]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].Columns[Codice_UM]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Codice_UM"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Codice_UM]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_UM]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].Columns[Scadenza_GG]"
+                          cachedDataType="i2"
+                          cachedName="Scadenza_GG"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Scadenza_GG]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Scadenza_GG]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].Columns[N_SKU_per_conf]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="N_SKU_per_conf"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[N_SKU_per_conf]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[N_SKU_per_conf]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].Columns[N_SKU_per_pallet]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="N_SKU_per_pallet"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[N_SKU_per_pallet]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[N_SKU_per_pallet]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].Columns[EAN13]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="EAN13"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[EAN13]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[EAN13]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].Columns[GTIN]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="GTIN"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[GTIN]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[GTIN]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of Con_Lotto]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Copy of Con_Lotto"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Con_Lotto]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Con_Lotto]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of Descrizione_Gruppo_Stock]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Copy of Descrizione_Gruppo_Stock"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Descrizione_Gruppo_Stock]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_Gruppo_Stock]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Codice_Articolo]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Codice_Articolo" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Con_Lotto]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Con_Lotto" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Descrizione_Gruppo_Stock]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Descrizione_Gruppo_Stock" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Descrizione_Articolo]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Descrizione_Articolo" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Codice_UM]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Codice_UM" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Scadenza_GG]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Scadenza_GG" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[N_SKU_per_conf]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="N_SKU_per_conf" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[N_SKU_per_pallet]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="N_SKU_per_pallet" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[EAN13]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="EAN13" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[GTIN]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="GTIN" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast.Outputs[Multicast Output 3]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 3"
+                      synchronousInputId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast.Outputs[Multicast Output 2]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast.Outputs[Multicast Output 1]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[db_owner].[TBDWFT_ARTICLE_TO_NEMOSPED]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Codice_Articolo]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Codice_Articolo"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CODICE_ARTICOLO]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_Articolo]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Descrizione_Articolo]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="Descrizione_Articolo"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIZIONE_ARTICOLO]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Descrizione_Articolo]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Codice_UM]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Codice_UM"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CODICE_UM]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_UM]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Scadenza_GG]"
+                          cachedDataType="i2"
+                          cachedName="Scadenza_GG"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SCADENZA_GG]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Scadenza_GG]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[N_SKU_per_conf]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="N_SKU_per_conf"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[N_SKU_PER_CONF]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[N_SKU_per_conf]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[N_SKU_per_pallet]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="N_SKU_per_pallet"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[N_SKU_PER_PALLET]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[N_SKU_per_pallet]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EAN13]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="EAN13"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EAN13]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[EAN13]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GTIN]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="GTIN"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GTIN]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[GTIN]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TBLOG_PACKAGE_ID]"
+                          cachedDataType="i4"
+                          cachedName="TBLOG_PACKAGE_ID"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_ID]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INSERT_DT]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="INSERT_DT"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_DT]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[INSERT_DT]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UPDATE_DT]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="UPDATE_DT"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATE_DT]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[UPDATE_DT]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[USER_CD]"
+                          cachedDataType="wstr"
+                          cachedLength="11"
+                          cachedName="USER_CD"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[USER_CD]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SITE_ID]"
+                          cachedDataType="i4"
+                          cachedName="SITE_ID"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SITE_ID]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[SITE_ID]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_SYSTEM_ID]"
+                          cachedDataType="i4"
+                          cachedName="SOURCE_SYSTEM_ID"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_ID]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                          cachedDataType="i4"
+                          cachedName="TBLOG_PACKAGE_TABLE_ID"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_TABLE_ID]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FILENAME]"
+                          cachedDataType="wstr"
+                          cachedLength="250"
+                          cachedName="FILENAME"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FILENAME]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output].Columns[FILENAME]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Con_Lotto]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Copy of Con_Lotto"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CON_LOTTO]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Con_Lotto]" />
+                        <inputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Descrizione_Gruppo_Stock]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Copy of Descrizione_Gruppo_Stock"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIZIONE_GRUPPO_STOCK]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_Gruppo_Stock]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_ID]"
+                          dataType="i8"
+                          name="TBLOG_PACKAGE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_TABLE_ID]"
+                          dataType="i8"
+                          name="TBLOG_PACKAGE_TABLE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_DT]"
+                          dataType="dbTimeStamp"
+                          name="INSERT_DT" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATE_DT]"
+                          dataType="dbTimeStamp"
+                          name="UPDATE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DELETE_DT]"
+                          dataType="dbTimeStamp"
+                          name="DELETE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[USER_CD]"
+                          dataType="wstr"
+                          length="100"
+                          name="USER_CD" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SITE_ID]"
+                          dataType="i8"
+                          name="SITE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_ID]"
+                          dataType="i8"
+                          name="SOURCE_SYSTEM_ID" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ROW_STS_FLG]"
+                          dataType="bool"
+                          name="ROW_STS_FLG" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                          dataType="i8"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CODICE_ARTICOLO]"
+                          dataType="wstr"
+                          length="20"
+                          name="CODICE_ARTICOLO" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CON_LOTTO]"
+                          dataType="wstr"
+                          length="10"
+                          name="CON_LOTTO" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIZIONE_GRUPPO_STOCK]"
+                          dataType="wstr"
+                          length="100"
+                          name="DESCRIZIONE_GRUPPO_STOCK" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIZIONE_ARTICOLO]"
+                          dataType="wstr"
+                          length="150"
+                          name="DESCRIZIONE_ARTICOLO" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CODICE_UM]"
+                          dataType="wstr"
+                          length="10"
+                          name="CODICE_UM" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SCADENZA_GG]"
+                          dataType="i2"
+                          name="SCADENZA_GG" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[N_SKU_PER_CONF]"
+                          dataType="i2"
+                          name="N_SKU_PER_CONF" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[N_SKU_PER_PALLET]"
+                          dataType="i2"
+                          name="N_SKU_PER_PALLET" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EAN13]"
+                          dataType="wstr"
+                          length="100"
+                          name="EAN13" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GTIN]"
+                          dataType="wstr"
+                          length="100"
+                          name="GTIN" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FILENAME]"
+                          dataType="wstr"
+                          length="250"
+                          name="FILENAME" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="TRUNCATE + OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">truncate table TBDWFT_ARTICLE_TO_NEMOSPED;
+
+Select 
+ a.article_cd as Codice_Articolo,
+ case 
+	when a.with_batch_flg =1 then 'SI'
+	when a.with_batch_flg= 0 then 'NO' 
+ end as Con_Lotto,
+ case 
+	when a.article_type_desc = 1 then 'Materie Prime'
+	when a.article_type_desc = 2 then 'Semilavorato'
+	when a.article_type_desc = 3 then 'Prod. Finiti'
+	when a.article_type_desc = 5 then 'Mat. di confezionamento'
+	when a.article_type_desc = 6 then 'Mat. di consumo'
+	when a.article_type_desc = 8 then 'Servizi'
+ end as Descrizione_Gruppo_Stock, 
+ a.article_desc as Descrizione_Articolo,
+ a.um_cd as Codice_UM,
+ a.expiry_days_nbr as Scadenza_GG,
+ cast (a.N_SKU_per_conf as int) as N_SKU_per_conf,
+ case when a.N_SKU_per_conf = 0 then cast (a.N_BOX_per_pallet as int) else cast (a.N_BOX_per_pallet as int) * cast (a.N_SKU_per_conf as int) end  as N_SKU_per_pallet,
+ case when len(a.GTIN_L1)=14 then substring(a.GTIN_L1,2,len(a.GTIN_L1))else a.GTIN_L1 end EAN13,
+ a.GTIN_L1 as GTIN
+from
+(
+	select 
+		article_cd, with_batch_flg, article_desc, article_type_desc, um_cd, expiry_days_nbr,
+		max(case when ADDED_VALUE_CD = 'Quantity L1 in L2|1013' then left(ADDED_VALUE_DESC,CHARINDEX('.', ADDED_VALUE_DESC)-1) end) as N_SKU_per_conf,
+		max(case when ADDED_VALUE_CD = 'Contained Box in L3 (1003)' then  left(ADDED_VALUE_DESC,CHARINDEX('.', ADDED_VALUE_DESC)-1) end) as N_BOX_per_pallet,
+		max(case when ADDED_VALUE_CD = 'GTIN L1' then ADDED_VALUE_DESC end) as GTIN_L1
+
+	from
+		(select id, article_cd, with_batch_flg, article_desc, article_type_desc, um_cd, expiry_days_nbr from [db_owner].TBDWAN_ARTICLE where site_id = ? and row_sts_flg = 1) a left join
+		(select entity_id, entity_cd, added_value_cd, ADDED_VALUE_DESC from [db_owner].[TBDWFT_ADDED_VALUE] where site_id = ? and row_sts_flg = 1 and ENTITY_CATEGORY_CD='ARTICOLI' and ADDED_VALUE_CD in ('GTIN L1','Contained Box in L3 (1003)','Quantity L1 in L2|1013')) b on a.article_Cd = b.entity_cd
+	group by article_cd, with_batch_flg, article_desc, article_type_desc, um_cd, expiry_days_nbr
+) a</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{67185719-7940-4717-8482-6B177C0808AC};"Parameter1:Input",{67185719-7940-4717-8482-6B177C0808AC};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_Articolo]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codice_Articolo]"
+                          length="20"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_Articolo]"
+                          name="Codice_Articolo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Con_Lotto]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Con_Lotto]"
+                          length="2"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Con_Lotto]"
+                          name="Con_Lotto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Descrizione_Gruppo_Stock]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descrizione_Gruppo_Stock]"
+                          length="23"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Descrizione_Gruppo_Stock]"
+                          name="Descrizione_Gruppo_Stock"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Descrizione_Articolo]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descrizione_Articolo]"
+                          length="150"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Descrizione_Articolo]"
+                          name="Descrizione_Articolo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_UM]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codice_UM]"
+                          length="10"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_UM]"
+                          name="Codice_UM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Scadenza_GG]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Scadenza_GG]"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[Scadenza_GG]"
+                          name="Scadenza_GG"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[N_SKU_per_conf]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[N_SKU_per_conf]"
+                          length="4000"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[N_SKU_per_conf]"
+                          name="N_SKU_per_conf"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[N_SKU_per_pallet]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[N_SKU_per_pallet]"
+                          length="4000"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[N_SKU_per_pallet]"
+                          name="N_SKU_per_pallet"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[GTIN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GTIN]"
+                          length="4000"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[GTIN]"
+                          name="GTIN"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[EAN13]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EAN13]"
+                          length="4000"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].Columns[EAN13]"
+                          name="EAN13"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codice_Articolo]"
+                          dataType="wstr"
+                          length="20"
+                          name="Codice_Articolo" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Con_Lotto]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="Con_Lotto" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descrizione_Gruppo_Stock]"
+                          codePage="1252"
+                          dataType="str"
+                          length="23"
+                          name="Descrizione_Gruppo_Stock" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descrizione_Articolo]"
+                          dataType="wstr"
+                          length="150"
+                          name="Descrizione_Articolo" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codice_UM]"
+                          dataType="wstr"
+                          length="10"
+                          name="Codice_UM" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Scadenza_GG]"
+                          dataType="i2"
+                          name="Scadenza_GG" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[N_SKU_per_conf]"
+                          dataType="i4"
+                          name="N_SKU_per_conf" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[N_SKU_per_pallet]"
+                          dataType="i4"
+                          name="N_SKU_per_pallet" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GTIN]"
+                          dataType="wstr"
+                          length="4000"
+                          name="GTIN" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EAN13]"
+                          dataType="wstr"
+                          length="4000"
+                          name="EAN13" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codice_Articolo]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codice_Articolo]"
+                          name="Codice_Articolo" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Con_Lotto]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Con_Lotto]"
+                          name="Con_Lotto" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descrizione_Gruppo_Stock]"
+                          codePage="1252"
+                          dataType="str"
+                          length="23"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descrizione_Gruppo_Stock]"
+                          name="Descrizione_Gruppo_Stock" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descrizione_Articolo]"
+                          dataType="wstr"
+                          length="150"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descrizione_Articolo]"
+                          name="Descrizione_Articolo" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codice_UM]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codice_UM]"
+                          name="Codice_UM" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Scadenza_GG]"
+                          dataType="i2"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Scadenza_GG]"
+                          name="Scadenza_GG" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[N_SKU_per_conf]"
+                          dataType="i4"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[N_SKU_per_conf]"
+                          name="N_SKU_per_conf" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[N_SKU_per_pallet]"
+                          dataType="i4"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[N_SKU_per_pallet]"
+                          name="N_SKU_per_pallet" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EAN13]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EAN13]"
+                          name="EAN13" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GTIN]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GTIN]"
+                          name="GTIN" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Data Conversion Output]"
+                  endId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Inputs[Derived Column Input]"
+                  name="Data Conversion Output"
+                  startId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Derived Column Output]"
+                  endId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast.Inputs[Multicast Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Multicast Output 2]"
+                  endId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Multicast Output 2"
+                  startId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast.Outputs[Multicast Output 2]" />
+                <path
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Multicast Output 3]"
+                  endId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination.Inputs[Flat File Destination Input]"
+                  name="Multicast Output 3"
+                  startId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast.Outputs[Multicast Output 3]" />
+                <path
+                  refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[OLE DB Source Output]"
+                  endId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion.Inputs[Data Conversion Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Upd DATE Loaded"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CE4E0988-7814-408F-8E19-823B8EEEFA10}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Upd DATE Loaded"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="IF EXISTS&#xA; (select *&#xA; from TBLOG_DELTA_LOAD &#xA; where  &#xA;  SOURCE_SYSTEM_ID = ?&#xA;  and TABLE_TARGET_CD = ?&#xA;  and ENTITY_CD = ?)&#xA;&#xA;update TBLOG_DELTA_LOAD &#xA;set LAST_SUCCESS_LOAD_DT= ?,&#xA;TBLOG_PACKAGE_ID=?,&#xA;TBLOG_PACKAGE_TABLE_ID=?,&#xA;ONE_SHOT_FULL_LOAD_FLG=0,&#xA;TRANSACTION_CD='U',&#xA;INSERT_DT=getdate()&#xA;where  &#xA; SOURCE_SYSTEM_ID = ?&#xA; and TABLE_TARGET_CD = ?&#xA; and ENTITY_CD = ?&#xA;ELSE&#xA;   insert into TBLOG_DELTA_LOAD values (?,?,?,?,?,?,?,0,0,0,'I',getdate(),?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::out_NEW_LAST_SUCCESS_LOAD_DT"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="8"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="9"
+                SQLTask:DtsVariableName="User::out_MAX_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="10"
+                SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="11"
+                SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="12"
+                SQLTask:DtsVariableName="User::in_PACKAGE_NAME_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="13"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="14"
+                SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="15"
+                SQLTask:DtsVariableName="User::out_NEW_LAST_SUCCESS_LOAD_DT"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="16"
+                SQLTask:DtsVariableName="$Project::in_USER_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::out_MAX_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{52D49FC9-1DC4-4268-965C-F5759DD84604}"
+          DTS:From="Package\TBDWFT_ARTICLE_TO_NEMOSPED\MAX TABLE ID"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{1D033239-BB0E-4D1A-923A-3086AF543C10}"
+          DTS:From="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Assign TABLE_TARGET_CD"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Ins_Upd TBLOG_PACKAGE_TABLE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{31745213-70BE-4CB3-AE05-3C20AE26BA3A}"
+          DTS:From="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Ins_Upd TBLOG_PACKAGE_TABLE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\TBDWFT_ARTICLE_TO_NEMOSPED\MAX TABLE ID" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{DD987A06-D39C-4A53-8DFF-5965B850ADC0}"
+          DTS:From="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Assign out_FILENAME"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{69C4CACA-FFA3-45E9-91FB-36FABDA2D310}"
+          DTS:From="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Upd DATE Loaded" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{F2EB37C9-5462-418C-9B1C-FF56FB5FCD83}"
+          DTS:From="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Upd DATE Loaded"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 9"
+          DTS:To="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Last Upd TBLOG_PACKAGE_TABLE" />
+      </DTS:PrecedenceConstraints>
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\TBDWFT_ARTICLE_TO_NEMOSPED.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{BC69C3BD-E43A-46AF-B62C-DD2302042AC7}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{CA7352CD-8699-4920-8F5D-D69EC0A51385}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables />
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TBLOG_PACKAGE"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9E1A9EDB-81B0-432A-841F-9C71642CEB7F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TBLOG_PACKAGE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\TBLOG_PACKAGE\Assign SITE_ID"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4A22FA38-6418-4126-BD77-F66C01B5AA69}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Assign SITE_ID"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="SELECT ID &#xA;FROM TBDWMN_SITE &#xA;WHERE SITE_CD = ? and getdate() between VALIDITY_START_DT and VALIDITY_END_DT"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="ID"
+                SQLTask:DtsVariableName="User::out_SITE_ID" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::in_SITE_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TBLOG_PACKAGE\Ins TBLOG_PACKAGE + Max ID"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{411AF433-87C6-408C-A39A-25D7376FA99E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Ins TBLOG_PACKAGE + Max ID"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="--insert new row&#xA; INSERT INTO TBLOG_PACKAGE VALUES (0,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="MAX_ID"
+                SQLTask:DtsVariableName="User::out_MAX_ID" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::out_SITE_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::in_PACKAGE_SCOPE_DESC"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_DESC"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::in_TARGET_SYSTEM_DESC"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="$Project::in_USER_CD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="8"
+                SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TBLOG_PACKAGE\Upd TBLOG_PACKAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{97FECBDA-D1E5-4B6E-93AF-E0622EA61CBB}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Upd TBLOG_PACKAGE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="--update previous last package run to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and  LAST_PACKAGE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::out_MAX_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TBLOG_PACKAGE.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{504CCC42-B572-479C-B8EB-F703F4E05817}"
+          DTS:From="Package\TBLOG_PACKAGE\Assign SITE_ID"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\TBLOG_PACKAGE\Ins TBLOG_PACKAGE + Max ID" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TBLOG_PACKAGE.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{C309A3AA-8AFE-4C45-B6DD-1C06780008BE}"
+          DTS:From="Package\TBLOG_PACKAGE\Ins TBLOG_PACKAGE + Max ID"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\TBLOG_PACKAGE\Upd TBLOG_PACKAGE" />
+      </DTS:PrecedenceConstraints>
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\TBLOG_PACKAGE.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{0DCF5E18-C270-4635-8BA2-782541352DFC}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{9E745FEB-7E48-4D47-B586-61D8D3CC18F2}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{5471B358-5812-4F04-A27E-A3C360E7B8B6}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Email ERROR"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FD7301A7-7968-4554-ACDE-A4E167CEBC2D}"
+      DTS:From="Package\FTP Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Last Upd TBLOG_PACKAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{488F66C7-BBC4-4F08-BC9A-4AB7257DF181}"
+      DTS:From="Package\TBLOG_PACKAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\TBDWFT_ARTICLE_TO_NEMOSPED" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{A463A266-B4AA-41CF-BCE4-704AC4A7B652}"
+      DTS:Expression="@[User::out_COUNT_ROWS] &gt;0"
+      DTS:From="Package\TBDWFT_ARTICLE_TO_NEMOSPED"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\FTP Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{7BE57C8E-690B-41A2-8CDB-A82891047889}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{4282F943-3A11-44F2-ACC8-7FB762185240}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0814C8C8-0E8C-4590-921A-0849F0D2C2E8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Email ERROR"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::in_MAIL_RECIPIENTS_ERROR_pkg_override"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="127,42"
+          Id="Package\FTP Task"
+          TopLeft="1103,369" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Last Upd TBLOG_PACKAGE"
+          TopLeft="1063,478" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Assign out_FILENAME"
+          TopLeft="517,185" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Assign TABLE_TARGET_CD"
+          TopLeft="244.5,5.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Ins_Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="220.5,94.5" />
+        <NodeLayout
+          Size="263,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Last Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="366,548.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\MAX TABLE ID"
+          TopLeft="277,176.5" />
+        <NodeLayout
+          Size="268,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED"
+          TopLeft="325,299" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Upd DATE Loaded"
+          TopLeft="385.5,395.5" />
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint]"
+          TopLeft="354.5,218.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.1666666666666,80.5"
+              Start="0,0"
+              End="61.1666666666666,73">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.013353115727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.013353115727"
+                    Point2="0,48.013353115727"
+                    Point3="4,48.013353115727" />
+                  <mssgle:LineSegment
+                    End="57.1666666666666,48.013353115727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.1666666666666,48.013353115727"
+                    Point2="61.1666666666666,48.013353115727"
+                    Point3="61.1666666666666,52.013353115727" />
+                  <mssgle:LineSegment
+                    End="61.1666666666666,73" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 2]"
+          TopLeft="353,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 3]"
+          TopLeft="352.5,136.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 5]"
+          TopLeft="628,227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-125.666666666667,72"
+              Start="0,0"
+              End="-125.666666666667,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.9436201780415" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.9436201780415"
+                    Point2="0,42.9436201780415"
+                    Point3="-4,42.9436201780415" />
+                  <mssgle:LineSegment
+                    End="-121.666666666667,42.9436201780415" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-121.666666666667,42.9436201780415"
+                    Point2="-125.666666666667,42.9436201780415"
+                    Point3="-125.666666666667,46.9436201780415" />
+                  <mssgle:LineSegment
+                    End="-125.666666666667,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 6]"
+          TopLeft="459,341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12,54.5"
+              Start="0,0"
+              End="12,47">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.25"
+                    Point2="0,27.25"
+                    Point3="4,27.25" />
+                  <mssgle:LineSegment
+                    End="8,27.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8,27.25"
+                    Point2="12,27.25"
+                    Point3="12,31.25" />
+                  <mssgle:LineSegment
+                    End="12,47" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 9]"
+          TopLeft="471,437.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.5,111"
+              Start="0,0"
+              End="26.5,103.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.5"
+                    Point2="0,55.5"
+                    Point3="4,55.5" />
+                  <mssgle:LineSegment
+                    End="22.5,55.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,55.5"
+                    Point2="26.5,55.5"
+                    Point3="26.5,59.5" />
+                  <mssgle:LineSegment
+                    End="26.5,103.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="To be specify target table name"
+          ParentId="Package\TBDWFT_ARTICLE_TO_NEMOSPED"
+          FontInfo="{assembly:Null}"
+          Size="195,40"
+          Id="770e5d1f-9727-4e0f-9d45-cb2863de88dd"
+          TopLeft="29.5,10.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="837,748"
+          Size="837,791"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED"
+          TopLeft="116,267" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\TBLOG_PACKAGE\Assign SITE_ID"
+          TopLeft="27,29.4722222222222" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\TBLOG_PACKAGE\Ins TBLOG_PACKAGE + Max ID"
+          TopLeft="323.166666666667,47" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\TBLOG_PACKAGE\Upd TBLOG_PACKAGE"
+          TopLeft="343.944444444444,123.555555555555" />
+        <EdgeLayout
+          Id="Package\TBLOG_PACKAGE.PrecedenceConstraints[Constraint 1]"
+          TopLeft="184,50.4722222222222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="139.166666666667,17.5277777777778"
+              Start="0,0"
+              End="131.666666666667,17.5277777777778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.5833333333335,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="65.5833333333335,0"
+                    Point2="69.5833333333335,0"
+                    Point3="69.5833333333335,4" />
+                  <mssgle:LineSegment
+                    End="69.5833333333335,13.5277777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.5833333333335,13.5277777777778"
+                    Point2="69.5833333333335,17.5277777777778"
+                    Point3="73.5833333333335,17.5277777777778" />
+                  <mssgle:LineSegment
+                    End="131.666666666667,17.5277777777778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBLOG_PACKAGE.PrecedenceConstraints[Constraint 2]"
+          TopLeft="481.833333333334,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-38.3888888888896,34.5555555555552"
+              Start="0,0"
+              End="-38.3888888888896,27.0555555555552">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.95952906548916" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.95952906548916"
+                    Point2="0,13.9595290654892"
+                    Point3="-4,13.9595290654892" />
+                  <mssgle:LineSegment
+                    End="-34.3888888888896,13.9595290654892" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34.3888888888896,13.9595290654892"
+                    Point2="-38.3888888888896,13.9595290654892"
+                    Point3="-38.3888888888896,17.9595290654892" />
+                  <mssgle:LineSegment
+                    End="-38.3888888888896,27.0555555555552" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="568,283"
+          Size="199,43"
+          Id="Package\TBLOG_PACKAGE"
+          TopLeft="221,159" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1170.25,411">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="320.5,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="214,65"
+              Start="0,0"
+              End="214,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
+                  <mssgle:LineSegment
+                    End="210,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="210,32.5"
+                    Point2="214,32.5"
+                    Point3="214,36.5" />
+                  <mssgle:LineSegment
+                    End="214,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="953,662.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="150,-272.5"
+              Start="0,0"
+              End="142.5,-272.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71,0"
+                    Point2="75,0"
+                    Point3="75,-4" />
+                  <mssgle:LineSegment
+                    End="75,-268.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75,-268.5"
+                    Point2="75,-272.5"
+                    Point3="79,-272.5" />
+                  <mssgle:LineSegment
+                    End="142.5,-272.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\TBDWFT_ARTICLE_TO_NEMOSPED.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
+          TopLeft="265,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion"
+          TopLeft="188,115" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source"
+          TopLeft="80,27" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination"
+          TopLeft="700,375" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination"
+          TopLeft="174,373" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast"
+          TopLeft="509,283" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields"
+          TopLeft="316,203" />
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[OLE DB Source Output]"
+          TopLeft="194.5,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,46"
+              Start="0,0"
+              End="74,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="4,23" />
+                  <mssgle:LineSegment
+                    End="70,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70,23"
+                    Point2="74,23"
+                    Point3="74,27" />
+                  <mssgle:LineSegment
+                    End="74,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Multicast Output 3]"
+          TopLeft="589.666666666667,325">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="198.333333333333,50"
+              Start="0,0"
+              End="198.333333333333,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.3852327447833" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.3852327447833"
+                    Point2="0,20.3852327447833"
+                    Point3="4,20.3852327447833" />
+                  <mssgle:LineSegment
+                    End="194.333333333333,20.3852327447833" />
+                  <mssgle:CubicBezierSegment
+                    Point1="194.333333333333,20.3852327447833"
+                    Point2="198.333333333333,20.3852327447833"
+                    Point3="198.333333333333,24.3852327447833" />
+                  <mssgle:LineSegment
+                    End="198.333333333333,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Multicast Output 2]"
+          TopLeft="551.333333333333,325">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-288.833333333333,48"
+              Start="0,0"
+              End="-288.833333333333,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.569823434992" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.569823434992"
+                    Point2="0,19.569823434992"
+                    Point3="-4,19.569823434992" />
+                  <mssgle:LineSegment
+                    End="-284.833333333333,19.569823434992" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-284.833333333333,19.569823434992"
+                    Point2="-288.833333333333,19.569823434992"
+                    Point3="-288.833333333333,23.569823434992" />
+                  <mssgle:LineSegment
+                    End="-288.833333333333,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Derived Column Output]"
+          TopLeft="406.5,245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="164,38"
+              Start="0,0"
+              End="164,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="160,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="160,19"
+                    Point2="164,19"
+                    Point3="164,23" />
+                  <mssgle:LineSegment
+                    End="164,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Data Conversion Output]"
+          TopLeft="268.5,157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138,46"
+              Start="0,0"
+              End="138,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="4,23" />
+                  <mssgle:LineSegment
+                    End="134,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="134,23"
+                    Point2="138,23"
+                    Point3="138,27" />
+                  <mssgle:LineSegment
+                    End="138,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\TBLOG_PACKAGE.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
