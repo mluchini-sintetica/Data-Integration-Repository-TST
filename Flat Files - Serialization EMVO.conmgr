@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="Flat Files - Serialization EMVO"
-  DTS:DTSID="{18D51BC5-6C63-420F-9A29-31AF86EF0ED2}"
+  DTS:DTSID="{23AACAEA-44B8-44BA-9BE6-714050DCD227}"
   DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
     <DTS:ConnectionManager
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Batch"
-          DTS:DTSID="{DCA6E3C5-0B92-4944-8A93-274E402B503F}"
+          DTS:DTSID="{09D371C8-0697-4780-80B8-13C24A2F4CDA}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

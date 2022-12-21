@@ -1,17 +1,10 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="SAP_HANA_DEV_32b ZSAP_EXT_R"
-  DTS:DTSID="{5C247F53-133A-4585-B3D1-0EE44D363255}"
+  DTS:DTSID="{D04CB7DE-7625-4879-8FAE-1C056D92A615}"
   DTS:CreationName="ODBC">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="uid=ZSAP_EXT_R;Dsn=SAP_HANA_DEV_32b;">
-      <DTS:Password
-        DTS:Name="pwd"
-        Sensitive="1"
-        p4:Salt="6pfC7Aqy57g="
-        p4:IV="bvTfR9+3qk4GNgPfX1knWw=="
-        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">wXCGyTK1BNhkTQVvPA3nWRB8cLgDDdk4rzu3rSgBbIFNXV8W7iW6ygB7MoDGkWukNSSvKeKykOIRo+yMcyYyk+XZEvaxx0QHszRvCfrJQ5yedkAvmi7glxnGTAmhOxrL9QK0+B9VzxtX3xaXnRXGTZ3DFyFYe3FXVAQIyXCqw64=</DTS:Password>
-    </DTS:ConnectionManager>
+      DTS:ConnectionString="uid=ZSAP_EXT_R;Dsn=SAP_HANA_DEV_32b;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

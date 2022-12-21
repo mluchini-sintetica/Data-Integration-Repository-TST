@@ -5,22 +5,22 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SRV-DIR-TST"
   DTS:CreatorName="SINTE00\mluchini"
-  DTS:DTSID="{4A76F1DE-8CEF-4C2E-A0EB-7D5DFBF08461}"
+  DTS:DTSID="{957336C1-948D-48AB-AED9-138197C21FF3}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="1033"
   DTS:ObjectName="SERIALIZATION_EMVO_FILE_CREATION"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{708E0FEF-E8A7-480F-845C-A1F191ED0395}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{5C71A2A9-38FF-486D-B765-D7CFE48961A1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat Files - Serialization EMVO Json OUT File]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{FFD0345E-130D-4CB4-A488-996C41A18875}"
+      DTS:DTSID="{8545F468-8E83-4CBB-B21B-56AE20F66A8C}"
       DTS:ObjectName="Flat Files - Serialization EMVO Json OUT File">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::out_FILENAME]</DTS:PropertyExpression>
@@ -39,7 +39,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Output"
-              DTS:DTSID="{A7A2A860-8995-4FDE-AF27-C18AECC7CBED}"
+              DTS:DTSID="{8F4B4727-91A3-4942-BA19-954DFF8F204B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -49,7 +49,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F32C74C1-51A6-4453-BB87-F30555BA9FFA}"
+      DTS:DTSID="{84E2B0A5-A7F8-4188-900F-2F9F251AD85E}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -60,7 +60,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{202ABEA3-CDA2-4174-9569-DDF169268ECD}"
+      DTS:DTSID="{200BEDD8-2B0D-471E-AFD4-4028069295C1}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -71,7 +71,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D625AAA1-442E-4E1A-8C3E-22437959F69D}"
+      DTS:DTSID="{2C138046-FCDE-4A1E-87E1-8D8271C48774}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::PackageName] "
       DTS:IncludeInDebugDump="2345"
@@ -82,7 +82,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5B26E343-24FF-474C-BF2E-E5FCE23D3795}"
+      DTS:DTSID="{A28D3346-5DC7-4CA0-A8D5-FBCA64463358}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="out_BATCH_CD">
@@ -92,7 +92,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F4F00B2C-F89B-4F7E-A90E-44F8F00EA696}"
+      DTS:DTSID="{23ECA473-150D-4D99-B881-2DA656DEE93F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="out_FILENAME">
@@ -102,7 +102,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{20076E67-D6DF-4F97-88FE-72F1DFA8F2F2}"
+      DTS:DTSID="{E4B678C0-53C4-4A83-8FA9-B654CB0D846E}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="out_LOOP_COUNTER">
@@ -115,7 +115,7 @@
       DTS:refId="Package\From_CSV_to_DB"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{16117D58-4193-468D-80E9-A235F232193C}"
+      DTS:DTSID="{E334B7AB-8227-40CD-A5CD-6B7B37BD0CFD}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="From_CSV_to_DB"
@@ -147,7 +147,7 @@
               <connections>
                 <connection
                   refId="Package\From_CSV_to_DB\Batch_List.Connections[FlatFileConnection]"
-                  connectionManagerID="{18D51BC5-6C63-420F-9A29-31AF86EF0ED2}:external"
+                  connectionManagerID="{23AACAEA-44B8-44BA-9BE6-714050DCD227}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Flat Files - Serialization EMVO]"
                   name="FlatFileConnection" />
               </connections>
@@ -432,7 +432,7 @@
       DTS:AssignExpression="@[out_LOOP_COUNTER]=@[out_LOOP_COUNTER]-1"
       DTS:CreationName="STOCK:FORLOOP"
       DTS:Description="For Loop Container"
-      DTS:DTSID="{C9541734-10FF-4B10-85F1-19A3997DF00F}"
+      DTS:DTSID="{9D9F2C6D-E443-42B0-8EA9-7C3D3C8AFEEE}"
       DTS:EvalExpression="@[out_LOOP_COUNTER]&gt;0"
       DTS:ExecutableType="STOCK:FORLOOP"
       DTS:LocaleID="-1"
@@ -444,7 +444,7 @@
           DTS:refId="Package\Loop on all batches\Assign out_FILENAME_FINAL"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6c39b7c4-fd7b-4a07-bc18-47f0ecc9b652}"
+          DTS:DTSID="{C8A20A8D-524D-46D5-9F67-957125DE6839}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign out_FILENAME_FINAL"
@@ -472,7 +472,7 @@
           DTS:refId="Package\Loop on all batches\Assign TOP 1 out_BATCH_CD"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{f87f3277-724b-4006-a808-3ef7a40ca874}"
+          DTS:DTSID="{0DBBB3CD-665D-493E-A6B3-B8818226CACB}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign TOP 1 out_BATCH_CD"
@@ -494,7 +494,7 @@
           DTS:refId="Package\Loop on all batches\Delete Batch TBDWTMP_SERIALIZATION_EMVO_BATCH"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{f03ce484-c5d6-4e07-9dca-c56f1e896f97}"
+          DTS:DTSID="{D8D0EC06-D9B6-4566-92E7-DEFFBC8629AD}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete Batch TBDWTMP_SERIALIZATION_EMVO_BATCH"
@@ -518,7 +518,7 @@
           DTS:refId="Package\Loop on all batches\From_DB_to_JSON_file"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{a0f6715d-75a0-4d6b-90f8-f8713d39fd7a}"
+          DTS:DTSID="{15DA74F7-0F95-49C6-A569-EF2A037F8687}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="From_DB_to_JSON_file"
@@ -707,7 +707,7 @@
           DTS:refId="Package\Loop on all batches\Trunc + TBDWTMP_SERIALIZATION_EMVO_DATA_FINAL_ins"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{36e778b9-ed8b-42ad-a5dc-09f792df2cc6}"
+          DTS:DTSID="{6A571021-4CA6-463B-BDD3-1E0E3F3C9117}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Trunc + TBDWTMP_SERIALIZATION_EMVO_DATA_FINAL_ins"
@@ -724,7 +724,7 @@
           DTS:refId="Package\Loop on all batches\Trunc + TBDWTMP_SERIALIZATION_EMVO_DATA_ins"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{36bc56f8-845b-4e39-bbf8-120dab281390}"
+          DTS:DTSID="{4C302F5A-1DAB-43A1-A028-FD5F135DF43A}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Trunc + TBDWTMP_SERIALIZATION_EMVO_DATA_ins"
@@ -749,7 +749,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Loop on all batches.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{7E6F221B-540F-4F38-8047-1856B8CA2A48}"
+          DTS:DTSID="{206B3207-6275-4129-AFA8-AC0D109D65F6}"
           DTS:From="Package\Loop on all batches\Trunc + TBDWTMP_SERIALIZATION_EMVO_DATA_ins"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -757,7 +757,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Loop on all batches.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{B5CFC8FC-4FB1-43A0-9F9B-1B95B42F695C}"
+          DTS:DTSID="{F5C3D2C3-7BBB-4959-97EA-7E450E31ACAB}"
           DTS:From="Package\Loop on all batches\Trunc + TBDWTMP_SERIALIZATION_EMVO_DATA_FINAL_ins"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -765,7 +765,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Loop on all batches.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{B8CC47EB-78B9-421D-B83B-279B8B0983AA}"
+          DTS:DTSID="{E21230C5-5E77-41A5-8F53-0E07DF137E8F}"
           DTS:From="Package\Loop on all batches\From_DB_to_JSON_file"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -773,7 +773,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Loop on all batches.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{9B168692-715E-4977-A7CD-00E1BC5F5905}"
+          DTS:DTSID="{64CA52AE-A5B3-4A2F-9C9C-F6D357E32B24}"
           DTS:From="Package\Loop on all batches\Assign TOP 1 out_BATCH_CD"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -781,7 +781,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Loop on all batches.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{FBECD501-1785-4338-B549-0758A5AF63D9}"
+          DTS:DTSID="{AF2B15D2-6D69-4C6E-9D82-10772051E6A2}"
           DTS:From="Package\Loop on all batches\Assign out_FILENAME_FINAL"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -789,7 +789,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Loop on all batches.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{7937E5B5-1D89-42A8-9274-3D61A72D5DE1}"
+          DTS:DTSID="{0632056A-7A1A-4EE8-9313-B6E531E455C2}"
           DTS:From="Package\Loop on all batches\Assign TOP 1 out_BATCH_CD"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
@@ -800,7 +800,7 @@
       DTS:refId="Package\out_LOOP_COUNTER"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{12045f5f-3d34-409a-87ab-85d077189d41}"
+      DTS:DTSID="{3982303D-FB73-4AA3-B7E4-E7AADFD90ADC}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="out_LOOP_COUNTER"
@@ -822,7 +822,7 @@
       DTS:refId="Package\Trunc TBDWTMP_SERIALIZATION_EMVO_BATCH"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7E9326D8-E4CB-4FFE-8DD0-DC836346A128}"
+      DTS:DTSID="{A4384791-3C8C-4B86-AF7D-4122E2DD8908}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunc TBDWTMP_SERIALIZATION_EMVO_BATCH"
@@ -840,7 +840,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{A17988CD-EF4F-4FE8-BDBA-2B10483E64FC}"
+      DTS:DTSID="{9F188F06-9EBC-48B2-9205-FC3E96A07BD2}"
       DTS:From="Package\Trunc TBDWTMP_SERIALIZATION_EMVO_BATCH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -848,7 +848,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{D3F14DA4-4A01-40BE-A4A2-7491DE080D6F}"
+      DTS:DTSID="{DAADDE38-E339-4B7B-8D89-3EAF6E284EF0}"
       DTS:From="Package\From_CSV_to_DB"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -856,7 +856,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{63A5B51C-C760-4C4F-96F1-D2B9BD3120F7}"
+      DTS:DTSID="{7448FC41-2703-47CC-917E-22A78D05624D}"
       DTS:From="Package\out_LOOP_COUNTER"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
@@ -866,7 +866,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{1037700C-C9AB-4F0A-BB5B-89BA56894239}"
+      DTS:DTSID="{8C76DEB2-C835-453A-823C-46F53576B650}"
       DTS:EventID="6619251"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -874,7 +874,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{FCD5D608-DBDE-4125-AA56-201BE4B456EB}"
+          DTS:DTSID="{BB5E228B-D6A6-44AB-A631-5A17C3FC28FA}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -887,7 +887,7 @@
           DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{a720ca5b-ef92-49e9-810b-0c57c81b9e6d}"
+          DTS:DTSID="{6BBF72C2-867D-4495-A07B-AD619AB65F0E}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Email ERROR"

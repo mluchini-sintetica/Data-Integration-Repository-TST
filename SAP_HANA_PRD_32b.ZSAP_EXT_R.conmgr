@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="SAP_HANA_PRD_32b.ZSAP_EXT_R"
-  DTS:DTSID="{23075D97-0A26-47BC-96ED-CEB97E34C6AF}"
+  DTS:DTSID="{5178EA1F-9799-48D2-B393-B0A6795CD7A7}"
   DTS:CreationName="ODBC">
   <DTS:ObjectData>
     <DTS:ConnectionManager
@@ -9,9 +9,9 @@
       <DTS:Password
         DTS:Name="pwd"
         Sensitive="1"
-        p4:Salt="E49SDIyRGwo="
-        p4:IV="uMsIGE5a0vFvg7iuSUm0dw=="
-        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">lWPjYYeLLZK818G1v7tOxUDVFxNpkkJ269xc+Z3syKMUb408FgjccTu6CtS9FsH+cqgXrKqTSOMlaSr3fIRwkuoELd+o+Igyn0AjmL4dpbxkeDpXve+ifk1yvR7DNFts0ZLJKGMkkA0JTYM4lO+CM+YWlRBU5vvcweyQtXjmyoU=</DTS:Password>
+        p4:Salt="G05KGFWX8VM="
+        p4:IV="z8oH3Wr/KxrIYi9aXzflaw=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">dryHq7L9C8QHZEMS21+X7LC/6+LC9iUx9FO2qZ47jRU21ofNZb+Rd7/BqUKbWhgZGdQwq49QkEUVr20QU+FRomx3G/tz65ArwP3q6nouPa947uP8I5qlpNjqNCuPLpfwT0gz39gOZElwQ2EK4kiCFt6qdxYjsgCSOruBSP+mkDM=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

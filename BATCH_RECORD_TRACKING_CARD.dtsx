@@ -5,22 +5,22 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SRV-DIR-TST"
   DTS:CreatorName="SINTE00\mluchini"
-  DTS:DTSID="{FDE5A4C3-08A2-4BFC-83BA-99F6D49FD966}"
+  DTS:DTSID="{9F6CCFA8-BA10-4E12-8F9A-78CD27766A32}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="1033"
   DTS:ObjectName="BATCH_RECORD_TRACKING_CARD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="191"
-  DTS:VersionGUID="{19BB57EA-7B14-4D39-B973-1B05BEFE63EA}">
+  DTS:VersionBuild="192"
+  DTS:VersionGUID="{3AC000D4-8063-491C-B159-536FCAF7C6C4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{FBB7ED4A-2E60-453E-978F-E61B4E08BDFE}"
+      DTS:DTSID="{284DD06D-FF3D-4F18-A3E7-57EE24317C0D}"
       DTS:ObjectName="in_SITE_CD">
       <DTS:Property
         DTS:DataType="8"
@@ -30,7 +30,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DEAA6C4D-0BFA-4345-89D6-19CA7D987290}"
+      DTS:DTSID="{33E8E55A-CD94-401D-9190-FF1316349C3D}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -41,7 +41,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7D823731-1F69-4B30-B920-7E6D6A43B35B}"
+      DTS:DTSID="{F1BC58A7-7B88-4A05-9AE9-3D4A7AB791EF}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; STARTED&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -52,7 +52,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A1C27C87-B7F4-4914-B7AC-E918B40B1B66}"
+      DTS:DTSID="{930D7EA7-7E61-4C5F-B4DE-07BFB46749E4}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -63,7 +63,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7967E132-FB49-44AE-8174-51E2D3B3CF62}"
+      DTS:DTSID="{D0D96830-902B-4C20-868C-A979C77BC4A5}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_RECIPIENTS_ERROR_pkg_override">
@@ -72,7 +72,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{E6BA1F2D-2128-4014-B50A-1568215E9609}"
+      DTS:DTSID="{96935C13-3D83-42ED-B917-2411247FBDFD}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_RECIPIENTS_SUCCESS_pkg_override">
@@ -81,7 +81,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F522E5A1-BE17-430B-8FBA-ADCD1A3F25C4}"
+      DTS:DTSID="{8521C739-C6B6-44BD-8585-95F748736000}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::PackageName] "
       DTS:IncludeInDebugDump="2345"
@@ -92,7 +92,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8B58F915-BDB7-403F-922F-12DD77C67DF3}"
+      DTS:DTSID="{F0CEE46C-0936-413C-806D-F8BB1BE6B55A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
@@ -101,7 +101,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5BC5254A-9D60-4F57-B3DA-E8DD7AF87B55}"
+      DTS:DTSID="{5A62AEFF-AF64-47F9-92C1-0FC3645DCEB9}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_SOURCE_SYSTEM_DESC">
@@ -110,7 +110,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DF35C9C7-520D-4AC9-9043-B6F742AB83EA}"
+      DTS:DTSID="{EBCE0DB2-663B-4E35-BBE7-BE95CD20F267}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="in_SOURCE_SYSTEM_ID">
@@ -119,7 +119,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5F72848F-0031-443F-8EF4-F22CFB6485D2}"
+      DTS:DTSID="{32DD20F5-18BD-4580-9F7D-3D0624BB473C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_TARGET_SYSTEM_DESC">
@@ -128,7 +128,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{E35B3F3F-F2A4-4D2B-997F-D7DD2ECF6FE7}"
+      DTS:DTSID="{ABC17135-D074-498C-BE32-609C4B726780}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="out_MAX_ID">
@@ -137,7 +137,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FF761ABE-5D4A-405F-8700-7D466D540E31}"
+      DTS:DTSID="{4D19BC6F-9F60-42E7-B82C-FAF9F1EC91BE}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="out_MAX_TABLE_ID">
@@ -146,7 +146,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FAE40751-0128-4FD9-97EB-C4961BC16703}"
+      DTS:DTSID="{DCDA504A-09AD-4906-B71A-A95BF812A1D0}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="out_SITE_ID">
@@ -155,7 +155,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9AC1BAE2-2F07-495A-9E57-26338EA9C155}"
+      DTS:DTSID="{B80447AF-1E38-42E4-8A8E-D405B13C2D3F}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::in_SOURCE_SYSTEM_ID]"
       DTS:IncludeInDebugDump="2345"
@@ -166,7 +166,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B79070DD-0DAD-4EE2-A326-995412EB8991}"
+      DTS:DTSID="{4EF79BDE-99D8-4515-A000-EBB95B568445}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="out_TABLE_TARGET_CD">
@@ -180,7 +180,7 @@
       DTS:refId="Package\Email START"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6f3eba98-dec0-4e7f-bf3e-f536644275a0}"
+      DTS:DTSID="{3669FBA9-3D27-4E9C-ACCE-163E9D74160F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Email START"
@@ -191,7 +191,7 @@
         <DTS:EventHandler
           DTS:refId="Package\Email START.EventHandlers[OnError]"
           DTS:CreationName="OnError"
-          DTS:DTSID="{9512b633-c1a6-4571-860f-74e76d67858c}"
+          DTS:DTSID="{AF253D65-5AD4-4E1F-9A5E-1CA567A66812}"
           DTS:EventID="0"
           DTS:EventName="OnError"
           DTS:LocaleID="-1">
@@ -199,7 +199,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="The propagate property of the event"
-              DTS:DTSID="{21df2fba-d492-4e07-a1ff-8efc6829dd8f}"
+              DTS:DTSID="{EA667C4B-284B-462B-98C4-7CD5C85F36C6}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="System"
               DTS:ObjectName="Propagate">
@@ -212,7 +212,7 @@
               DTS:refId="Package\Email START.EventHandlers[OnError]\Email ERROR"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{b3c08196-ec50-4c01-a312-26300926b530}"
+              DTS:DTSID="{ECE2E54A-24C5-4520-9C93-49C87976F184}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Email ERROR"
@@ -281,7 +281,7 @@
       DTS:refId="Package\Email SUCCESS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{4f36d412-9268-4128-a494-331a3ce991ae}"
+      DTS:DTSID="{4EBC28F6-68F1-48CD-ADC7-A8D252AE7609}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Email SUCCESS"
@@ -292,7 +292,7 @@
         <DTS:EventHandler
           DTS:refId="Package\Email SUCCESS.EventHandlers[OnError]"
           DTS:CreationName="OnError"
-          DTS:DTSID="{b204ef0c-1946-4514-9973-4d1fc6def232}"
+          DTS:DTSID="{4EE51BD5-5F6D-4BBF-88A4-8F89F016609C}"
           DTS:EventID="3014772"
           DTS:EventName="OnError"
           DTS:LocaleID="-1">
@@ -300,7 +300,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="The propagate property of the event"
-              DTS:DTSID="{b4d82535-e8ea-4901-9758-6e33f83a4605}"
+              DTS:DTSID="{BC13E8BC-5B58-48F0-B1C5-D739F81E60D5}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="System"
               DTS:ObjectName="Propagate">
@@ -313,7 +313,7 @@
               DTS:refId="Package\Email SUCCESS.EventHandlers[OnError]\Email ERROR"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{3cb914f7-ee8d-4854-a8f2-662b1b9fbca0}"
+              DTS:DTSID="{5626BAE4-67E9-410E-BC9D-F83BE4B99069}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Email ERROR"
@@ -382,7 +382,7 @@
       DTS:refId="Package\Last Upd TBLOG_PACKAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6797e09f-a925-4be0-abfa-01eabeb0791f}"
+      DTS:DTSID="{4CA9FF4E-EA90-4D28-A226-D8F45355E297}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Last Upd TBLOG_PACKAGE"
@@ -424,7 +424,7 @@
       DTS:refId="Package\Run BAT copyXlsxToBkp"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
-      DTS:DTSID="{eb4c76fd-f52a-4800-b7ea-fea189865080}"
+      DTS:DTSID="{F1932510-99CB-461F-8155-BC6284999B92}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
       DTS:ObjectName="Run BAT copyXlsxToBkp"
@@ -440,7 +440,7 @@
       DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{1CA04044-EF6D-40AB-BC2A-13659BE6D608}"
+      DTS:DTSID="{A3577EAC-16AF-48E1-9AD4-9E1C71AD15E5}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="TBDWFT_BATCH_RECORD_TRACKING_CARD">
@@ -450,7 +450,7 @@
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\Assign TABLE_TARGET_CD"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{357fc191-cb65-4a5c-9ee9-6e8fb8b63078}"
+          DTS:DTSID="{D186320C-8CF2-435C-BDD3-42AD3A397C53}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign TABLE_TARGET_CD"
@@ -472,7 +472,7 @@
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\Ins_Upd TBLOG_PACKAGE_TABLE"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7f5e42a6-7d26-4dd4-82a9-9c9ebceab0a9}"
+          DTS:DTSID="{164BCA1B-2894-4190-8228-B67711CC402E}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
@@ -550,7 +550,7 @@
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\Last Upd TBLOG_PACKAGE_TABLE"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{15cd5255-c9b9-42fa-93d1-937ea41d74da}"
+          DTS:DTSID="{8C58D77E-92AE-48C7-8013-83C82E92DDF3}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
@@ -592,7 +592,7 @@
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\MAX TABLE ID"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{4047186f-dc04-4b87-b7f5-ecc4bd67ef7c}"
+          DTS:DTSID="{92067183-8606-4F11-B9A7-C6D308939E96}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="MAX TABLE ID"
@@ -632,7 +632,7 @@
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\TBDWFT_BATCH_RECORD_TRACKING_CARD_del"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{ae57d86e-ed46-4223-9ff1-b42d19802b57}"
+          DTS:DTSID="{52AE7064-E207-4938-A0D6-0792443B87F4}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBDWFT_BATCH_RECORD_TRACKING_CARD_del"
@@ -668,7 +668,7 @@
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\TBDWFT_BATCH_RECORD_TRACKING_CARD_HIST"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{893aa873-a7d5-41e1-b2bf-561c0c07abbe}"
+          DTS:DTSID="{008880E4-E722-4B88-B250-91A6793BC465}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBDWFT_BATCH_RECORD_TRACKING_CARD_HIST"
@@ -685,7 +685,7 @@
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\TBDWFT_BATCH_RECORD_TRACKING_CARD_ins"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{34ffb232-abf4-4740-9572-be34b40352f3}"
+          DTS:DTSID="{413B41CE-7205-4558-A223-F095B83BED4C}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBDWFT_BATCH_RECORD_TRACKING_CARD_ins"
@@ -734,7 +734,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{1F2E5D80-28F6-43CF-A244-73AD3FC12B9A}"
+          DTS:DTSID="{A68991DB-07AF-4D6E-A889-76A75A5EB25E}"
           DTS:From="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\Assign TABLE_TARGET_CD"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -742,7 +742,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{A7A2546B-4897-4E0D-90BB-138119985152}"
+          DTS:DTSID="{5DC1A50A-DA6B-420A-9A8D-7B7383E19F13}"
           DTS:From="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\Ins_Upd TBLOG_PACKAGE_TABLE"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -750,7 +750,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{67146EF8-C960-4477-8561-00854279ECF9}"
+          DTS:DTSID="{C65EE2A1-FA80-478C-8431-AACC932E21BF}"
           DTS:From="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\MAX TABLE ID"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -758,7 +758,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{71F23C79-8E2E-4A6B-8C3E-C21612B84554}"
+          DTS:DTSID="{7C9EBCA9-2955-440A-BEB7-782AB0D5B4E4}"
           DTS:From="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\TBDWFT_BATCH_RECORD_TRACKING_CARD_ins"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -766,7 +766,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{4CA4595E-85B1-449C-A329-0F39D8D459CB}"
+          DTS:DTSID="{2A12E215-BD4A-4699-B438-B1D964025A5E}"
           DTS:From="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\TBDWFT_BATCH_RECORD_TRACKING_CARD_HIST"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -774,7 +774,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{FF4FEEBA-1820-4EC2-AF5E-C3582018579A}"
+          DTS:DTSID="{92EEFB41-A83E-4E34-9514-4E1C515517D4}"
           DTS:From="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD\TBDWFT_BATCH_RECORD_TRACKING_CARD_del"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
@@ -785,7 +785,7 @@
       DTS:refId="Package\TBDWTMP_BR_TRACKING_CARD"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{19953E27-BA20-4337-AFF8-685D25D9101C}"
+      DTS:DTSID="{8BD8557A-8E91-4154-8437-325A82DC06CA}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="TBDWTMP_BR_TRACKING_CARD">
@@ -795,7 +795,7 @@
           DTS:refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{0f2d155f-c091-433f-a846-464dcc64807e}"
+          DTS:DTSID="{0463DD0D-7AA4-44B5-AA9F-FBB504A0F5FE}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBDWTMP_BR_TRACKING_CARD"
@@ -827,7 +827,7 @@
                   <connections>
                     <connection
                       refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Connections[FlatFileConnection]"
-                      connectionManagerID="{B2517F07-31FD-49EC-8068-679EA611BB62}:external"
+                      connectionManagerID="{3110881C-CA0C-4466-8C4E-F895E98FDC7B}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Flat Files - Mendrisio - Batch Record Tracking Card]"
                       name="FlatFileConnection" />
                   </connections>
@@ -836,26 +836,6 @@
                       refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output]"
                       name="Flat File Source Output">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Row id]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Row id]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Row id]"
-                          name="Row id"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
                         <outputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[SF_Batch]"
                           dataType="wstr"
@@ -1247,26 +1227,6 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[BRSC Review End Date (Sento to QA)]"
-                          dataType="dbDate"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[BRSC Review End Date (Sento to QA)]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[BRSC Review End Date (Sento to QA)]"
-                          name="BRSC Review End Date (Sento to QA)"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[CoA Issue Date]"
                           dataType="dbDate"
                           errorOrTruncationOperation="Conversion"
@@ -1489,13 +1449,49 @@
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Row ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Row ID]"
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Row ID]"
+                          name="Row ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[BRSC Review  Date (Sento to QA)]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[BRSC Review  Date (Sento to QA)]"
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[BRSC Review  Date (Sento to QA)]"
+                          name="BRSC Review  Date (Sento to QA)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Row id]"
-                          dataType="i4"
-                          name="Row id" />
                         <externalMetadataColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[SF_Batch]"
                           dataType="wstr"
@@ -1583,10 +1579,6 @@
                           dataType="dbDate"
                           name="FP_Quarantine Date" />
                         <externalMetadataColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[BRSC Review End Date (Sento to QA)]"
-                          dataType="dbDate"
-                          name="BRSC Review End Date (Sento to QA)" />
-                        <externalMetadataColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[CoA Issue Date]"
                           dataType="dbDate"
                           name="CoA Issue Date" />
@@ -1633,6 +1625,14 @@
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[F_Required_Release_Date]"
                           dataType="dbTime"
                           name="F_Required_Release_Date" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[Row ID]"
+                          dataType="i4"
+                          name="Row ID" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].ExternalColumns[BRSC Review  Date (Sento to QA)]"
+                          dataType="dbDate"
+                          name="BRSC Review  Date (Sento to QA)" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1737,11 +1737,11 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Row id]"
+                          refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[Row ID]"
                           cachedDataType="i4"
-                          cachedName="Row id"
+                          cachedName="Row ID"
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[ROW_ID]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Row id]" />
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[Row ID]" />
                         <inputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[SF_Batch]"
                           cachedDataType="wstr"
@@ -1871,7 +1871,7 @@
                           cachedDataType="dbDate"
                           cachedName="BRSC Review End Date (Sento to QA)"
                           externalMetadataColumnId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].ExternalColumns[F_BRSC_REVIEW_DT]"
-                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\BR_Tracking_Card CSV.Outputs[Flat File Source Output].Columns[BRSC Review End Date (Sento to QA)]" />
+                          lineageId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\67:invalid" />
                         <inputColumn
                           refId="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD.Inputs[OLE DB Destination Input].Columns[CoA Issue Date]"
                           cachedDataType="dbDate"
@@ -2160,7 +2160,7 @@
           DTS:refId="Package\TBDWTMP_BR_TRACKING_CARD\Truncate TMP table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0521c52f-e4ca-40a0-aee3-9ace286df2e0}"
+          DTS:DTSID="{26D6D27C-3F3E-47DD-B0D0-12E116FC3887}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate TMP table"
@@ -2178,7 +2178,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\TBDWTMP_BR_TRACKING_CARD.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{C0FCC5FA-85F8-4F1E-9C9A-82B24FE2E390}"
+          DTS:DTSID="{030CB0F6-3AEA-4E92-BF06-490874E1AA66}"
           DTS:From="Package\TBDWTMP_BR_TRACKING_CARD\Truncate TMP table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -2189,7 +2189,7 @@
       DTS:refId="Package\TBLOG_PACKAGE"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{183B4E4B-D89C-472D-B1E5-A482E93FAFE6}"
+      DTS:DTSID="{C77D667E-E141-43A3-9001-6CE782264AF2}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="TBLOG_PACKAGE">
@@ -2199,7 +2199,7 @@
           DTS:refId="Package\TBLOG_PACKAGE\Assign SITE_ID"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{ce4d8e38-f9ce-46a5-b2d6-0c0dbd941758}"
+          DTS:DTSID="{8AC90D08-990B-4030-B8B1-E6D678934489}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign SITE_ID"
@@ -2227,7 +2227,7 @@
           DTS:refId="Package\TBLOG_PACKAGE\Ins TBLOG_PACKAGE + Max ID"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{e0525893-3e88-47d5-aa23-589498654376}"
+          DTS:DTSID="{CFA62922-61E9-4615-BAB7-08A9B3A80590}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Ins TBLOG_PACKAGE + Max ID"
@@ -2303,7 +2303,7 @@
           DTS:refId="Package\TBLOG_PACKAGE\Upd TBLOG_PACKAGE"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5e3d8382-d53d-4bc6-8997-119d2199ec02}"
+          DTS:DTSID="{77BEEB68-2558-4F1F-9211-2EE43C61A1EB}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Upd TBLOG_PACKAGE"
@@ -2340,7 +2340,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\TBLOG_PACKAGE.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{866dac26-169e-4601-a79d-45e2a67c3a75}"
+          DTS:DTSID="{32CC19D5-B511-4401-AB51-3D981DE6831D}"
           DTS:From="Package\TBLOG_PACKAGE\Assign SITE_ID"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -2348,7 +2348,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\TBLOG_PACKAGE.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{371ca75f-4b25-41fa-998f-c0e223b26661}"
+          DTS:DTSID="{543A3AD2-9759-4030-B0C6-829D9055FC11}"
           DTS:From="Package\TBLOG_PACKAGE\Ins TBLOG_PACKAGE + Max ID"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -2360,7 +2360,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{5A57B122-F1BE-4E91-8509-0AE5407B0ACF}"
+      DTS:DTSID="{1090846A-3F31-43BE-BC7B-A7DAFF57F41E}"
       DTS:From="Package\TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -2368,7 +2368,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{CF127AC6-50F4-4D9D-9D37-7D85C94FBC5F}"
+      DTS:DTSID="{6508FC81-3E41-44F5-A716-A07F70B2D0B0}"
       DTS:From="Package\TBDWFT_BATCH_RECORD_TRACKING_CARD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -2376,7 +2376,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{44975369-BDED-4D88-A8C7-825E59B00F1C}"
+      DTS:DTSID="{12C32CD2-9AF2-489A-B0D5-BDE5D1220FDF}"
       DTS:From="Package\TBDWTMP_BR_TRACKING_CARD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -2384,7 +2384,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{C3E79AC7-E931-4C03-974D-FD475B16D191}"
+      DTS:DTSID="{6365ED72-A3C5-449F-AE45-D41D4106268E}"
       DTS:From="Package\Email START"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -2392,7 +2392,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{862D5EA4-63A5-4D7B-B1AA-0883E76BE908}"
+      DTS:DTSID="{916B3995-33C0-4123-A8E6-6552F1BC7635}"
       DTS:From="Package\Last Upd TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -2400,7 +2400,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{27038301-8CA6-4F81-8EB6-09A74EC2031A}"
+      DTS:DTSID="{6B38DB7E-44E5-426B-8366-62E6B700D8B8}"
       DTS:From="Package\Run BAT copyXlsxToBkp"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
@@ -2410,7 +2410,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{9DFAEE8B-3AB7-4122-920C-155E4C837ECF}"
+      DTS:DTSID="{9FC3742E-C461-4590-85BD-F77AC080BE6C}"
       DTS:EventID="6619251"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -2418,7 +2418,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{373392DB-0F93-4BB1-917C-E12084C49431}"
+          DTS:DTSID="{EFCD30C0-13D2-4563-9AA5-8C59FAC66A95}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -2431,7 +2431,7 @@
           DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{2B1D8ECC-8116-47C8-9C25-61DCE845B447}"
+          DTS:DTSID="{DBB97E76-2553-495B-AC36-FFAEBA1A11CE}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Email ERROR"
@@ -3096,7 +3096,7 @@
     design-time-name="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="238,42"
           Id="Package\TBDWTMP_BR_TRACKING_CARD\TBDWTMP_BR_TRACKING_CARD\TBTMP_BR_TRACKING_CARD"
@@ -3136,7 +3136,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="76,99,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

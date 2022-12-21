@@ -1,11 +1,11 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/5/2022 4:36:44 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SRV-DIR-TST"
   DTS:CreatorName="SINTE00\mluchini"
-  DTS:DTSID="{30B81969-9298-454E-96AE-6E35E1208059}"
+  DTS:DTSID="{4CF947B4-11E5-47F1-963E-3EA0C59F5F36}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="1033"
@@ -13,7 +13,7 @@
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
   DTS:VersionBuild="2"
-  DTS:VersionGUID="{4B59F7CD-7AA5-4FB7-999F-3A3E4930C08B}">
+  DTS:VersionGUID="{4B8AA576-5930-4FA4-B3AE-6E6570201023}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -22,7 +22,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{9291DC17-78DC-40C2-8A3C-DC49E3D88EA4}"
+      DTS:DTSID="{7B85564C-A3A5-453A-849E-7C82C84A4724}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -103,8 +103,8 @@ from saphanadb.mara</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\ODBC Source.Connections[ODBCConnection]"
-                  connectionManagerID="{5C247F53-133A-4585-B3D1-0EE44D363255}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SAP_HANA_DEV_32b.SAP_QLIK_R]"
+                  connectionManagerID="{5C247F53-133A-4585-B3D1-0EE44D363255}:invalid"
+                  connectionManagerRefId="{5C247F53-133A-4585-B3D1-0EE44D363255}:invalid"
                   description="The ODBC runtime connection used to access the database."
                   name="ODBCConnection" />
               </connections>

@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="656"
-  DTS:VersionGUID="{39740AB2-C2B6-457B-8053-5A77F3A620AD}">
+  DTS:VersionBuild="657"
+  DTS:VersionGUID="{6CCCFDA0-A63D-4C54-B8AE-52B2DB2B86E4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="bK1QRqgf68c="
-            IV="qAYn28lvMfOX/aMPoE4Scw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="+NVUjKtxyJ0="
+            IV="m8SvsnLob9qxEKX3A6fVOw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>qAYn28lvMfOX/aMPoE4Scxn/SeLTINDt5TKomga0SjzrrJ1TBG585xFyvQmpCzk4iRchLjWIKSlgCXVHgyk/hSjTM0oKrpq3XJFv4iRXouz4vtHFxxjEi2w2CW39LU3v+eW9R8ekgwA1vEjNY0ihB2csWCCt8t2rEAUDC7Jy2XmJv7qMF0vh+JgnZLl+D/DF</CipherValue>
+              <CipherValue>m8SvsnLob9qxEKX3A6fVOwhGuIOmfrN5htqi8HvuYI31zKphPPYyqaM69prNw7+GHbiZB9YgEAhPklX1gOLDHUvTvyAomaVBbWSUGXXtxLSNg+EV6VaBH7YSWMm1YeiuNHdAgtlBl3gsDaq7/Uv2/mZtZHsJV0UqDI7WNFAU+5JSVFsPAjVdMAzububPj08R</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -195,7 +195,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -223,7 +223,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3709,7 +3709,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Max DATE Loaded and DWH_DELTA_DT"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3834,7 +3834,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="New Max DATE Loaded"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -5849,7 +5849,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5955,7 +5957,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6011,7 +6015,7 @@ FROM
     design-time-name="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="162,42"
           Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables"
@@ -6055,7 +6059,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6089,7 +6095,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
