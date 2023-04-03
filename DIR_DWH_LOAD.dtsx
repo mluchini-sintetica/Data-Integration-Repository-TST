@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="329"
-  DTS:VersionGUID="{D3791B69-9B35-4EC7-AF55-38158A6104BA}">
+  DTS:VersionBuild="331"
+  DTS:VersionGUID="{9A24BCF4-12D7-4132-988D-04362431AA29}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -121,6 +121,7 @@
       DTS:refId="Package\AUDIT_TRAIL_FLAT_FILES"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{3670ed1a-c9ad-4b3b-960b-cdb0a4e570ef}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -270,6 +271,7 @@
       DTS:refId="Package\COUVET NO Audit Trail Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{d9c7c571-d449-4517-a775-d1aac6cf18c7}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -892,6 +894,7 @@
       DTS:refId="Package\MENDRISIO Audit Trail Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{BE732827-BF4E-4759-8634-E05F08127621}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -989,6 +992,7 @@
       DTS:refId="Package\MENDRISIO NO Audit Trail Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{C666FC27-F69C-4D1A-9CFA-D11346867830}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"

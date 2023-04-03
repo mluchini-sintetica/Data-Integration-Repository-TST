@@ -12,7 +12,7 @@
       DTS:ColumnNamesInFirstDataRow="True"
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
-      DTS:CodePage="1252"
+      DTS:CodePage="65001"
       DTS:ConnectionString="D:\Files_output\Couvet\K6L_Formato.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
@@ -21,7 +21,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Contatore"
-          DTS:DTSID="{12FFFE8C-62D1-498B-B9CC-9C1CDE82953E}"
+          DTS:DTSID="{383DEFAF-E3CA-46E7-9872-D817D8703DA4}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Parametro"
-          DTS:DTSID="{8210249F-6607-4AC6-8D11-84CDBCDD1093}"
+          DTS:DTSID="{0E56ADEA-0CE0-4633-A78C-17C3765801B7}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Valore"
-          DTS:DTSID="{E6827546-5B8B-4DBB-A5AE-D7316736D6D8}"
+          DTS:DTSID="{7D8714BA-95EA-4BB8-A8B9-0409645CE518}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Minimo"
-          DTS:DTSID="{2B149F44-4DD1-41C1-8299-B2F2C2DD5BED}"
+          DTS:DTSID="{52D881D3-4B41-4774-9CB6-CA955FB65A1F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Massimo"
-          DTS:DTSID="{2B687F97-DF0C-42B4-BA3F-B50083FA3889}"
+          DTS:DTSID="{1E0FA184-8803-4445-A937-671E1EDE8DF9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Severità"
-          DTS:DTSID="{8A141F98-FC70-456A-A855-7561B4C1FE53}"
+          DTS:DTSID="{78D57AB2-B0C4-4C62-9C25-91772963473D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Tag"
-          DTS:DTSID="{286A0CF1-E898-4B3B-A892-3A7FEEB19A50}"
+          DTS:DTSID="{EB0C6713-2BF9-41C7-88B7-8F11FE81C4EF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -83,7 +83,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Parametro In Chiaro"
-          DTS:DTSID="{A85D87AE-AC6B-4334-AA72-F6DF4456C2F3}"
+          DTS:DTSID="{5459860E-D9A1-4735-89B7-EAF1919F78FF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -92,7 +92,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Filtro"
-          DTS:DTSID="{415B8E5A-6432-45BD-94D1-FDF63404B105}"
+          DTS:DTSID="{9AEE956F-7607-4386-937E-B705768C86AF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -101,7 +101,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Descrizione Parametro"
-          DTS:DTSID="{1C4314C5-BFFB-485B-8F97-56EE0E80AEF3}"
+          DTS:DTSID="{F35DF325-65B2-4344-867B-BD00FE99F2BE}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
